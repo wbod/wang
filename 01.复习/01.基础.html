@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基础</title>
+</head>
+<body>
+  <script>
+    /*
+      数据类型：
+        1. 基本数据类型 Number String Boolean Null Undefined Symbol BigInt
+        2. 引用数据类型 Object Array Function 
+
+      判断数据类型方法：
+        1. typeof A
+          能准确判断 Number String Boolean Undefined Function
+          不能准确判断 Null Object Array
+
+        2. A instanceof B
+          简单理解：检测A是否是B的实例
+          准确理解：检测A的隐式原型属性（__proto__）是否在B的显示原型属性（prototype）上
+          A没有限制 B必须是函数
+
+          instanceof 只用来检测引用类型数据
+
+        3. Array.isArray()
+          只能检测数组
+
+        4. Object.prototype.toString.call(A).slice(8, -1) 
+          万能版
+    */
+  </script>
+</body>
+</html>

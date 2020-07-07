@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day01</title>
+  </head>
+  <body>
+    <script>
+      /*
+        请实现函数 instanceOf
+        A instanceOf B
+
+        准确理解：检测A的隐式原型属性（__proto__）是否在B的显示原型属性（prototype）上
+        A没有限制 B必须是函数
+
+        instanceof 只用来检测引用类型数据
+      */
+
+      function instanceOf(a, b) {
+        // 判断b的类型是否是函数
+        var isFunction = typeof b === "function";
+        if (!isFunction) {
+          // 不是函数，报错
+          // return new Error("b is not a function");
+          throw new Error("b is not a function"); // 抛
+        }
+
+        // 判断a是否是基本类型
+        const aType = typeof a;
+        if (aType !== "function" && (aType !== "object" || a === null)) {
+          // 说明a是基本类型
+          return false;
+        }
+
+        // a一定是引用类型 b一定是函数
+        b = b.prototype;
+        a = a.__proto__;
+
+        // 死循环: 因为不能确定隐式原型有多少层~
+        while (true) {
+          // 判断a和b是否相等
+          if (a === b) {
+            // 只要退出函数，立马终止死循环
+            return true;
+          }
+          // 再取隐式原型
+          a = a.__proto__;
+          // a的值可能是null，说明来原型链的尽头，都不相等
+          if (a === null) {
+            return false;
+          }
+        }
+      }
+
+      console.log(instanceOf(null, Object)); // false
+      console.log(instanceOf(123, Number)); // false
+
+      var obj = {};
+      function fn() {}
+      var arr = [];
+
+      var f = new fn();
+
+      console.log(instanceOf(Object, Function)); // true
+      console.log(instanceOf(obj, Object)); // true
+      console.log(instanceOf(f, Object)); // true
+      console.log(instanceOf(fn, Function)); // true
+      console.log(instanceOf(arr, Array)); // true
+
+      console.log(instanceOf(arr, {})); // 报错
+    </script>
+  </body>
+</html>

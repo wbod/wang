@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写JS</title>
+  </head>
+  <body>
+    <script>
+      /*
+        函数的节流(throttle)与防抖(debounce)
+          作用：为了节约函数的性能（让函数调用次数更少）
+          节流(throttle)：让函数在单位时间内只调用一次，第一次调用生效
+            应用场景：发送验证码按钮
+          防抖(debounce)：让函数在单位时间内只调用一次，最后一次调用生效
+            应用场景：搜索栏
+      */
+
+      function move(event) {
+        console.log(event);
+        console.log(this);
+        // console.log('move()');
+      }
+
+      // var newFn = throttle(move, 200);
+      // document.onmousemove = newFn;
+
+      // throttle高阶函数
+      function throttle(fn, time) {
+        // 函数上一次调用时间
+        var lastTime = 0;
+        // ...args 三点运算符（ES6） 剩下所有参数
+        // 接受函数的所有参数
+        /* return function (...args) {
+          // 让函数在单位时间内只调用一次，第一次调用生效
+          // 函数调用的时间
+          var nowTime = Date.now();
+          // 判断当前时间-上次时间是否小于单位时间
+          if (nowTime - lastTime < time) return;
+          // ...args将数组元素展开，作为参数传入函数中
+          fn.call(this, ...args);
+          // 同步时间
+          lastTime = nowTime; 
+        } */
+
+        return function () {
+          // 让函数在单位时间内只调用一次，第一次调用生效
+          // 函数调用的时间
+          var nowTime = Date.now();
+          // 判断当前时间-上次时间是否小于单位时间
+          if (nowTime - lastTime < time) return;
+
+          fn.apply(this, arguments);
+          // 同步时间
+          lastTime = nowTime;
+        };
+      }
+
+      /*
+        事件回调函数的参数再哪？ newFn
+          newFn才是事件回调函数，自然就有event参数
+
+        事件回调函数的参数哪个函数要使用?
+          不是newFn要用，newFn只用来做节流
+          给move函数使用，    
+
+        newFn是DOM事件回调函数，所有它的this指向document
+        需求: 需要将move函数this指向document
+      */
+      function throttle(fn, time) {
+        // 上次函数调用时间
+        var lastTime = 0;
+        return function newFn() {
+          // 当前函数调用时间
+          var nowTime = Date.now();
+          // 让函数在单位时间内只调用一次，第一次调用生效
+          if (nowTime - lastTime < time) return;
+          // 所有函数都有arguments，代表实参列表
+          // 将来调用newFn传入的参数，都会自动添加到arguments
+          // arguments是伪数组
+          fn.apply(this, arguments);
+
+          lastTime = nowTime;
+        };
+      }
+
+      var newFn = debounce(move, 200);
+      document.onmousemove = newFn;
+
+      function debounce(fn, time) {
+        var timeId = null;
+        function newFn() {
+          // 让函数在单位时间内只调用一次，最后一次调用生效
+          clearTimeout(timeId);
+          var _this = this; // 私有变量
+          var _args = arguments;
+          timeId = setTimeout(function timeout() {
+            fn.apply(_this, _args);
+          }, time);
+        }
+        return newFn;
+      }
+
+      // 闭包保存的局部变量特点：只会保存在嵌套的第一层函数中
+      // 嵌套的多层函数要使用局部变量，得去第一层函数的闭包中找
+      function fn1() {
+        debugger;
+        var a = 1;
+        var b = 2;
+
+        function fn2() {
+          var c = 3;
+          console.log(a);
+
+          function fn3() {
+            debugger;
+
+            function fn4() {
+              console.log(b, c);
+            }
+          }
+
+          fn3();
+        }
+
+        fn2();
+      }
+
+      fn1();
+    </script>
+  </body>
+</html>

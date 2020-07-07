@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+    </ul>
+    <script>
+      /*
+        1. 编写一个数组方法，用来去重~
+        var arr = [1, 2, 3, 6, 3, 8, 1];
+
+        2. 编写一个数组方法，用来扁平化数组（数组降维）
+        原数组：var arr = [1, [[[2], 3], [6, [3], 8], 1]];
+        处理后数组：var arr = [1, 2, 3, 6, 3, 8, 1];
+
+        arr.toString().split(',').map(function (item, index, array) { return +item })
+
+        总结this指向： this调用时才能确定（动态确定的~）
+          普通函数
+            直接调用 window
+            隐式调用（对象调用） obj
+            显示调用 第一个参数 obj
+            new调用 产生的实例对象 fnObj
+          回调函数：
+            1. 概念：
+              - 你定义了
+              - 你没有调用
+              - 最终执行了
+            2. 常见的回调函数
+              定时器回调函数 window
+              DOM事件回调函数 绑定事件的DOM元素
+
+      */
+
+      // function fn() {
+      //   console.log(this);
+      // }
+
+      // fn(); // 直接调用 window
+      // var obj = {
+      //   fn: fn,
+      // };
+      // obj.fn(); // 隐式调用（对象调用） obj
+
+      // fn.call(obj); // 显示调用 第一个参数 obj
+      // fn.apply(window); // 显示调用 第一个参数 window
+
+      // var fnObj = new fn(); // new调用 产生的实例对象 fnObj
+
+      /*
+        回调函数：
+          1. 概念：
+            - 你定义了
+            - 你没有调用
+            - 最终执行了
+          2. 常见的回调函数
+            定时器回调函数 window
+            DOM事件回调函数 绑定事件的DOM元素
+      */
+
+      // btn.onclick = function () {};
+      // setInterval(function () {}, 1000);
+
+      document.getElementById("list").onclick = function (e) {
+        console.log(this);
+        console.log(e.target); // 触发事件的目标DOM元素
+      };
+
+      var arr1 = [1, 2, 3, 6, 3, 8, 1];
+      // 定义数组去重方法
+      Array.prototype.unique = function () {
+        // 怎么找到要处理的数组？ this
+        // console.log(this);
+
+        //默认标志位
+        var flag = true;
+        var newArr = [];
+        for (var i = 0; i < this.length; i++) {
+          for (var j = 0; j < newArr.length; j++) {
+            if (this[i] == newArr[j]) {
+              flag = false;
+              break;
+            }
+          }
+          if (flag) {
+            newArr[newArr.length] = this[i];
+          }
+          flag = true;
+        }
+
+        return newArr;
+      };
+
+      const newArr = arr1.unique();
+
+      console.log(newArr);
+
+      Array.prototype.flat = function () {
+        var newArr = [];
+        this.forEach((item) => {
+          if (Array.isArray(item)) {
+            var arr = item.flat();
+            // newArr = newArr.concat(arr);
+            newArr = [...newArr, ...arr];
+            return;
+          }
+          newArr.push(item);
+        });
+        return newArr;
+      };
+
+      var arr = [1, [[[2], 3], [6, [3], 8], 1]];
+
+      console.log(arr.flat());
+    </script>
+  </body>
+</html>

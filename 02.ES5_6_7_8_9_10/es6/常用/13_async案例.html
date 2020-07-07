@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        需求：请求a数据，再请求b数据，请求c数据
+      */
+
+      async function fn() {
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("a数据ok");
+            resolve();
+          }, 1000);
+        });
+
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("b数据ok");
+            resolve();
+          }, 2000);
+        });
+
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("c数据ok");
+            resolve();
+          }, 3000);
+        });
+
+        console.log("全部数据请求成功了~");
+      }
+
+      fn();
+    </script>
+  </body>
+</html>

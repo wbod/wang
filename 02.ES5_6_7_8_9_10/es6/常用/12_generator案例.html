@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        需求：请求a数据，再请求b数据，请求c数据
+      */
+
+      function* fn() {
+        yield setTimeout(() => {
+          console.log("a数据成功了");
+          iteratorObj.next(); // 执行下一段代码
+        }, 1000);
+
+        yield setTimeout(() => {
+          console.log("b数据成功了");
+          iteratorObj.next(); // 执行下一段代码
+        }, 2000);
+
+        yield setTimeout(() => {
+          console.log("c数据成功了");
+          iteratorObj.next(); // 执行下一段代码
+        }, 3000);
+
+        console.log('全部数据请求回来~');
+      }
+      
+      const iteratorObj = fn();
+      iteratorObj.next();
+
+    </script>
+  </body>
+</html>

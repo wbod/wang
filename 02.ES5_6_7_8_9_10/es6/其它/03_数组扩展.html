@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03_数组扩展</title>
+  </head>
+  <body>
+    <button>测试1</button>
+    <br />
+    <button>测试2</button>
+    <br />
+    <button>测试3</button>
+    <br />
+
+    <!--
+1. Array.from(v) : 将伪数组对象或可遍历对象转换为真数组
+2. Array.of(v1, v2, v3) : 将一系列值转换成数组
+3. Array.prototype.find(function(value, index, arr){return true}) : 找出第一个满足条件返回true的元素
+4. Array.prototype.findIndex(function(value, index, arr){return true}) : 找出第一个满足条件返回true的元素下标
+-->
+    <script type="text/javascript">
+      function fn() {
+        console.log(arguments);
+        console.log(Array.from(arguments));
+      }
+      fn(1, 2, 3);
+
+      const btns = document.querySelectorAll("button");
+      console.log(Array.from(btns));
+
+      console.log(Array.of(1, 2, 3));
+      console.log([1, 2, 3]);
+
+      const arr = [{ age: 18 }, { age: 20 }, { age: 22 }];
+
+      const result1 = arr.find((item, index, array) => {
+        // 返回值为true，就找到了，后面的就不看了，返回值是当前遍历的item
+        // 返回值为false，就没找到，就找下一个
+        // 只有所有所有都没找到, 返回值undefined
+        return item.age === 28;
+      });
+      console.log(result1);
+      const result2 = arr.findIndex((item, index, array) => {
+        // 返回值为true，就找到了，后面的就不看了，返回值是当前遍历的index
+        // 返回值为false，就没找到，就找下一个
+        // 只有所有所有都没找到, 返回值-1
+        return item.age === 28;
+      });
+      console.log(result2);
+    </script>
+  </body>
+</html>

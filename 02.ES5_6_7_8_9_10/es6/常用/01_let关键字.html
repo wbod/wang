@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>01_let关键字</title>
+  </head>
+  <body>
+    <button>测试1</button>
+    <br />
+    <button>测试2</button>
+    <br />
+    <button>测试3</button>
+    <br />
+    <!--
+***let
+1. 作用:
+  * 与var类似, 用于声明一个变量
+2. 特点:
+  * 在块作用域内有效
+  * 不能重复声明
+  * 不会预处理, 不存在提升
+3. 应用:
+  * 循环遍历加监听
+  * 使用let取代var是趋势
+-->
+    <script type="text/javascript">
+      /*
+        1. 不存在变量提升
+        2. 不能重复声明
+        3. 产生块级作用域 {}
+        
+      */
+
+      var btns = document.querySelectorAll("button");
+
+      for (let i = 0; i < btns.length; i++) {
+        const btn = btns[i];
+        btn.onclick = function fn() {
+          alert(i);
+        };
+      }
+
+      /* if (true) {
+        let a = 123;
+        var b = 456;
+      } */
+
+      /* for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+      }
+
+      while (true) {}
+
+      switch (true) {
+        default:
+          return 213;
+      } */
+    </script>
+  </body>
+</html>

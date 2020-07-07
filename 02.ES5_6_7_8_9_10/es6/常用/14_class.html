@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12_class</title>
+  </head>
+  <body></body>
+  <!--
+1. 通过class定义类/实现类的继承
+2. 在类中通过constructor定义构造方法
+3. 通过new来创建类的实例
+4. 通过extends来实现类的继承
+5. 通过super调用父类的构造方法
+6. 重写从父类中继承的一般方法
+-->
+  <script type="text/javascript">
+    // 定义 Father
+    class Father {
+      // 类的构造方法
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 原型上
+      setName(name) {
+        this.name = name;
+      }
+      setAge(age) {
+        this.age = age;
+      }
+    }
+
+    // extends 继承
+    // Son子类继承Father父类
+    class Son extends Father {
+      constructor(name, age, sex) {
+        super(name, age); // 调用父类的constructor 
+        this.sex = sex;
+      }
+      setSex(sex) {
+        this.sex = sex;
+      }
+    }
+
+    const s = new Son("jack", 18, '男');
+    console.log(s);
+
+    const f = new Father("jack", 18);
+    console.log(f);
+  </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>allSettled</title>
+</head>
+<body>
+  <!-- 
+    Promise.allSettled()
+   -->
+  <script>
+    const promise1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('a数据ok');
+        reject(111);
+      }, 1000)
+    })
+
+    const promise2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('b数据ok');
+        resolve(222);
+      }, 2000)
+    })
+
+    const promise3 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('c数据ok');
+        reject(333);
+      }, 3000)
+    })
+
+    /*
+       {status: "rejected", reason: 111}
+       {status: "fulfilled", value: 222}
+       {status: "rejected", reason: 333}
+    */
+    Promise.allSettled([promise1, promise2, promise3])
+      .then((res) => {
+        console.log('then方法执行了~', res);
+      })
+  </script>
+</body>
+</html>

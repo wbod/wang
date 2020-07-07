@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作用域</title>
+</head>
+<body>
+  <script>
+    /*
+      1. 什么是作用域？
+        一块代码生效的地盘
+        变量生效的范围
+      2. 作用域的作用？
+        隔离变量
+        让不同作用域的变量不会产生冲突
+      3. 作用域分类：
+        全局作用域
+        函数作用域（局部作用域）
+        块级作用域  ES6有了~  
+      4. 作用域是静态的，定义时产生了，和调用没有关系
+      5. 作用域链
+        多个上下级关系作用域形成的结构
+        方向由内向外（由小向大）
+        作用：用来查找变量
+          先在自身作用域找，找到就使用，没有找到就去上一级作用域找，找到就使用，
+          直到找到全局作用域，找到就使用，再没有找到就报错，xx is not defined
+    */
+
+    function fn1() {
+
+      function fn2() {
+
+        function fn3() {
+
+        }
+
+      }
+
+    }
+
+  </script>
+</body>
+</html>

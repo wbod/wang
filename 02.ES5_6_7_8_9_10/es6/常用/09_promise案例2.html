@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      /*
+    需求： 同时请求三个数据，全部请求成功了，才OK，只要有一个失败，就失败
+   */
+
+      /* const promise = new Promise((resolve, reject) => {
+        let successNum = 0;
+
+        setTimeout(() => {
+          console.log("a数据ok");
+          reject();
+          successNum++;
+          if (successNum === 3) {
+            resolve();
+          }
+        }, 1000);
+
+        setTimeout(() => {
+          console.log("b数据ok");
+          successNum++;
+          if (successNum === 3) {
+            resolve();
+          }
+        }, 2000);
+
+        setTimeout(() => {
+          console.log("c数据ok");
+          successNum++;
+          if (successNum === 3) {
+            resolve();
+          }
+        }, 3000);
+      });
+
+      promise
+        .then(() => console.log("全部成功了~"))
+        .catch(() => console.log("失败了~")); */
+
+      const promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("a数据ok");
+          resolve();
+        }, 1000);
+      });
+
+      const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("b数据ok");
+          reject();
+        }, 2000);
+      });
+
+      const promise3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("c数据ok");
+          resolve();
+        }, 3000);
+      });
+
+      const promise = Promise.all([promise1, promise2, promise3]);
+
+      promise
+        .then(() => console.log("全部成功了~"))
+        .catch(() => console.log("失败了~"));
+
+    </script>
+  </body>
+</html>

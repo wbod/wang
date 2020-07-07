@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSON对象</title>
+</head>
+<body>
+<!--
+1. JSON.stringify(obj/arr)
+  * js对象(数组)转换为json对象(数组)
+2. JSON.parse(json)
+  * json对象(数组)转换为js对象(数组)
+
+-->
+<script type="text/javascript">
+/*
+  JSON对象
+    JSON.stringify(obj/arr)
+    JSON.parse(json)
+    作用：用来生成json数据，用来存储数据（将来前后端交互/通信）
+
+    json字符串：
+      属性名：必须用双引号
+      属性值: 如果是字符串类型，也必须用双引号
+      注意：不能加任何多余的符号
+
+    不能存储undefined和function数据，其他数据可以存储
+
+*/
+// JS对象
+var obj = {name: 'jack', age: 18 };
+var arr = [1, 'str', null, true, undefined, {}, [], function () {}];
+// 将JS对象转换成JSON对象
+var jsonStr = JSON.stringify(arr);
+console.log(jsonStr); // {"name":"jack","age":18}
+
+// 将JSON对象转换成JS对象
+var jsObj = JSON.parse(jsonStr);
+console.log(jsObj);
+
+
+</script>
+</body>
+</html>
