@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局对象</title>
+    <script>
+        /*
+            在全局作用域中，有一个对象叫做全局对象
+                在全局作用域中创建的所有变量，都会作为全局对象的属性保存
+                在全局作用域中创建的所有的函数，都会作为全局对象的方法保存
+                在浏览器中，全局对象叫做window
+                    在全局作用域中所有的变量和函数（使用var声明的）都存储在window对象中
+         */
+        var a = 10;
+        var b = 'hello';
+        // alert(window.b); 全局变量是window对象的属性，可以通过window.xxx来访问
+
+        function fn() {
+            console.log('我是fn函数');
+        }
+
+        // window.fn(); 全局函数时window对象的方法，可以通过window.xxx()来调用
+        // 所谓的函数实则就是window对象的方法
+        // window.alert('hello');
+
+        window.c = '你好'; // 向window对象中添加属性，相当于添加了一个全局变量
+        //d = 'xx' 相当于 window.d = 'xx'
+        d = '哈哈'; // 声明变量不使用var关键字，相当于直接向window对象中添加属性
+
+        alert(d);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

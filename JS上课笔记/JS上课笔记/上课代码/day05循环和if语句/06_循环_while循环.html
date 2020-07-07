@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环语句</title>
+    <script>
+
+        //在网页中打印一行❤
+        // document.write('❤❤❤❤❤❤❤❤❤❤❤❤<br>');
+
+    /*
+        循环语句（loop）
+            - 通过循环语句可以让一段代码反复的执行多次
+            - 循环语句主要两种：
+                while语句（while循环）
+                do-while语句
+                for语句（for循环）
+
+            while语句：
+                - 语法：
+                    while(条件表达式){
+                        语句...
+                    }
+
+                 - 执行流程：
+                    while语句在执行时，会先对while后的条件表达式进行求值判断，
+                        如果为false，则语句直接结束
+                        如果为true，则执行while后的代码块（循环体），
+                            执行完毕继续对条件表达式进行求值判断，
+                            以此类推，直到条件表达式为false，循环结束
+
+     */
+
+        // 像这种条件表达式恒为true循环，被称为死循环，它会一直执行（慎用）
+        // while(true){
+        //     alert('hello');
+        // }
+
+        //每一个循环都要由三个表达式组成
+        // 初始化表达式，初始化一个变量
+        var i = 0;
+
+        //条件表达式，设置循环执行的条件
+        while(i < 5){
+            document.write('❤❤❤❤❤❤❤❤❤❤❤❤<br>');
+            //更新表达式，修改初始化变量的值
+            i++;
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

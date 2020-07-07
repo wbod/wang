@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script>
+
+
+        //创建一个对象
+        var obj = {};
+        obj.name = '孙悟空';
+        obj.age = 18;
+        //为obj对象添加一个方法
+        obj.sayHello = sayHello;
+
+        //创建一个全局的name属性
+        var name = '我是window的name属性';
+        //创建一个全局函数，用来打印window的name属性
+        function sayHello() {
+            console.log(this.name);
+        }
+
+        var obj2 = {
+            name:'猪八戒',
+            sayHello:sayHello
+        };
+
+        // 我希望，在通过obj调用sayHello时，显示obj的name属性，孙悟空
+        //   在通过obj2调用sayHello时，显示obj2的name属性，猪八戒
+        //   在直接调用sayHello时，显示全局变量name的值，我是window的name属性
+        // obj.sayHello(); // 孙悟空
+        // obj2.sayHello(); // 猪八戒
+        // window.sayHello();  // 我是window的name属性
+
+        // function sayHello() {
+        //   我们希望，谁调用的sayHello，我们就打印 谁.name
+        //     console.log(window.name);
+        // }
+
+        // console.log(sayHello === obj.sayHello);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

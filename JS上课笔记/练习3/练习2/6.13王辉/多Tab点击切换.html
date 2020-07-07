@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #tab>li{
+            float: left;
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            /* border: 1px gray solid; */
+            
+        }
+      /*  #tab>li:nth-child(1){
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #tab>li:nth-last-child(1){
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+        } */
+        #conten1,#conten2,#conten3{
+            width: 300px;
+            height: 100px;
+            padding: 30px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            border-radius: 10px;
+        }
+        #tab1,#conten1{
+            background: yellow;
+        }
+        #tab2,#conten2{
+            background: pink;
+        }
+        #tab3,#conten3{
+            background: red;
+        }
+    </style>
+	<body>
+        <ul id="tab">
+            <li id="tab1">10元套餐</li>
+            <li id="tab2">20元套餐</li>
+            <li id="tab3">50元套餐</li>
+        </ul>
+        
+        <div id="container">
+            <div id="conten1">
+                10元套餐: <br> 每月套餐内拨打100分钟, 超出部分2毛/分钟
+                <br>
+            </div>
+            <div id="conten2" style="display: none;">
+                20元套餐: <br> 每月套餐内拨打200分钟, 超出部分1.5毛/分钟
+                <br>
+            </div>
+            <div id="conten3" style="display: none;">
+                50元套餐: <br> 每月无限量随心打
+             
+            </div>
+        </div>
+    </body>
+    <script src="js/jquery-1.10.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        // 创建一个变量索引为0
+        var currentindex = 0;
+        $(function(){
+            // 获取container下的所有div
+            var $contents = $('#container>div');
+            // 给tab下的li绑定鼠标单击事件
+            $('#tab>li').click(function(){
+                // 默认样式不显示
+                $contents[currentindex].style.display = 'none';
+                // 创建一个index变量用来存储点击的li的索引返回
+                var index = $(this).index();                
+                 // 当li的索引等于div的索引,就能切换
+                 currentindex = index;
+                 // 隐藏的div显示
+                   $contents[index].style.display = 'block';
+             })
+        })
+    </script>
+</html>

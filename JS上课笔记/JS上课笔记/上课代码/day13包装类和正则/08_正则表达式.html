@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script>
+
+        /*
+            正则表达式
+                - 用户名、密码、电子邮件...
+                - 正则表达式用来描述一个关于字符串的规则
+                    程序可以根据这个规则来识别一个字符串是否符合要求
+                    或者从一个字符串中提取出符合要求的内容
+         */
+
+        // 创建一个正则表达式
+        // 通过构造函数来创建一个正则的对象
+        // 语法： new RegExp('正则表达式','匹配模式');
+        // 使用typeof检查一个正则对象时，会返回 "object"
+        var reg = new RegExp('a');
+
+        // 正则表达式 a，用来检查一个字符串中是否含有a
+
+        // test() 用来检查一个字符串是否符合正则表达式的要求
+        // 如果符合，返回true， 如果不符合返回false
+        var result = reg.test('a'); // true
+        result = reg.test('abc'); // true
+        result = reg.test('bcabc'); // true
+        result = reg.test('bcd'); // false
+
+        reg = new RegExp('ab');
+        result = reg.test('abcd');
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

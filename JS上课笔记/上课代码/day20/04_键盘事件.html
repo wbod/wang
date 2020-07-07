@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+
+    </style>
+    <script>
+
+        window.onload = function () {
+            var inp = document.querySelector('[type=text]');
+            /*
+                keydown 事件 会在按键在元素上按下时触发
+             */
+            // inp.addEventListener('keydown',function () {
+            //     console.log('按键按下了~~');
+            // });
+
+            /*
+                keyup 事件 会在按键在元素上松开时触发
+             */
+            // inp.addEventListener('keyup',function () {
+            //     console.log('按键松开了~~');
+            // });
+
+            /*
+                键盘事件只能绑定给可以获取焦点的元素
+             */
+            // document.getElementById('box1').addEventListener('keydown',function () {
+            //     console.log('哈哈哈~~~');
+            // });
+
+            // document.querySelector('a').addEventListener('keydown',function () {
+            //     console.log('按键按下了~~');
+            // });
+
+
+            document.addEventListener('keydown',function (ev) {
+                /*
+                    事件对象中key属性，表示当前所按的按键
+                    keyCode返回的是按键的编号（不区分大小写和换挡）
+                 */
+                // if(ev.key.toLowerCase() === 'k'){
+                //     alert('你按了k了！');
+                // }
+
+                /*
+                    判断用户的ctrl和k是否同时被按下
+                 */
+                // if(ev.key === 'Control' && ev.key.toLowerCase() === 'k') {
+                //     alert('你的ctrl和k被同时按下了~~~');
+                // }
+
+                /*
+                    类似于ctrl alt shift这种功能按键，在事件对象中都有专门判断属性
+                        ctrlKey 用来判断ctrl是否被按下，按下返回true，否则返回false
+                        altKey 用来判断alt是否按下
+                        shiftKey 用来判断shift是否按下
+                 */
+
+                // if(ev.ctrlKey && ev.key.toLowerCase() === 'k') {
+                //     alert('你的ctrl和k被同时按下了~~~');
+                // }
+
+                alert(ev.key);
+
+            });
+        };
+
+    </script>
+</head>
+<body>
+
+<input type="text">
+
+<a href="javascript:;">超链接</a>
+
+<!--<div id="box1"></div>-->
+
+</body>
+</html>

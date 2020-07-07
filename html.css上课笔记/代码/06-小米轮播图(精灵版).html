@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.banner{
+				width: 1226px;
+				height: 460px;
+				background: pink;
+				margin: 50px auto 0;
+				position: relative;
+			}
+			img,a{
+				display: block;
+			}
+			
+	
+			.banner ul li{
+				/* 不占位隐藏 */
+				/* display: none; */
+				/* 占位隐藏 */
+				/* visibility: hidden; */
+			}
+			.banner .leftNav{
+				width: 234px;
+				height: 460px;
+				position: absolute;
+				left:0;
+				top:0;
+				/* 透明度: 第一种方式  取值范围0-1一位小数,将元素中的内容一起透明 */
+				/* opacity: 0.5; */
+				/* 透明度:第二种方式  css3中的属性 */
+				background: rgba(0,0,0,0.5);
+			    color:red;
+			}
+			/* .txt{
+				width: 234px;
+				height: 460px;
+				background: #000;
+				position: absolute;
+				left:0;
+				top:0;
+				
+				
+				color:red;
+			} */
+			.banner span{
+				width: 41px;
+				height: 69px;
+				background: url(icon-slides.png) no-repeat -84px 0;
+				position: absolute;
+				left:234px;
+				top:50%;
+				margin-top: -35px;
+				cursor: pointer;
+			}
+			.banner .rightBtn{
+				/* 让给left属性失效 */
+				left:auto;
+				right: 0;
+				/* background-position: -126px 0; */
+				background-position-x:-126px;
+			}
+			.banner .leftBtn:hover{
+				background-position-x:0;
+			}
+			.banner .rightBtn:hover{
+				background-position-x:-44px;
+			}
+			.banner ol{
+				position: absolute;
+				right:34px;
+				bottom: 26px;
+			}
+			.banner ol li{
+				float:left;
+				width: 6px;
+				height: 6px;
+				background: #5c564d;
+				border: 2px solid #8e8880;
+				/* 圆角属性 */
+				border-radius: 50%;
+				margin-left: 8px;
+				cursor: pointer;
+			}
+			.banner ol li:hover{
+				background: #cec7be;
+				border-color:#77736e;
+			}
+			.banner .current{
+				background: #cec7be;
+				border-color:#77736e;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+			<ul>
+				<li>
+					<a href="">
+						<img src="banner.webp">
+					</a>
+				</li>
+			</ul>
+			<div class="leftNav"></div>
+			<span class="leftBtn"></span>
+			<span class="rightBtn"></span>
+			<ol>
+				
+				<!-- <li style="background:#cec7be;border-color:#77736e;"></li> -->
+				<li class="current"><li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<!-- <div class="txt">
+				<span>哈哈,老刘说整数</span>
+			</div> -->
+		</div>
+	</body>
+</html>

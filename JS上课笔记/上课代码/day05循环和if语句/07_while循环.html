@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while循环</title>
+    <script>
+        //创建一个初始化表达式
+        // var i = 0;
+        //
+        // //创建循环和条件表达式
+        // while(i < 10){
+        //     console.log('hello');
+        //     //更新表达式
+        //     i++;
+        // }
+
+        // var i = 0;
+        //
+        // while (true){
+        //     console.log('abc')
+        //     i++;
+        //
+        //     if(i === 5){
+        //         // 也可以通过break来结束循环
+        //         break;
+        //     }
+        // }
+
+
+        // 获取到用户输入的狗的年龄
+        // 如果用户输入的内容不合法，则重复的显示出输入的对话框，
+        //  让用户重新输入，直到用户输入正确位置
+        // var dogAge = prompt('请输入狗的年龄：');
+        //
+        // while(isNaN(dogAge) || dogAge < 0){
+        //     dogAge = prompt('输入错误，请重新输入狗的年龄：');
+        // }
+
+        //假设存款的年利率为5%，1000元存几年能变成5000元
+        // 创建一个变量，用来存储钱数
+        var money = 1000;
+
+        // money *= 1.05; //一年后的钱数
+        // money *= 1.05; //两年后的钱数
+
+        // 创建一个计数器
+        var year = 0;
+
+        // 创建一个循环，来模拟存钱的状态
+        while (money <= 5000){
+            money *= 1.05;
+
+            //使计数器增加
+            year++;
+        }
+
+        alert('从1000到5000需要'+year+'年！');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

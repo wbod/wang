@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<!--
+    设置事件响应的方式一
+        - 可以通过在元素的事件属性中设置js代码的形式来响应事件
+        https://developer.mozilla.org/zh-CN/docs/Web/Events
+-->
+<!--<button id="btn" onmouseenter="alert('你点我干嘛！');">点我一下</button>-->
+<button id="btn">点我一下</button>
+<script>
+    /*
+        事件（event）
+            - 事件指用户和浏览器的交互瞬间
+            - 在网页中，像点击鼠标、缩放窗口、点击键盘、移动鼠标...
+            - 可以在事件时来对事件做一些处理，对其进行响应
+     */
+    /*
+        设置事件响应的方式二
+            - 可以在script标签来设置事件的响应
+     */
+    // 获取要设置事件的对象
+    var btn = document.getElementById('btn');
+    // 可以为元素对应的事件属性设置响应函数形式来处理事件
+    btn.onclick = function () {
+        alert('哈哈哈');
+    };
+
+</script>
+
+</body>
+</html>

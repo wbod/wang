@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script>
+        /*
+            数组（Array）
+                - 数组也是一个对象
+                - 数组也是用来存储数据的
+                - 和object不同，数组中可以存储一组有序的数据，
+                - 数组中存储的数据我们称其为元素（element）
+                - 数组中的每一个元素都有一个唯一的一个索引，通过索引可以对其进行各种操作
+                - 索引（index），从0开始的整数
+                - array和object没有太本质的区别，不同点主要在于对象中使用使用属性名操作数据
+                    数组中通过索引来操作数据
+                - 对于存储大量数据来讲，数组的存储性能要高于对象
+         */
+
+        //创建一个数组对象
+        var arr = new Array();
+
+        // console.log(typeof arr);
+
+        //向数组中添加元素
+        //语法：数组[索引] = 值;
+        arr[0] = 33;
+        arr[1] = 22;
+        arr[2] = 78;
+        arr[3] = 44;
+        arr[4] = 221;
+        // arr[100] = 345;
+
+        arr[0] = 3;
+
+        // 读取数组中的元素
+        // 语法：数组[索引]
+        // 如果读取数组中没有属性，最终会返回undefined
+
+        //删除数组中的元素
+        // delete arr[3];
+
+        // console.log(arr[3]);
+
+        //获取数组的长度
+        // 通过length属性可以获取数组中元素的数量
+        //    对于连续数组，length获取到的就是元素的数量
+        //      对于非连续数组，length获取到的是元素的最大索引+1
+        // 在实际使用中，尽量避免使用非连续数组（性能差）
+        // length属性也可直接修改
+        // arr.length = 4;
+
+        //向数组的最后添加元素
+        arr[arr.length] = 567;
+        arr[arr.length] = 333;
+        arr[arr.length] = 6789;
+
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* button{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            border: none;
+            border-radius: 20px;
+        } */
+    </style>
+</head>
+<body>
+    
+    <!-- 事件（event）
+        - 事件指用户和浏览器的交互瞬间
+        - 在网页中，像点击鼠标、缩放窗口、点击键盘、移动鼠标...
+        - 可以在事件时来对事件做一些处理，对其进行响应 -->
+ 
+    <button id="btn">我是一个按钮</button>
+    <button id="btn2">我是第二个按钮</button>
+    <script>
+        var btn = document.getElementById('btn');
+        // btn.innerHTML = "I'm Button";
+        btn.onclick = function(){
+            alert('哈哈');
+        };
+        var btn2 = document.getElementById('btn2');
+        btn.evevt = function(){
+            alert('你好');
+        };
+    </script>
+</body>
+</html>

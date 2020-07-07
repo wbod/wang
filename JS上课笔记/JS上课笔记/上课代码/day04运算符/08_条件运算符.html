@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件运算符</title>
+    <script>
+
+        /*
+            条件运算符（三元运算符），可以根据条件选择要执行的语句
+
+            语法：条件表达式?语句1:语句2;
+
+            执行顺序：
+                条件运算符在执行时，会先对条件表达式进行求值判断，
+                    如果结果为true，则执行语句1
+                    结果为false，则执行语句2
+
+         */
+
+        // false?alert('hello'):alert('你好');
+        var a = 40;
+        var b = 50;
+        var c = 73;
+
+        // a > b ? alert('a大') : alert('b大');
+
+        // 获取a和b中的较大值
+        // var max = a > b ? a : b;
+
+
+        // 获取到a b c三者中的较大值
+        // var max = a > b ? a : b;
+        // max = max > c ? max : c;
+
+        // 这种方式即使是加了括号的，强烈不建议使用
+        // var max = a > b ? a > c ? a : c : b > c ? b : c;
+        var max = a > b ? ( a > c ? a : c ) : (b > c ? b : c);
+
+        console.log(max);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			body{
+				overflow: hidden;
+			}
+			
+			#carImg{
+				width: 100%;
+				/*cursor: grab;
+				cursor: -webkit-grab;*/
+			}
+			
+			#cover{
+				position: absolute;
+				width: 100%;
+				top: 0;
+				bottom: 0;
+				background-color: #1A1A1A;
+				font-size: 100px;
+				color: #fff;
+				text-align: center;
+				vertical-align: middle;
+			}
+			
+			#cover img{
+				position: relative;
+				top:50%;
+				margin-top: -65px;
+			}
+		
+    </style>
+</head>
+<body>
+    <img id="carImg" src="img/0.jpg">
+            <!-- /*
+				逻辑：
+					1.当鼠标按下是功能开始
+					2.根据鼠标滑动方向来切换图片
+					3.当鼠标松开时功能结束
+             */ -->
+             
+<script>
+        //  创建一个数组用来缓存图片
+         var arr = [];
+         for(var i =0; i < 60; i++){
+            //  创建一个图片标签,然后设置路径,图片就会预先被加载
+            var img = document.createElement('img');
+            img .scr = "img/"+i+".jpg";
+            arr.push(img);
+         }
+
+
+        //   获取图片元素
+         var carImg = document.getElementById('carImg');
+
+        //   创建一个变量记录功能受否开始
+        var isStart = false;  //默认没有开始
+
+        //  创建一个变量记录当前图片索引
+        var currentIndex = 0;
+
+        // 创建一个变量表示图片最大数量
+        var totalImg  = 60;
+
+        // 定义一个变量记录鼠标按下的位置
+        var mouseBegin, distance;
+
+         //   绑定鼠标按下事件
+         document.addEventListener('mousedown',function(ev){
+            //  取消默认行为
+            ev.preventDefault();
+                // 鼠标按下时  功能开始
+                isStart = true;
+                // 修改mouseBegin的值
+                mouseBegin = ev.clientX;
+         },false)
+
+
+          
+        //   鼠标移动事件
+        document.addEventListener('mousemove',function(ev){
+              if(isStart){
+                  //获取当前位置
+					// 创建一个变量，记录鼠标移动的距离
+					distance = currentIndex + Math.floor((mouseBegin - ev.clientX)/20);
+
+                    distance %= totalImg;
+
+                    // 判断distance是否是负值
+                    if(distance < 0){
+                        distance += totalImg;
+                    }
+
+                    carImg.src = "img/"+distance+".jpg";
+
+             }
+
+        },false)
+
+
+
+            // 鼠标松开事件
+         document.addEventListener('mouseup',function(ev){
+                // 鼠标松开时  功能结束
+                isStart = false;
+
+                // 更新currentIndex
+                currentIndex = distance;
+         },false)
+</script>
+</body>
+</html>

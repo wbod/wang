@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				右浮动:按照标签的顺序,去父元素的最右边,按照由右向左的顺序排列
+				浮动的排列方式: 浮动元素当一行放不下时,会自动换行
+			 */
+			.box{
+				width: 1000px;
+				height:600px;
+				border: 1px solid red;
+				margin: 100px auto 0;
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background: red;
+				float:left;
+			}
+			.two{
+				width: 100px;
+				height: 100px;
+				background: green;
+				float:left;
+			}
+			.three{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				float:left;
+			}
+			.four{
+				width: 101px;
+				height: 100px;
+				background: blue;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="one">1</span>
+			<span class="two">2</span>
+			<span class="three">3</span>
+			<span class="one">1</span>
+			<span class="two">2</span>
+			<span class="three">3</span>
+			<span class="one">1</span>
+			<span class="two">2</span>
+			<span class="three">3</span>
+<!-- 			<span class="one">1</span>
+			<span class="two">2</span>
+			<span class="three">3</span>
+ -->		
+			<span class="four">4</span>
+        </div>
+	</body>
+</html>

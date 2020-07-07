@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        body{
+            color: red;
+        }
+
+        h1::after{
+            content: 'hello';
+            color: red;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            // document.styleSheets 是一个类数组对象，会返回页面中所有的样式表
+            // var ss = document.styleSheets;
+            // console.log(ss[0].cssRules[0]);
+
+            var h1 = document.getElementById('h1');
+
+            // var cs = getComputedStyle(h1, "::after");
+
+            // alert(h1.currentStyle.color);
+        };
+
+    </script>
+</head>
+<body>
+
+<h1 id="h1">我是一个一级标题</h1>
+
+</body>
+</html>

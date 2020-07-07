@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function men (name,age,gender){
+        //     // 创建一个对象
+        //     var o = {};
+        //     // 相对象中添加属性
+        //     o.name = name;
+        //     o .age = age;
+        //     o.gender = gender;
+        //     o.sayHello = function(){
+        //         console.log('大家好,我是'+ this.name);
+                
+        //     };
+        //       return o;
+        // }
+
+        // function men(name,age,gender){
+        //     // 将新对象作为返回值返回
+        //     return{
+        //         name,
+        //         age,
+        //         gender,
+        //         sayHello(){
+        //             console.log('大家好,我是'+this.name,age,gender);
+                    
+        //         }
+        //     }
+        // }
+        // var p1 = men('孙悟空',18 ,'男');
+        // var p2 = men('猪八戒',28 ,'男');
+        // var p3 = men('沙悟净',38 ,'男');
+        // // console.log(p1);
+        // // console.log(p2);
+        // // console.log(p3);
+
+        // p1. sayHello();
+        // p2. sayHello();
+        // p3. sayHello();
+        
+        
+        // 构造函数
+        function Rem(name,age,dender){
+            this .name = name;
+            this .age = age;
+            this .dender = dender;
+            this .sayHello = function(){
+                console.log('大家好,我是'+ this.name);
+                
+            }
+        }
+        var p1 = new Rem('孙悟空',18,'男');
+        var p2 = new Rem('猪八戒',28,'男')
+        console.log(p1);
+        console.log(p2);
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

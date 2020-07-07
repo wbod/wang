@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator函数</title>
+</head>
+<body>
+
+  <!--
+   Generator函数
+    概念：
+      1、ES6提供的解决异步编程的方案之一
+      2、Generator函数是一个状态机，内部封装了不同状态的数据，
+      3、用来生成遍历器对象
+      4、可暂停函数(惰性求值), yield可暂停，next方法可启动。每次返回的是yield后的表达式结果
+    特点：
+      1、function 与函数名之间有一个星号
+      2、内部用yield表达式来定义不同的状态
+      例如：
+        function* generatorExample(){
+          let result = yield 'hello';  // 状态值为hello
+          yield 'generator'; // 状态值为generator
+        }
+      3、generator函数返回的是指针对象(接11章节里iterator)，而不会执行函数内部逻辑
+      4、调用next方法函数内部逻辑开始执行，遇到yield表达式停止，返回{value: yield后的表达式结果/undefined, done: false/true}
+      5、再次调用next方法会从上一次停止时的yield处开始，直到最后
+      6、yield语句返回结果通常为undefined， 当调用next方法时传参内容会作为启动时yield语句的返回值。
+  -->
+<script type="text/javascript">
+  // generator: 异步编程解决方案之一, 现在用的较少
+  // 惰性函数：很懒
+  function* fn() {
+    console.log('函数开始执行了~');
+    const flag = true;
+    const result = yield flag ? 123 : 456;
+    console.log(result);
+    console.log('函数执行完了~');
+  }
+
+  // 执行generator函数，返回值是一个iterator对象
+  const iteratorObj = fn();
+  console.log(iteratorObj);
+  // 通过iterator对象的next方法执行函数体代码（推着函数动一下）
+  const result1 = iteratorObj.next(111);
+  console.log(result1);  // {value: 123, done: false}  value 看yield后面表达式的值, done 看函数是否执行完毕：没有执行完就是false 执行完了就是true
+  const result2 = iteratorObj.next(222);
+  console.log(result2);
+
+
+  // 手动给对象添加iterator接口
+  console.log(Symbol.iterator);
+  const person = {
+    name: 'jack',
+    age: 18,
+    sex: '男'
+  }
+  Object.prototype[Symbol.iterator] = function* () {
+    for (let key in this) {
+      yield this[key];
+    }
+  }
+
+  for (let value of person) {
+    console.log(value);
+  }
+
+</script>
+</body>
+</html>

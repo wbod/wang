@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加删除记录练习</title>
+<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+<script type="text/javascript">
+
+	window.onload = function () {
+
+		// 将删除tr的函数单独提取
+		function delA() {
+			// 删除员工 点击哪个超链接，就要删除哪个超链接所在的tr
+			// 在这个响应函数中，点击哪个超链接，this就是哪个超链接
+			// alert(this);
+			// 获取当前超链接所在的tr
+			var tr = this.parentNode.parentNode;
+
+			// 获取被删除员工的name
+			// var name = tr.firstElementChild.innerHTML;
+			// var name = tr.children[0].innerHTML;
+			var name = tr.getElementsByTagName('td')[0].innerHTML;
+
+			//弹出一个提示框
+			// confirm() 用来弹出一个带有确认和取消的对话框
+			// confirm() 会根据用户的不同选择返回不同的值
+			//		点击确认，返回true，点击取消返回false
+			if(confirm('确认删除【'+name+'】吗？')){
+				// 删除tr
+				tr.parentNode.removeChild(tr);
+			}
+
+			// 点击超链接后，会发生页面的跳转，这个是超链接的默认行为
+			// 如果不希望发生默认行为，可以在响应函数的最后return 一个 false
+			// 取消默认行为
+			return false;
+		}
+
+		/*
+			点击超链接以后，删除员工
+		 */
+		// 获取所有的超链接
+		var links = document.getElementsByTagName('a');
+		// 遍历links
+		for(var i=0; i<links.length; i++){
+			// 为超链接绑定单击响应函数
+			links[i].onclick = delA;
+		}
+
+		/*
+			点击提交按钮后，添加员工
+		 */
+		var addEmpButton = document.getElementById('addEmpButton');
+		addEmpButton.onclick = function () {
+			// 获取用户填写 姓名 邮件 薪资
+			var name = document.getElementById('empName').value;
+			var email = document.getElementById('email').value;
+			var salary = document.getElementById('salary').value;
+
+		/*
+			<tr>
+				<td>Tom</td>
+				<td>tom@tom.com</td>
+				<td>5000</td>
+				<td><a href="javascript:;">Delete</a></td>
+			</tr>
+		 */
+
+			// 创建一个tr
+			var tr = document.createElement('tr');
+
+			// 创建四个td
+			var nameTd = document.createElement('td');
+			var emailTd = document.createElement('td');
+			var salaryTd = document.createElement('td');
+			var aTd = document.createElement('td');
+
+			// 创建一个超链接
+			var link = document.createElement('a');
+			// 为超链接添加属性
+			link.href = 'javascript:;';
+			// 为超链接绑定删除的事件
+			link.onclick = delA;
+
+			// 创建四个文本节点
+			var nameTxt = document.createTextNode(name);
+			var emailTxt = document.createTextNode(email);
+			var salaryTxt = document.createTextNode(salary);
+			var delTxt = document.createTextNode('Delete');
+
+			// 将文本节点添加到元素中
+			nameTd.appendChild(nameTxt);
+			emailTd.appendChild(emailTxt);
+			salaryTd.appendChild(salaryTxt);
+			link.appendChild(delTxt);
+			aTd.appendChild(link);
+
+			// 将四个td添加到tr中
+			tr.appendChild(nameTd);
+			tr.appendChild(emailTd);
+			tr.appendChild(salaryTd);
+			tr.appendChild(aTd);
+
+			// 获取id为employeeTable的table
+			var tbody = document.querySelector('#employeeTable tbody');
+			tbody.appendChild(tr);
+
+
+		};
+
+
+	};
+
+</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <script>
+
+        /*
+            创建一个正则表达式，可以用来检查一个字符串是否是一个手机号
+
+            1 3 843436188
+
+            1开头  第二位3-9任意数字  任意数字9位结尾
+            ^1      [3-9]          [0-9]{9}$
+
+            ^1[3-9][0-9]{9}$
+         */
+
+        var phoneReg = /^1[3-9][0-9]{9}$/;
+
+        console.log(phoneReg.test('13843436188'));
+        console.log(phoneReg.test('1384343618'));
+        console.log(phoneReg.test('1184343618'));
+        console.log(phoneReg.test('1184343618889'));
+        console.log(phoneReg.test('23843436188'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				层级: 当定位层级相同时,后写的标签会压在先写标签的上面,默认定位的层级是0,
+				当层级不同时,谁的层级高,谁在上面,当层级是负值时,低于标准流,层级的取值范围整数
+			 */
+			.box{
+				width: 800px;
+				height: 500px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				position: relative;
+			}
+			.s1{
+				width: 100px;
+				height: 30px;
+				background: red;
+				position: absolute;
+				left:10px;
+				top:10px;
+				z-index: -1;
+			}
+			.s2{
+				width: 100px;
+				height: 30px;
+				background: blue;
+				position: absolute;
+				left:50px;
+				top:5px;
+				z-index: 2;
+			}
+			.s3{
+				width: 100px;
+				height: 30px;
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="s1">1</span>
+			<span class="s2">2</span>
+			<div class="s3"></div>
+		</div>
+	</body>
+</html>

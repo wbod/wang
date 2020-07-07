@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise案例</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+    需求：setTimeout模拟发送请求
+      请求a数据，请求成功在请求b数据，请求成功在请求c数据
+   */
+
+
+</script>
+</body>
+</html>

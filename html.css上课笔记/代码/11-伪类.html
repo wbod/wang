@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 伪类: 访问的四种状态,伪类的权重是10
+			 当四种状态同时存在时,顺序要按照 lvha
+			 出于对个人隐私的考虑,访问后的状态只能设置字体颜色.
+			 */
+			a{
+				
+			}
+			/* 未访问状态 */
+			a:link{
+				color:red;
+				font-size: 60px;
+			}
+			/* 访问后状态 */
+			a:visited{
+				color:yellowgreen;
+				
+				font-size: 12px;
+			}
+			/* 鼠标移入状态 */
+			a:hover{
+				color:blue;
+				font-size: 16px;
+			}
+			/* 鼠标按下状态 */
+			a:active{
+				color:purple;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="##">超链接</a>
+	</body>
+</html>

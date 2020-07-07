@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            /*
+                当需要为多个元素绑定相同事件时，往往会面临如下问题：
+                    ① 需要绑定多次事件（有可能创建多个功能相同的函数）
+                    ② 新添加的元素必须重新绑定事件
+
+                我希望只需要绑定一次事件，即可让所有的元素都拥有该事件包含现在的元素和未来新添加的元素
+
+                事件的委派
+                    - 当需要为多个元素绑定事件时，可以统一将事件绑定到其共同的祖先元素上
+                        这样只需要绑定一次事件既可以使所有的子元素都拥有该事件
+             */
+
+            //为每一个超链接都绑定一个单级响应函数
+            var links = document.getElementsByTagName('a');
+
+            // 为ul绑定一个单击响应函数
+            var ul = document.querySelector('ul');
+            ul.onclick = function(ev){
+                // 判断事件的触发对象，如果是我们希望的对象则向下执行
+                // 如果不是我们希望的对象，则不执行
+                // 事件对象中的target属性，表示的是触发事件的对象
+                // 元素的nodeName属性可以返回标签名
+                if(ev.target.nodeName.toLowerCase() === 'a'){
+                    alert('我是ul上的单击响应函数~~');
+                }
+
+            };
+
+
+            //点击按钮添加超链接
+            document.getElementById('btn').onclick = function () {
+                //创建li
+                var li = document.createElement('li');
+                li.innerHTML = '<a href="javascript:;">新添加的超链接</a>'
+                // 将li添加到ul中
+                document.querySelector('ul').appendChild(li);
+            };
+        };
+
+    </script>
+</head>
+<body>
+<button id="btn">添加超链接</button>
+<ul>
+    <li><a href="javascript:;">超链接一</a></li>
+    <li><a href="javascript:;">超链接二</a></li>
+    <li><a href="javascript:;">超链接三</a></li>
+</ul>
+
+</body>
+</html>

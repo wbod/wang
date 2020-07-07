@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题</title>
+    <script>
+
+        //定义一个类
+        function Person(name) {
+            this.name = name;
+            /*
+                目前，我们将sayHello()方法定义在了构造函数的内部，
+                    这样意味着，构造函数每执行一次就会创建一个新的函数对象
+                   这就导致了，每一个对象的sayHello()方法都是不同的函数对象
+                   但是本质上每个对象sayHello()结构是一模一样的，
+                   创建多个对象完全是浪费内存空间
+
+                   创建这么多相同的函数对象是没有必要的，
+                    我们完全可以让所有的对象都使用同一个sayHello()函数
+
+                   问题：如何能够做到这件事呢？
+             */
+            this.sayHello = function () {
+                console.log('Hello，大家好，我是 '+this.name);
+            };
+        }
+
+        //创建一个Person类的实例
+        var p1 = new Person('孙悟空');
+        var p2 = new Person('渣渣辉');
+        // p1.sayHello();
+        // p2.sayHello();
+
+        console.log(p1.sayHello === p2.sayHello);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

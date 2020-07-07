@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 继承性: 后代标签可以继承父辈标签的所有关于设置文本的css属性,继承的权重是0.
+			 */
+			.box{
+				color:red !important;
+				font-size: 30px;
+				font-weight: 700;
+				font-family: "黑体";
+				width:500px;
+				height: 500px;
+				background: yellowgreen;
+			}
+			span{
+				color:blue;
+			}
+			.s1{
+				color:yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="s1">我是span</span>
+			<i>我是i</i>
+			<p>我是段落</p>
+		</div>
+	</body>
+</html>

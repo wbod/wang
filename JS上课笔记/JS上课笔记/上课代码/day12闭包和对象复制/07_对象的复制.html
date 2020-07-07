@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var arr = [3,4,5,6,7];
+        // 需要创建一个arr数组的副本
+        // 如果直接调用slice()方法，不传任何参数，则会创建一个当前数组的浅复制
+        // 浅复制(浅拷贝)表示只对对象中的属性进行复制，如果对象的属性还是一个对象，不会对其复制
+        // 深复制(深拷贝)，指不仅复制对象本身，也会复制其对象属性（性能差）
+        var arr2 = arr.slice();
+
+        arr2[0] = 10;
+
+        // console.log(arr === arr2);
+        // console.log(arr+'');
+        // console.log(arr2+'');
+
+        var a = [1,2,{name:'孙悟空'}];
+        var b = a.slice(); // 对a进行浅复制
+
+        // a[0] = 10;
+        a[2].name = '猪八戒';
+
+        // console.log(a[2].name+'');
+        // console.log(b[2].name+'');
+        // console.log(a === b);
+
+        var obj = {
+            name:'孙悟空',
+            age:18,
+            son:{
+                name:'孙悟饭', age:3
+            }
+        };
+
+        // Object.assign() 用来将一个或多个对象中的属性复制到另一个对象中（浅复制）
+        // 参数:
+        //   第一个参数：目标对象
+        //   第二及以后的参数：被复制的对象
+        var obj2 = Object.assign({},obj);
+
+        // obj2.name = '猪八戒';
+        obj2.son.name = '猪小戒';
+
+        console.log(obj);
+        console.log(obj2);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

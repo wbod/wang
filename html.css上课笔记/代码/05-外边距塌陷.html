@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				外边距塌陷: 嵌套的两个块元素,给子元素设置向上的外边距,此时父元素会跟着掉下来,
+				形成的叫外边距塌陷
+				解决方案:
+				1.给父元素设置上边框
+				2.给父元素设置上内边距,需要减撑开的宽度
+				3.给父元素设置overflow属性 
+			 */
+			.box{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				/* border-top:1px solid yellowgreen; */
+				overflow: hidden;
+			}
+			.phone{
+				width: 50px;
+				height: 100px;
+				background: blue;
+				margin-left: 30px;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="phone">
+				手机
+			</div>
+		</div>
+	</body>
+</html>

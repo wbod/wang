@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套的for循环</title>
+    <script>
+        //创建一个循环，来控制打印的行数（高度）
+        // 当循环发生嵌套时，外层循环每执行一次，内层循环就会执行一圈
+        // for(var i=0; i<5; i++){
+        //     // 创建一个内部循环，来控制图形的宽度
+        //     for(var j=0; j<5; j++){
+        //         document.write('*&nbsp;&nbsp;&nbsp;');
+        //     }
+        //
+        //     document.write('<br>');
+        // }
+
+        /*
+            打印图形：
+                * * * * *
+                * * * * *
+                * * * * *
+                * * * * *
+                * * * * *
+
+                *          第一行 j<i+1 i=0
+                * *        第二行 j<2 i=1
+                * * *      第三行 j<3 i=2
+                * * * *    第四行 j<4 i=3
+                * * * * *  第五行 j<5 i=4
+         */
+
+        // //外层循环控制高度
+        // for(var i=0; i<5; i++){
+        //     // 创建一个内部循环，来控制图形的宽度
+        //     for(var j=0; j<i+1; j++){
+        //         document.write('❤&nbsp;&nbsp;&nbsp;');
+        //     }
+        //
+        //     document.write('<br>');
+        // }
+
+
+        /*
+            打印如下图形
+                * * * * *  j<5  i=0
+                * * * *    j<4  i=1
+                * * *      j<3  i=2
+                * *        j<2  i=3
+                *          j<1  i=4
+         */
+
+        //外层循环控制高度
+        for(var i=0; i<5; i++){
+            // 创建一个内部循环，来控制图形的宽度
+            for(var j=0; j<5-i; j++){
+                document.write('❤&nbsp;&nbsp;&nbsp;');
+            }
+
+            document.write('<br>');
+        }
+
+        /*
+            练习1：打印99乘法表
+                1x1=1
+                1x2=2 2x2=4
+                1x3=3 2x3=6 3x3=9
+                1x4=4 2x4=8 3x4=12 4x4=16
+                。。。
+                                            9x9=81
+
+            练习2：求100以内所有质数
+
+        */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

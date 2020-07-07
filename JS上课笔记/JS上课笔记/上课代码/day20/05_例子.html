@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text">
+
+<script>
+
+    var input = document.querySelector('input');
+    input.addEventListener('keydown', function (ev) {
+        // 限制在input中只能输出数字
+        // console.log(typeof ev.key);
+        // ev.key 是数字就让你输入，如果不是就禁止输入
+        // 取消keydown的默认行为
+        if(/\D/.test(ev.key)){
+            ev.preventDefault();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

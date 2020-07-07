@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+</head>
+<body>
+    <script>
+        // 要求用户输入年龄， 如果年龄是 18-60岁，允许访问，否则就告知不能访问。
+        // 获取用户年龄
+        var age = prompt('请输入年龄：');
+
+        // 判断 小于18或者 大于 60 不允许访问
+        if (age < 18 ||  age > 60) {
+            alert('不允许访问');
+        } else {
+            alert('允许访问');
+        }
+    </script>
+</body>
+</html>

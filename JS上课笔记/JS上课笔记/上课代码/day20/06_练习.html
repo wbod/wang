@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        /*
+            通过键盘来控制div的移动
+         */
+        window.onload = function () {
+
+            // 获取box1
+            var box1 = document.getElementById('box1');
+            // 为document绑定一个keydown事件
+            document.addEventListener('keydown',function (ev) {
+
+                // 判断哪个按键被按下
+                /*
+                    ArrowUp
+                    ArrowDown
+                    ArrowLeft
+                    ArrowRight
+                 */
+                // if(ev.key === 'ArrowUp'){
+                //     // 向上
+                //     alert('↑')
+                // }else if(ev.key === 'ArrowDown'){
+                //     // 向下
+                //     alert('↓')
+                // }else if(ev.key === 'ArrowLeft'){
+                //     // 向左
+                //     alert('←')
+                // }else if(ev.key === 'ArrowRight'){
+                //     // 向右
+                //     alert('→')
+                // }
+
+                // console.log(ev.key);
+                /*
+                    如果一直按着按键不松手，keydown事件会一直连续触发，
+                        但是触发时第一次和第二次之间间隔会比较长
+                        其余每次间隔一样，这么设置是为了防止用户的误操作
+                 */
+
+                // 判断按键的方向
+                switch (ev.key) {
+                    case 'ArrowUp':
+                    case 'Up':
+                        //向上移动
+                        box1.style.top = box1.offsetTop - 10 + 'px';
+                        break;
+                    case 'ArrowDown':
+                    case 'Down':
+                        // 向下移动
+                        box1.style.top = box1.offsetTop + 10 + 'px';
+                        break;
+                    case 'ArrowLeft':
+                    case 'Left':
+                        // 向左移动
+                        box1.style.left = box1.offsetLeft - 10 + 'px'
+                        break;
+                    case 'ArrowRight':
+                    case 'Right':
+                        // 向右移动
+                        box1.style.left = box1.offsetLeft + 10 + 'px'
+                        break;
+                }
+
+
+            });
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+
+<div id="box1"></div>
+
+</body>
+</html>

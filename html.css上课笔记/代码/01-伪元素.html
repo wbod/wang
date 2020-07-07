@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+				伪元素:在元素内部,有before,after,一前一后两个盒子,默认是行内显示模式,使用方
+				式和其他元素没有区别
+			 */
+			.box{
+				width: 200px;
+				height: 200px;
+				background: #FFC0CB;
+				margin: 200px auto;
+				position: relative;
+			}
+			.box::before{
+				/* 必写项 */
+				content:"";
+				background: #ADFF2F;
+				width: 50px;
+				height: 50px;
+				display: block;
+				margin: 0 auto;
+			}
+			.box:after{
+				content:"after";
+				background: #FFFF00;
+				float:left;
+				position: absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">盒子</div>
+	</body>
+</html>

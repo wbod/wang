@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+            Navigator
+                - 该对象表示的是浏览器的信息
+                - 可以通过 window.navigator 或 navigator来对其进行访问
+                - 可以通过navigator来识别浏览器的信息
+                - 由于历史原因Navigator中的大部分属性都不能用来识别浏览器
+                - 只剩下一个还有点用的属性 userAgent
+                    userAgent 是一个字符串，字符串中包含浏览器的描述信息
+
+               - 火狐的：
+                Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0
+               - Chrome
+                Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4168.2 Safari/537.36
+               - IE
+                Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; rv:11.0) like Gecko
+               - IE10
+                Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E)
+
+         */
+        var ua = navigator.userAgent;
+
+        // console.log(ua);
+        // if(/Firefox/.test(ua)){
+        //     alert('你是火狐~~');
+        // }else if(/Chrome/.test(ua)){
+        //     alert('你是Chrome~~');
+        // }
+
+        // 可以通过一些IE中独有的对象来判断一个浏览器是不是IE浏览器
+        if('ActiveXObject' in window){
+            alert('哈哈哈~你是IE');
+        }else{
+            alert('你不是IE');
+        }
+
+        // console.log(!!window.ActiveXObject);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

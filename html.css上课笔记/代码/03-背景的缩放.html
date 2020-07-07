@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				height: 1000px;
+				border: 1px solid #000000;
+				background: url(./img/222.jpg) no-repeat;
+			}
+			div:hover{
+				/* 
+					背景的缩放:
+				 */
+				/*             图片的宽度  图片的高度 */
+				/* background-size: 50px 30px; */
+				
+				/*             盒子宽度的百分比   盒子高度的百分比 */
+				/* background-size:50% 100% ; */
+				
+				/*  根据元素的最长边图片进行铺满,为了保证图片不失真,会截掉一部分*/
+				  /* background-size: cover; */
+				   
+				/*  根据元素的最短边图片进行铺满,为了保证图片不失真,会一部分留白*/
+				   background-size: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

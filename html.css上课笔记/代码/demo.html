@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				/* 去掉列表小圆点 */
+				list-style: none;
+			}
+			body{
+				background: #333;
+			}
+			.box{
+				width: 240px;
+				/* 为了自适应ul的高度 */
+				/* height: 462px; */
+				background: url(images/bg.gif);
+				margin: 50px auto 0;
+				/* 解决h2塌陷 */
+				/* overflow: hidden; */
+				/* 第二种:内边距 */
+				padding: 10px;
+			}
+			.box h2{
+				font:700 20px/23px "黑体";
+				color:#fff;
+				height: 23px;
+				border-left:4px solid #c9e143;
+				/* 第一种:外边距 */
+				/* margin-left: 10px; */
+				/* margin-top: 10px; */
+				/* h2文本第一种处理方式 */
+				/* padding-left: 5px; */
+				/* h2文本第二种处理方式 */
+				text-indent: 5px;
+			}
+			.box .list{
+				/* width: 220px; */
+				/* 为了自适应li的个数 */
+				/* height: 434px; */
+				background: #fff;
+				padding: 0 10px;
+				margin-top: 5px;
+			}
+			.box .list li{
+				border-bottom: 1px dashed  #666;
+				height: 30px;
+				line-height: 30px;
+				/* margin: 0 10px; */
+				background: url(images/tb.gif) no-repeat 6px center;
+				/* padding-left: 19px; */
+			}
+			.box .list li a{
+				font-size: 12px;
+				color:#06c;
+				text-decoration: none;
+				/* 将a转换成块元素,此时和li的宽度一样,由于a标签继承了li的行高,a标签的高度就是
+				行高的高度 */
+				display: block;
+				margin-left: 19px;
+				/* padding-left: 19px; */
+			}
+			.box .list li a:hover{
+				color:yellowgreen;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>爱宠知识</h2>
+			<ul class="list">
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+				<li>
+					<a href="##">养狗比养猫对健康更有利</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

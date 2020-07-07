@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script>
+        // fn()的返回值是inner，所以现在t就是inner函数
+        var t = fn();
+
+        var a = 10;
+        // 调用t就是在调用inner()函数
+        // t();
+
+        // 闭包指可以访问到外部函数作用域中变量的函数
+        function fn() {
+            var a = 20;
+            function inner() {
+                console.log(a);
+            }
+
+            // 将内部函数inner作为返回值返回
+            return inner;
+        }
+
+        // t();
+
+        /*
+            闭包就是用来藏一些见不得人的东西
+         */
+
+        // 将times设置为全局变量确实可以解决问题
+        // 但是全局变量可以在任意位置访问，非常容易被修改，安全性极差
+        // 所以我们希望能将times这个变量隐藏起来，只有fn2函数才能访问
+        // 这里就需要使用到闭包
+        // var times = 0;
+        // // 希望创建一个计数器，记录函数fn2()执行次数
+        // function fn2() {
+        //     times++;
+        //     console.log(times);
+        // }
+        //
+        // times = 'hello';
+
+        /*
+            编写闭包的三个要件：
+                1.函数的嵌套
+                2.要在内部函数中引用外部函数中的变量
+                3.将内部函数作为返回值返回
+         */
+
+        // function outer() {
+        //     var times = 0;
+        //     function inner() {
+        //         times++;
+        //         console.log(times);
+        //     }
+        //     return inner;
+        // }
+
+        // var fn2 = outer();
+
+        var fn2 = (function () {
+            var times = 0;
+            return function () {
+                times++;
+                console.log(times);
+            };
+        })();
+
+        fn2();
+        fn2();
+        fn2();
+        fn2();
+
+
+
+
+
+
+
+
+ </script>
+</head>
+<body>
+
+</body>
+</html>

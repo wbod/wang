@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加删除记录练习</title>
+<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+<script type="text/javascript">
+
+	window.onload = function () {
+
+		/*
+			点击超链接以后，删除员工
+		 */
+		// 获取所有的超链接
+		var links = document.getElementsByTagName('a');
+		// 遍历links
+		for(var i=0; i<links.length; i++){
+			alert('for 执行了 '+i);
+			// 为超链接绑定单击响应函数
+			links[i].onclick = function () {
+				alert('onclick 执行了 '+i); // i的值是3
+
+				// var tr = links[i].parentNode.parentNode;
+				// var name = tr.getElementsByTagName('td')[0].innerHTML;
+				// if(confirm('确认删除【'+name+'】吗？')){
+				// 	// 这么写行不行？
+				// 	// 创建一个表格时，如果在table中不指定thead tbody tfoot这些标签时
+				// 	//  浏览器会自动添加tbody标签，并将所有的tr都放入到tbody标签中
+				// 	// tr的父元素是tbody而不是table
+				// 	// var employeeTable = document.getElementById('employeeTable');
+				// 	// 删除tr
+				// 	tr.parentNode.removeChild(tr);
+				// }
+				return false;
+			};
+		}
+
+	};
+
+</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>

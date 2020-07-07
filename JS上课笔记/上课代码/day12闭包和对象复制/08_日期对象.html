@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期对象</title>
+    <script>
+
+        /*
+            Date对象
+                - JS中所有的关于时间信息都需要通过Date对象来表示
+         */
+        // 创建一个Date对象
+        // 如果直接使用new Date()创建时间对象，它会默认创建一个表示代码执行时刻的对象
+        var d = new Date();
+        // 如果希望创建一个指定的时间的Date的对象，需要传递一个字符串来指定时间
+        // 字符串的格式：月份/日/年 时:分:秒
+        // d = new Date('12/3/2018 13:45:00');
+
+        // console.log(d);
+        /*
+            Date对象的方法：
+                getFullYear()
+                    - 获取当前Date对象的年份信息(四位)
+                getMonth()
+                    - 获取当前Date对象的月份信息（从0开始）
+                        0 表示 1月
+                        1 表示 2月
+                        ...
+                getDate()
+                    - 获取当前Date对象是几日
+                getDay()
+                    - 获取当前Date对象是周几
+                    - 取值范围从 0-6
+                    - 0表示周日 1表示周一 ...
+
+
+
+         */
+        d = new Date();
+        d = new Date('3/7/2000 10:35:34');
+        var year = d.getFullYear(); // 获取年份
+        var month = d.getMonth(); // 获取月份
+        var dt = d.getDate(); // 获取几号
+        var day = d.getDay(); // 获取周几
+        // 创建一个数组，来存储周几
+        var week = ['周日','周一','周二','周三','周四','周五','周六'];
+
+        // console.log(week[d.getDay()]);
+
+        /*
+            getTime()
+                - 用来获取当前日期对象的时间戳
+                - 时间戳指从1970年1月1日0时0分0秒，
+                    到当前时间所经历的毫秒数
+         */
+        d = new Date();
+        var time = d.getTime();
+
+        // 创建一个日期对象
+        var meetDay = new Date('4/4/2019 14:33:45');
+        // 创建一个当前日期对象
+        var currentDay = new Date();
+        time = currentDay.getTime() - meetDay.getTime();
+        // console.log(time / 1000 / 60 / 60 / 24);
+
+        /*
+            Date.now()
+                - 获取当前的时间戳
+         */
+
+        //在代码执行前获取一个时间戳
+        var begin = Date.now();
+        for(var i=0 ; i<1000; i++){
+            console.log(1);
+        }
+        //在代码执行后获取一个时间戳
+        var end = Date.now();
+
+        console.log(end - begin);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

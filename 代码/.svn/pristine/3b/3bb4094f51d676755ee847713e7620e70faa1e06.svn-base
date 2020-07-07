@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+    需求： 同时请求三个数据，全部请求成功了，才OK，只要有一个失败，就失败
+   */
+
+</script>
+</body>
+</html>

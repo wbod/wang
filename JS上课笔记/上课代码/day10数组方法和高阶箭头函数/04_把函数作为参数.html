@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>把函数作为参数</title>
+    <script>
+        var numbers = [1, 2, 3, 4, 5, 6];
+
+        //创建一个函数，可以用来对数组进行筛选过滤
+        function filter(arr, c) {
+            // 创建一个新的数组，用来存储结果
+            var newArr = [];
+
+            //遍历arr
+            for(var i=0; i<arr.length; i++){
+                //判断 arr[i] 是否满足条件
+                // 如果能够将代码，以参数的形式传递进行函数那就好了！
+                if( c(arr[i]) ){
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+
+            //返回新数组
+            return newArr;
+        }
+        
+        function fn(n) {
+            return n % 3 === 0 && n % 2 === 0;
+        }
+
+        function fn2(n) {
+            return n % 5 === 0;
+        }
+
+        function fn3(n) {
+            return n % 4 === 0;
+        }
+
+        var result = filter(numbers, fn);
+        result = filter(numbers, fn3);
+
+        console.log(result+"");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

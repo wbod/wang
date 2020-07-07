@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            /*
+                拖拽的功能：
+                    1.当在被拖拽的元素上按下鼠标，功能开始
+                    2.当鼠标移动时，被拖拽的元素跟随鼠标一起移动
+                    3.当鼠标松开时，元素固定在当前位置不动
+
+                需要的事件：
+                    鼠标按下 mousedown
+                    鼠标移动 mousemove
+                    鼠标松开 mouseup
+
+                问题：
+                    如何确保鼠标指针和元素的相对位置保持不变？
+
+                问题：
+                    在浏览器中，当我们拖着一个文字（内容）移动时，
+                        浏览器会自动在搜索引擎查找相关内容，这个是浏览器对拖拽的默认行为
+
+                要求：
+                    1.将以下代码修改为addEventListener()
+                    2.拖拽可以适用于多个元素
+             */
+
+            //为被拖拽的元素绑定一个鼠标按下的事件
+            var box1 = document.getElementById('box1');
+            box1.onmousedown = function (ev) {
+
+                // offsetX 和 offsetY 用来获取鼠标指针在当前元素中的位置
+                // console.log(ev.offsetX, ev.offsetY);
+                /*
+                    目前是元素的左上角和鼠标指针发生重叠，
+                        我们希望元素和鼠标指针在拖拽过程中相对位置不会发生变化
+                        这就需要元素需要向上，向左移动一段距离
+                 */
+
+                // 计算顶部的距离
+                // var top = ev.clientY - box1.offsetTop;
+                var top = ev.offsetY;
+                // 计算左侧的距离
+                // var left = ev.clientX - box1.offsetLeft;
+                var left = ev.offsetX;
+
+
+                // 当鼠标按下时，功能开始，需要元素跟随鼠标移动
+                document.onmousemove = function (ev) {
+                    box1.style.left = ev.clientX - left + 'px';
+                    box1.style.top = ev.clientY - top + 'px';
+                };
+
+                // 当鼠标松开时，结束onmousemove事件
+                document.onmouseup = function () {
+                    // 去除onmouseup事件
+                    document.onmouseup = null;
+                    // 去除onmousemove事件
+                    document.onmousemove = null;
+                };
+
+                // 取消默认行为
+                return false;
+            };
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="box1"></div>
+
+
+<div style="width: 100px;height: 100px;background-color: #ff0; position:absolute; top: 200px;left: 300px;"></div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#areaDiv {
+		border: 1px solid black;
+		width: 300px;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+	
+	#showMsg {
+		border: 1px solid black;
+		width: 300px;
+		height: 20px;
+	}
+
+</style>
+<script type="text/javascript">
+
+	window.onload = function(){
+
+		/*
+			在areaDiv中移动时，在showMsg中显示鼠标的坐标
+		 */
+		// 获取id为areaDiv的元素
+		var areaDiv = document.getElementById('areaDiv');
+		var showMsg = document.getElementById('showMsg');
+
+		// 为areaDiv绑定一个鼠标移动的事件
+		/*
+			事件的响应函数会在事件触发时，由浏览器自动调用
+			当事件的响应函数调用时，浏览器会在响应函数中传递一个对象作为参数
+				这个对象就是事件对象，在事件对象中存储所有的当前事件的相关信息
+
+			事件对象中存储关于当前事件的所有细节，比如键盘哪个按键被按下、鼠标哪个按键被按下、鼠标指针的坐标...
+
+			注意：在IE8及以下的浏览器中，事件对象没有作为实参传递，无法通过以下的方式来获取事件对象
+					在IE8中，事件对象会作为window对象的属性保存
+		 */
+		areaDiv.onmousemove = function (event) {
+
+			// 可以通过以下方式来处理event的兼容问题
+			// event = event || window.event;
+
+			/*
+				事件对象中的属性：
+					clientX 鼠标指针的x轴坐标
+					clientY 鼠标指针的y轴坐标
+			 */
+			// console.log(event.clientX, event.clientY);
+
+			// 获取鼠标的坐标
+			//在showMsg显示鼠标的坐标
+			showMsg.innerHTML = 'x = '+event.clientX+', y = '+event.clientY;
+
+		};
+
+
+	};
+
+</script>
+</head>
+<body>
+
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+
+</body>
+</html>

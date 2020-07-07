@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+    <script>
+        var nums = [1,2,2,3,4,5,5,5,4,5,6];
+
+        //获取到数组中的每一个数
+        for(var i=0; i<nums.length; i++){
+            //nums[i] 表示当前取出的数字
+            //要将该数字和其他数字进行比较
+            //获取到当前数字后的所有数字
+            for(var j=i+1; j<nums.length; j++){
+                //nums[i]  nums[j]
+                // 比较两个数是否相等
+                if(nums[i] === nums[j]){
+                    //两个数字相等，说明有重复的情况出现，删除重复数字
+                    nums.splice(j, 1);
+                    //删除元素后，其后的元素会自动向前补位，这样将会导致少比较一个元素
+                    //需要将当前的位置在比较一遍
+                    j--;
+                }
+            }
+        }
+
+        // console.log(nums+'');
+
+        nums = [1,2,2,3,4,5,5,5,4,5,6];
+
+        //先创建一个新数组
+        var newNums = [];
+
+        //遍历老数组
+        for(var i=0; i<nums.length; i++){
+            //判断新数组中是否存在该元素
+            if(newNums.indexOf(nums[i]) === -1){
+                // 如果新数组中没有该值，则将其添加到新数组中
+                newNums.push(nums[i]);
+            }
+        }
+        console.log(newNums+'');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

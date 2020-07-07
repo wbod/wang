@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+    <script>
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHello = function () {
+            console.log('大家好，我是 '+this.name);
+        };
+        Person.prototype.abc = '嘻嘻';
+
+        var p1 = new Person('孙悟空', 18);
+
+        // console.log(p1.abc);
+
+        //in 运算符，用来检查一个对象中是否含有某个属性
+        //使用in检查一个属性时，无论属性是在原型中还是在对象本身中都会返回true
+        // console.log('abc' in p1);
+
+        // hasOwnProperty() 用来检查一个属性是否在对象自身中
+        // console.log(p1.hasOwnProperty('abc'));
+        // console.log(p1.__proto__.hasOwnProperty('abc'));
+
+        function MyClass() {
+
+        }
+
+        var mc = new MyClass();
+
+        // 当我们直接去打印一个对象时，显示通常是 "[object Object]"
+        // 当打印一个对象时，方法必须要将对象转换为字符串然后再输出
+        // mc被转换成字符串，实际上就是调用了mc的toString()方法
+        // alert(mc.toString());//[object Object]
+
+        // console.log(mc.hasOwnProperty('toString')); // false
+
+        // console.log(mc.__proto__.hasOwnProperty('toString')); // false
+
+        // console.log(mc.__proto__.__proto__.hasOwnProperty('toString'));
+        // console.log(mc.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+
+        // console.log(mc.__proto__);
+        // console.log(mc.__proto__.__proto__);
+        // console.log(mc.__proto__.__proto__.__proto__);
+
+        // console.log(mc.abc);
+
+        //Object的原型 Object.prototype 是所有对象的原型
+        console.log(mc instanceof MyClass);
+        console.log(mc instanceof Object);
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>

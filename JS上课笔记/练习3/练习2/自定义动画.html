@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        
+        .div1{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 100px;
+            left: 300px;
+            
+            /* background: pink; */
+            color: yellow;
+            background: url(1.jpg)no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">逐渐扩大</button>
+    <button class="btn2">向右移动</button>
+    <button class="btn3">向左移动</button>
+    <button class="btn4">停止动画</button>
+    <div class="div1">
+       你好
+    </div>
+    <script src="js/jquery-1.10.1.js"></script>
+    <script>
+        $(function(){
+            $('.btn1').click(function(){
+                $('.div1').stop().animate({
+                    'width':'200px'
+                },1000).animate({
+                    'height':'200px'
+                },1000).animate({
+                    'width':'0px',
+                    'height':'0px'  
+                },1000).animate({
+                    'width':'300px',    
+                },1000).animate({
+                    'height':'300px'
+                },1000).animate({
+                    'width':'0px',
+                    'height':'0px'  
+                },1000).animate({
+                    'width':'400px',    
+                },1000).animate({
+                    'height':'400px'
+                },1000).animate({
+                    'width':'0px',
+                    'height':'0px'  
+                },1000).animate({
+                    'width':'600px',
+                    'height':'400px'  
+                },1000)
+
+            });
+            $('.btn2').click(function(){
+                $('.div1').stop().animate({
+                    'left':'+=450px'
+                },2000)
+            })
+            $('.btn3').click(function(){
+                $('.div1').stop().animate({
+                    'left':'-350px'
+                },2000)
+            })
+
+            $('#btn4').click(function () {
+//           参数1：是否清空动画队列  参数2：当前动画是否执行完成
+//            $('.div1').stop(false,false);//立即停止当前动画 在当前位置执行下一个动画  不清空动画队列
+//            $('.div1').stop(true,false);//立即停止当前动画  清空动画队列 停留在原地 之后的不执行
+//            $('.div1').stop(true,true);//立即完成当前动画直接跳到当前动画结束位置 清空动画队列
+            $('.div1').stop(false,true);//立即完成当前动画直接跳到当前动画结束位置 不清空动画队列
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>执行上下文</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1. 变量提升和函数提升
+        变量提升：将var声明的变量提升，值为undefined
+        函数提升：将function声明的函数提升，值为函数体代码
+
+        先进行函数提升，再进行变量提升，
+          如果变量已经被声明，变量提升就会被忽略
+
+      2. 预解析和预处理
+        全局代码
+          JS引擎再执行全局代码之前会做一些工作，提前解析代码：
+            1. 创建全局上下文对象 --> window
+            2. 函数提升：将function声明的函数提升，值为函数体代码，添加为全局上下文对象的方法
+            3. 变量提升：将var声明的变量提升，值为undefined，添加全局上下文对象的属性
+            4. 确定全局this指向window
+            5. 才开始执行全局代码~ 
+
+        函数体代码
+          JS引擎再执行函数体代码之前会做一些工作，提前解析代码：
+            1. 创建函数上下文对象
+            2. 函数提升：将function声明的函数提升，值为函数体代码，添加为函数上下文对象的方法
+            3. 变量提升：将var声明的变量提升，值为undefined，添加函数上下文对象的属性
+            4. 将this指向调用函数的对象
+            5. 将形参赋值为实参，添加函数上下文对象的属性
+            6. 将arguments赋值为实参列表，添加函数上下文对象的属性
+            7. 才开始执行函数代码~
+
+        全局上下文对象只有一个
+        函数上下文对象看函数调用次数 
+
+      3. 执行上下文堆栈
+        内存空间：
+          1. 栈
+            变量名
+            值：基本类型值和地址值
+          2. 堆     
+            引用类型数据值
+
+        执行上下文堆栈：用来存储执行代码的产生的上下文对象
+    */
+
+
+      function a() {
+        
+      }
+      a();
+      a();
+      
+
+      // debugger
+      /* console.log(typeof a); // function
+      function a(x, y) {
+        debugger;
+        b();
+        console.log(this);
+        console.log(arguments);
+        function b() {
+          console.log(this);
+        }
+        var c = 123;
+      }
+      a(1, 2);
+      var a = 123;
+      console.log(typeof a); // number */
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fn(a, b) {
+            console.log('fn函数执行了~~，this是：', this);
+            console.log('a =',a);
+            console.log('b =',b);
+        }
+
+        var obj = {
+            t:fn
+        }
+
+        // fn();
+        // obj.t();
+
+        /*
+            call() 是函数对象的方法，需要由函数对象来调用
+                - 当调用函数的call方法时，函数会立即执行，就相当于调用了函数
+                - 通过call()方法调用函数时，可以通过它的第一个参数来指定函数的this
+            apply() 也是函数对象的方法，作用和call差不多
+                - 区别：
+                    call在向函数传递实参时，参数是一个一个的传递的
+                    apply在向函数传递实参时，参数时存储在一个数组中传递的
+                - 注意无法通过call和apply来指定箭头函数中的this
+        */
+        // fn.call(obj);
+        // obj.t.call(window);
+        // obj.t.apply(obj, [123, 456, 789, 999]);
+        // fn.call(obj, 'haha', 'heihei');
+
+        var fn2 = ()=>console.log('箭头函数：',this);
+
+        // fn2.call(obj);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

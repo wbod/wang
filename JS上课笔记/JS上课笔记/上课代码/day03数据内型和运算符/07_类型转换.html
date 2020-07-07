@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+    <script>
+
+        /*
+            类型转换：
+                指将其他的数据类型转换为string、number、boolean
+
+            将其他数据类型转换为字符串
+                方法一：
+                    - 可以通过调用被转换值的toString()方法来将其转换为字符串
+                    - 调用xxx的yyy方法 --> xxx.yyy()
+                    - 转换的原理：实际上根据原来的值创建出一个新值
+                    - toString()只是根据原来的值，创建一个新的字符串并返回，
+                        不会改变原来的值
+                    - 要改变变量中存储的值，必须要对变量进行重新赋值
+                    - 注意：由于在null和undefined中，不存在toString()方法，
+                        所以如果对null和undefined调用toString()会报错
+                方法二：
+                    - 可以通过调用String()函数，来将其他类型的值转换为字符串
+                    - 调用xxx函数，--> xxx()
+                    - String()的原理：
+                        对于具有toString()方法的值来说，String()会直接调用它们的
+                            toString()来将其转换为字符串
+                        对于没有toString()方法的null和undefined来说，
+                            null 会直接 转换为 'null'
+                            undefined 会直接 转换为 'undefined'
+
+         */
+
+        var a = 123; // 123 --> '123'
+        a = a.toString(); // 调用a的toString()来将其转换为字符串
+
+        // a = NaN;
+        // a = undefined; // 'undefined'
+        // a = true; // 'true'
+        // a = null;
+        // console.log(a, typeof a);
+
+        // a = a.toString();
+        // console.log(a, typeof a);
+
+        var b = false; // 'false'
+        b = null; // "null"
+        b = undefined; // "undefined"
+
+        console.log(b, typeof b);
+
+        //调用String()函数来将b转换为字符串
+        b = String(b);
+        console.log(b, typeof b);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

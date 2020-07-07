@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function fn(){
+        //     var n = 0;
+        //     function fn2(){
+        //        n++;
+        //        console.log(n);
+               
+        //     }
+        //     return fn2;
+        // }
+        // var num = fn();
+
+
+        function outer(){
+            var n = 0;
+            function inner() {
+                n++;
+                console.log(n);
+            }
+            return inner;
+        }
+
+        var fn2 = outer();
+        var fn3 = outer();
+         fn2();
+         fn2();
+         fn2();
+
+         fn3();
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

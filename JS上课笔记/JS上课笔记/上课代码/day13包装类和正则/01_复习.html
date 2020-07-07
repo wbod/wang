@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function MyClass() {
+
+        }
+
+        /*
+            添加到原型（prototype）中方法被称为实例方法，
+                需要通过实例对象来调用
+            var mc = new MyClass();
+            mc.t1();
+
+            new MyClass.t1();
+         */
+        MyClass.prototype.t1 = function () {
+
+        };
+
+        /*
+            直接添加到类（函数对象）中的方法称为类方法（静态方法），
+                类方法直接通过类（函数对象）调用
+                MyClass.t2()
+         */
+        MyClass.t2 = function () {
+
+        };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

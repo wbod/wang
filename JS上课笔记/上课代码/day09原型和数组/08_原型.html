@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHello = function () {
+            console.log('大家好，我是 '+this.name);
+        };
+
+        // 打印一个对象时，显示的实际上对象的toString()方法的返回值
+        // 如果不希望打印[object Object] 可以重新为对象设置一个toString()方法
+        Person.prototype.toString = function () {
+            // Person [name: 孙悟空, age: 18]
+            return 'Person [name: '+this.name+', age: '+this.age+']';
+        };
+
+        var p1 = new Person('孙悟空', 18);
+
+        // Person.__proto__ 构造函数自己的原型，自己用的
+
+        // Person.prototype 实例的原型，给实例用的
+
+
+        //获取一个对象的原型
+        // 可以通过实例的__proto__属性，或类的prototype属性来获取一个实例的原型对象
+        // p1.__proto__
+        // Object.getPrototypeOf(p1);
+        // Person.prototype.__proto__
+
+
+
+        var p2 = new Person('猪八戒', 28);
+        // alert(p2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

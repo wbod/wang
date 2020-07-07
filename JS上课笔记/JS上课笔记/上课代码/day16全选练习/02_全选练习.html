@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全选练习</title>
+	<script>
+
+		window.onload = function () {
+
+			// 获取四个多选框
+			var items = document.getElementsByName('items');
+
+
+			/*
+				点击全选按钮后，让四个多选框都选中
+			 */
+			// 为全选按钮绑定一个单击响应函数
+			var checkedAllBtn = document.getElementById('checkedAllBtn');
+			checkedAllBtn.onclick = function () {
+				// 让四个多选框都选中
+				// 遍历items
+				for(var i=0; i<items.length; i++){
+					// 将 items[i] 设置为选中状态
+					// 可以通过checked属性来设置选择框的选中状态
+					// 如果设置为true，则选择框选中，否则取消
+					items[i].checked = true;
+				}
+			};
+
+			//点击全不选按钮，让四个按钮都变成没有选中状态
+			// 为id为checkedNoBtn的元素绑定一个单击响应函数
+			var checkedNoBtn = document.getElementById('checkedNoBtn');
+			checkedNoBtn.onclick = function () {
+				for(var i=0; i<items.length; i++){
+					//设置items不选中
+					items[i].checked = false;
+				}
+			};
+
+			// 点击反选按钮后，选中的变成不选，没选的变成选中
+			var checkedRevBtn = document.getElementById('checkedRevBtn');
+			checkedRevBtn.onclick = function () {
+				// 遍历items
+				for(var i=0; i<items.length; i++){
+					// 如果items[i] 是选中状态，取消选中，设置checked为false
+					// 如果items[i] 是未选中状态，则让它选中，设置checked为true
+					// if(items[i].checked){
+					// 	items[i].checked = false;
+					// }else{
+					// 	items[i].checked = true;
+					// }
+					items[i].checked = !items[i].checked;
+				}
+			};
+
+			// 提交，单击按钮后，将选中的内容显示出来
+			var sendBtn = document.getElementById('sendBtn');
+			sendBtn.onclick = function () {
+				// 设置一个变量，记录选中的状态，默认认为所有的items都没选中
+				var flag = true;
+
+				// 遍历items
+				for(var i=0; i<items.length; i++){
+					//判断items是否选中，如果选中则打印items
+					if(items[i].checked){
+						// 有被选中的多选框，需要将flag设置为false
+						flag = false;
+						alert(items[i].value);
+					}
+					// else{
+					// 	// 只有所有的items都没选中时才需要执行该命令
+					// 	alert('您没有选择任何的内容！');
+					// }
+				}
+
+				// 如果所有的items都没选中，如何弹出一个提示信息
+				if(flag){
+					alert('没有选项被选中！');
+				}
+			};
+
+
+		};
+
+		//getElementsByName()它返回的是一个实时更新的数组 所有的getElementsXxx的方法都是这个特点
+		// 如果在网页中添加新的符合条件的元素，它会自动被添加到数组中
+		// 获取到四个多选框的对象
+		// var items = document.getElementsByName('items');
+		// var items = document.querySelectorAll('[name=items]');
+		// alert(items.length);
+
+	</script>
+</head>
+<body>
+
+	<form method="post" action="">
+		你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选 
+		
+		<br />
+		<input type="checkbox" name="items" value="足球" />足球
+		<input type="checkbox" name="items" value="篮球" />篮球
+		<input type="checkbox" name="items" value="羽毛球" />羽毛球
+		<input type="checkbox" name="items" value="乒乓球" />乒乓球
+		<br />
+		<input type="button" id="checkedAllBtn" value="全　选" />
+		<input type="button" id="checkedNoBtn" value="全不选" />
+		<input type="button" id="checkedRevBtn" value="反　选" />
+		<input type="button" id="sendBtn" value="提　交" />
+	</form>
+</body>
+</html>

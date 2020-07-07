@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+    <script>
+
+        var name = '嘿嘿';
+
+        // 函数的外层作用域，在函数创建时就已确定，和函数的调用位置无关
+        // JS中的作用域被称为 词法作用域
+        function fn() {
+            console.log(name);
+        }
+
+        function fn2() {
+            var name = '哈哈';
+            fn();
+        }
+
+        fn2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

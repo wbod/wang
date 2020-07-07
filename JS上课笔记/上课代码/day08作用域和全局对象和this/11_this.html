@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script>
+
+        function fn() {
+        //    在每一个函数中，都有一个隐含的参数，叫做 this
+        //   this代表的是当前调用函数的对象，谁调用的函数this就是谁
+        //   this是谁，主要由函数的调用方式来决定：
+        //      1.如果以函数的形式去调用，this就是window
+        //          (xxx() yyy())
+        //      2.如果以方法的形式去调用，this就是调用方法的对象
+        //          (aaa.bbb()  xxx.yyy())
+            console.log(this);
+        }
+
+        var obj = {
+            name:'swk',
+            sayHello:fn
+        }
+
+        var obj2 = {
+            name:'zbj',
+            sayHello:fn
+        }
+        window.fn();
+        // obj2.sayHello();
+        // obj.sayHello();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

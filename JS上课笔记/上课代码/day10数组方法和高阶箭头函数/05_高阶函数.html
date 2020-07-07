@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高阶函数</title>
+    <script>
+        /*
+            高阶函数
+                - 如果一个函数的参数是函数，或者函数的返回值是函数
+                    则这个函数我们就称其为高阶函数
+                - 将函数作为参数的情况：
+                    - 将函数作为参数，主要目的是动态的向函数内部传递代码
+                    - 作为参数的函数，它是由我们定义的，但不由我们调用
+                        这种函数被称为回调函数（callback）
+                    - ocp原则（开闭原则）
+                    -   一段程序（代码）应该对修改关闭
+                            对扩展开放
+         */
+
+        // function fn() {
+        //     function hello() {
+        //
+        //     }
+        //
+        //     return hello;
+        // }
+        //
+        // function fn2(a) {
+        //     a();
+        // }
+
+
+        //创建一个函数，可以用来对数组进行筛选过滤
+        function filter(arr, callback) {
+            // 创建一个新的数组，用来存储结果
+            var newArr = [];
+
+            //遍历arr
+            for(var i=0; i<arr.length; i++){
+                //判断 arr[i] 是否满足条件
+                // 如果能够将代码，以参数的形式传递进行函数那就好了！
+                if( callback(arr[i]) ){
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+            //返回新数组
+            return newArr;
+        }
+
+        function test(n) {
+            return n % 2 !== 0;
+        }
+
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+
+        // var result = filter(arr, test);
+        //
+        // console.log(result+'');
+
+        // 定义一个类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 重写类的toString
+        Person.prototype.toString = function () {
+            return 'Person [name:'+this.name+', age:'+this.age+']';
+        };
+
+        //创建一个对象
+        var p1 = new Person('孙悟空', 18);
+        var p2 = new Person('猪八戒', 28);
+        var p3 = new Person('牛魔王', 68);
+        var p4 = new Person('红孩儿', 8);
+        var p5 = new Person('蜘蛛精', 16);
+        var p6 = new Person('玉兔精', 14);
+        var p7 = new Person('唐僧', 16);
+        var p8 = new Person('沙和尚', 38);
+
+        // 将对象放入到一个数组zh中
+        var personArr = [p1, p2, p3, p4, p5, p6, p7, p8];
+
+        function test2(per) {
+            return per.age >= 18;
+        }
+
+        var result = filter(personArr, test2);
+
+        // console.log(result+'');
+
+        arr = [1,2,3,4,5,6,7,8,9,10];
+
+        result = filter(arr, function (n) {return n > 3;});
+        result = filter(arr, function (n) {return n < 4;});
+        result = filter(arr, (n) => n % 2 !== 0);
+        // 箭头函数，箭头函数专门用来定义这种作为参数的函数
+        // ([形参...])=>返回值
+        // console.log(result+'');
+        var sum = (a, b) => a + b;
+
+        console.log(sum(123,456));
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

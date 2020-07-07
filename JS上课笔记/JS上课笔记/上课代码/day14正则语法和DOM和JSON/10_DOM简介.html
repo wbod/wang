@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM简介</title>
+</head>
+<body>
+<button id="btn">我是一个按钮</button>
+<script>
+    /*
+        通过JS来修改button中的文字
+     */
+    // 在JS中，浏览器已经为我们提供了document对象
+    // document对象代表整个网页，该对象由浏览器提供，可以直接使用
+    // getElementById()是document的方法，通过方法可以根据元素的id属性获取一个元素
+    var btn = document.getElementById('btn');
+
+    // 修改btn的innerHTML属性
+    btn.innerHTML = "I'm Button";
+    // alert(btn.innerHTML);
+    // alert(btn);
+
+</script>
+
+</body>
+</html>

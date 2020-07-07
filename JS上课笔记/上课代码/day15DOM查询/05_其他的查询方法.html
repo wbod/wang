@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload = function () {
+
+            // getElementsByClassName() 用于根据元素的class属性值来获取一组元素节点对象
+            var box1 = document.getElementsByClassName('box1');
+
+            // alert(box1.length);
+
+            // for(var i=0; i<box1.length; i++){
+            //     box1[i].innerHTML = '哈哈哈哈哈哈';
+            // }
+
+            /*
+                querySelector()
+                    - 可以根据选择器的字符串去页面中查询元素
+                    - 会返回满足选择器的第一个元素
+                querySelectorAll()
+                    - 根据选择器获取一组元素节点对象
+             */
+            var result = document.querySelector('.box1');
+            result = document.querySelectorAll('.box1');
+            result = document.querySelector('[class=box1]');
+            result = document.querySelector('div');
+            result = document.querySelector('div:nth-child(2)');
+
+            // alert(result.innerHTML);
+
+            /*
+                document.all 是一个过时的属性
+                    它表示页面中的所有元素
+                    可以使用 document.getElementsByTagName('*') 来代替
+                document.body 获取页面中的body元素
+                document.documentElement 获取页面的根元素html
+             */
+            // alert(document.all.length);
+            // var all = document.getElementsByTagName('*');
+            // alert(all.length);
+
+            // alert(document.body);
+            // alert(document.getElementsByTagName('body')[0]);
+            alert(document.documentElement);
+
+
+        };
+
+    </script>
+    
+</head>
+<body>
+
+<div class="box1">1</div>
+<div class="box1">2</div>
+<div class="box1">3</div>
+<div class="box1">4</div>
+
+</body>
+</html>

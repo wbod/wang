@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigInt</title>
+</head>
+<body>
+  <!-- 
+    BigInt 一种新的基本数据类型
+    它代表一个任意精度的整数
+    超过 2⁵³ 
+   -->
+  <script>
+
+  </script>
+</body>
+</html>

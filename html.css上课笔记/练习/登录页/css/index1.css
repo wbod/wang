@@ -1,0 +1,260 @@
+.header-wrap {
+	height: 30px;
+	background: #eaeaea;
+}
+
+.header {
+	width: 1200px;
+	height: 30px;
+	line-height: 30px;
+	/* background: pink; */
+	margin: 0 auto;
+}
+
+.header .list01 {
+	float: left;
+	height: 30px;
+}
+
+.header .list01 li {
+	float: left;
+	position: relative;
+}
+
+.header .list01 .one {
+	margin-left: 1px;
+	z-index: 5;
+	/* border: 1px solid blue; */
+}
+.header .list01 .one a{
+	display: block;
+	height: 29px;
+	padding: 0 5px;
+	border: 1px solid #eaeaea;
+	border-bottom: none;
+	line-height: 29px;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+}
+.header .list01 .one .city{
+	width: 300px;
+	height: 300px;
+	border: 1px solid red;
+	position: absolute;
+	left: 0;
+	top: 29px;
+	background: #fff;
+	display: none;
+}.header .list01 li:hover a{
+	border-color: red;
+	background: #fff;
+
+}
+.header .list01 li:hover .city{
+	display: block;
+}
+.header .list01 .one a i{
+	float: left;
+	font-size: 14px;
+	color: red;
+	margin-right: 2px;
+}
+.header .list01 .one a span{
+	float: left;
+}
+.header .list01 a span,.header .list01 a i{
+	float: left;
+}
+.header .list01 a i{
+	margin-right: 2px;
+}
+
+
+.header .list01 .two {
+	margin: 0 9px 0 18px;
+}
+
+.header .list01 .three a {
+	border-left: 1px solid #b3aeae;
+	padding-left: 5px;
+}
+
+.header .list02 {
+	float: right;
+}
+
+.header .list02 li {
+	float: left;
+}
+
+.header .list02 li a {
+	border-right: 1px solid #b3aeae;
+	padding: 0 13px 0 10px;
+	color: #666;
+}
+.search-bar {
+	width: 1200px;
+	height: 106px;
+	/* background: yellow; */
+	margin: 0 auto;
+}
+
+.search-bar .logo {
+	float: left;
+	/* 第二种将父元素设置固定高度 */
+	/* height: 56px; */
+	/* overflow: hidden; */
+	margin: 25px 0 0 45px;
+}
+
+.search-bar .logo a {
+	display: block;
+	/* 第一种: 将字号设置成0*/
+	/* font-size: 0px; */
+
+
+
+	/* 第三种,背景图 */
+	background: url(../images/Logo.png) no-repeat;
+	width: 175px;
+	height: 56px;
+	text-indent: -9999px;
+}
+
+.search-bar form {
+	float: right;
+	margin-top: 35px;
+}
+
+.search-bar .txt {
+	width: 476px;
+	height: 28px;
+	border: 2px solid #ea4a36;
+	border-right: none;
+	float: left;
+	padding-left: 10px;
+}
+
+.search-bar .btn {
+	width: 70px;
+	height: 32px;
+	background: #ea4a36;
+	float: left;
+	color: #fff;
+	cursor: pointer;
+}
+
+.search-bar .btn:hover {
+	background: darkred;
+}
+.img{
+    height: 487px;
+    background: red;
+    position: relative;
+    
+}
+.img img{
+    margin: 0 auto;
+}
+.img .list{
+    width: 420px;
+    height: 407px;
+    background:#fff;
+    position: absolute;
+    right: 73px;
+    bottom: 35px;
+}
+.listone{
+    width: 378px;
+    height: 364px;
+    border: 1px solid #ddd;
+    margin: 20px;
+}
+.listone ul li{
+    float: left;
+    width: 189px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #ddd;
+}
+.img .input{
+	width: 378px;
+	height: 173px;
+	/* background: pink; */
+	position: absolute;
+	left: 21px;
+	top: 70px;
+}
+.input input{
+	width: 339px;
+	height: 31px;
+	margin-left: 18px;
+	margin-bottom: 16px;
+}
+.input .six1{
+	float: left;
+	margin-left: 18px;
+}
+.input .six2{
+	float: right;
+	margin-right: 22px;
+}
+.input .denglu{
+	width: 342px;
+	height: 36px;
+	background: red;
+	margin: 28px auto 0;
+}
+.denglu h3{
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+}
+.zc{
+	width: 342px;
+	height: 32px;
+	/* background: pink; */
+	margin: 32px auto 0;
+	
+}
+.zc h2{
+	font-size: 14px;
+	float: right;
+	line-height: 32px;
+}
+.xialist{
+	width: 701px;
+	height: 64px;
+	/* background: yellow; */
+	margin:14px 282px 0 282px;
+}
+.xialist ul{
+	display: block;
+}
+.xialist ul li{
+	/* width: 701px; */
+	float: left;
+	text-align: center;
+	margin-right: 21px;
+	border-right: 1px solid #666;
+	padding-left: 0 9px 0 13px;
+	/* margin: 0 auto; */
+}
+.xialist span{
+	width: 701px;
+	height: 12px;
+	display: block;
+	/* margin: 0 auto; */
+	text-align: center;
+	/* margin-top: 5px; */
+}
+
+
+
+

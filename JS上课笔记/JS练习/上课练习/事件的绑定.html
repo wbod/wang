@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       window.onload = function(){
+           var btn01 = document.getElementById('btn01');
+
+            // btn01.addEventListener('click',function(){
+            //       alert('1');
+            //       alert('2');
+            //       alert('3');
+            // },false)
+
+            function fn(){
+                alert('1');
+            }
+            btn01.addEventListener('click',fn,false)
+             btn01.removeEventListener('click',fn,false);
+       };
+    </script>
+</head>
+<body>
+    <button id="btn01">点我</button>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            margin-top: 50px;
+        }
+
+        .yellow{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            var box1 = document.querySelector('.box1');
+            btn.addEventListener('click',function () {
+                replaceClass(box1, 'yellowgreen', 'yellow');
+                // alert(hasClass(box1,'box1'));
+                // toggleClass(box1, 'yellow');
+                // addClass(box1, 'yellow');
+                // 修改box1的样式
+                // box1.style.width = '300px';
+                // box1.style.height = '300px';
+                // box1.style.backgroundColor = 'yellowgreen';
+
+                // 检查className中是否含有yellow，然后在添加
+
+                // var re = new RegExp("\\byellow\\b")
+                // if(!re.test(box1.className)){
+                //     // 将box1的class属性修改为yellow
+                //     box1.className += ' '+'yellow';
+                // }
+
+                // /\byellow\b/
+                // var reg = /\byellow\b/;
+                // 使用构造函数创建一个正则
+                // reg = new RegExp("\\byellow\\b");  // /\byellow\b/
+
+                // alert(reg);
+
+
+            },false)
+        };
+
+        
+        //定义一个函数，用来为任意的元素添加class
+        // ele 表示要添加样式的元素
+        // className 表示要添加的class
+        function addClass(ele, className) {
+            if(!hasClass(ele,className)){
+                // 将box1的class属性修改为yellow
+                ele.className += ' '+className;
+            }
+        }
+
+        // 定义一个函数用来检查类中是否含有某个class
+        function hasClass(ele, className) {
+            var re = new RegExp("\\b"+className+"\\b");
+            return re.test(ele.className);
+        }
+
+        // 删除元素的指定类
+        function removeClass(ele, className) {
+            // 根据className创建一个正则表达式
+            var re = new RegExp('\\s*\\b'+className+'\\b');
+            // 将ele.className中符合正则表达式的内容，替换为空串
+            ele.className = ele.className.replace(re, '');
+
+        }
+
+        // 切换class，如果元素中具有该class则删除，如果没有则添加
+        function toggleClass(ele, className) {
+            // 检查元素中是否含有该class
+            if(hasClass(ele, className)){
+                removeClass(ele, className);
+            }else{
+                addClass(ele, className);
+            }
+
+        }
+
+        // 替换元素class属性
+        function replaceClass(ele, oldCls, newCls) {
+            // 根据oldCls创建一个正则表达式
+            var re = new RegExp('\\b'+oldCls+'\\b');
+            // 将ele.className中符合re的内容替换为newCls
+            ele.className = ele.className.replace(re, newCls);
+
+        }
+    </script>
+</head>
+<body>
+
+<button id="btn">点我一下</button>
+
+
+<div class="box1 yellowgreen"></div>
+
+
+</body>
+</html>

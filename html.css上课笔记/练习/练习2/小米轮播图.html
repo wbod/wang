@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .banner{
+            width: 1226px;
+            height: 460px;
+            background: pink;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        img,a{
+            display: block;
+        }
+        
+
+        /* .banner ul li{ */
+            /* 不占位隐藏 */
+            /* display: none; */
+            /* 占位隐藏 */
+            /* visibility: hidden; */
+        /* } */
+        .banner .leftNav{
+            width: 234px;
+            height: 460px;
+            position: absolute;
+            left:0;
+            top:0;
+            background: rgba(0,0,0,0.5);
+            color:red;
+        }
+        .banner span{
+            width: 41px;
+            height: 69px;
+            /* background: yellowgreen;
+            position: absolute;
+            left:234px;
+            top:50%;
+            margin-top: -35px;
+            cursor: pointer; */
+            background: url(icon-slides.png) no-repeat -84px 0;
+            position: absolute;
+            left: 234px;
+            top: 50%;
+            margin-top: -35px;
+            cursor: pointer;
+            background-color: yellow;
+        }
+        .banner .rightBtn{
+            left:auto;
+            right: 0;
+            background-position-x: -126px;
+        }
+        .banner .leftNav:hover{
+             background-position-x: 0;
+        }
+        .banner.rightBtn:hover{
+            background-position-x: -44px;
+        }
+        .banner ol{
+            position: absolute;
+            right:34px;
+            bottom: 26px;
+        }
+        .banner ol li{
+            float:left;
+            width: 6px;
+            height: 6px;
+            background: #5c564d;
+            border: 2px solid #8e8880;
+            border-radius: 50%;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        .banner ol li:hover{
+            background: #cec7be;
+            border-color:#77736e;
+        }
+        .banner .current{
+            background: #cec7be;
+            border-color:#77736e;
+        }
+        .leftNav li{
+				height: 42px;
+				line-height: 42px;
+				font-size: 14px;
+			}
+			.leftNav li a{
+				height: 42px;
+				color:#fff;
+				display: block;
+				text-decoration: none;
+				padding: 0 23px 0 29px;
+			}
+			.leftNav li a strong{
+				float:left;
+			}
+			.leftNav li a b{
+				float:right;
+			}
+			.leftNav li a:hover{
+				background: #ff6700;
+			}
+			.leftNav .list{
+				margin-top: 20px;
+			}
+    </style>
+
+</head>
+<body>
+    <div class="banner">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="banner.webp">
+                </a>
+            </li>
+        </ul>
+        <div class="leftNav">
+            <ul class="list">
+                <li>
+                    <a href="##">
+                        <strong>手机 电话卡</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>电视 盒子</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>笔记本 显示器 平板</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>家电 插线板</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>出行 穿戴</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>智能 路由器</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>电源 配件</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>健康 儿童</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>耳机 音箱</strong>
+                        <b>></b>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <strong>生活 箱包</strong>
+                        <b>></b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <span class="leftBtn"></span>
+        <span class="rightBtn"></span>
+        <ol>
+            
+            <!-- <li style="background:#cec7be;border-color:#77736e;"></li> -->
+            <li class="current"><li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			.box{
+				width: 1200px;
+				height: 400px;
+				border: 1px solid #000;
+			}
+			.box p{
+				width: 300px;
+				height: 100px;
+			}
+			.box p:first-of-type{
+				background: yellowgreen;
+				/* display: none; */
+				opacity: 0;/*
+				过渡:属性从某个值,在规定的时间内到达某个值,这个过程就是过渡,过渡的
+				属性必须是从某个值递增或者递减的一个数值的变化(例如:display:none就
+				就不能有过渡行为),如果希望过渡效果有来有去,将过渡属性写在默认状态下
+				 */
+				/* 过渡的单属性 */
+				/* 过渡的属性 */
+				/* transition-property:width,height,background-color,display; */
+				transition-property: all;
+				/* 过渡的时间  单位 秒s,毫秒ms,  1秒=1000毫秒*/
+				transition-duration: 2s;
+				/* 过渡的方式 :
+					linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) 
+					ease(默认)： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) 
+					ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) 
+					ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) 
+					ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) 
+					https://cubic-bezier.com/#0,-0.48,1,1.39
+					
+				*/
+				transition-timing-function:cubic-bezier(0,-0.48,1,1.39) ;
+				/* 延时时间 */
+				transition-delay: 0.5s;
+			}
+			.box p:last-of-type{
+				background: red;
+			}
+			.box:hover p:first-of-type{
+				/* display: block; */
+				width: 1200px;
+				height: 500px;
+				background: #000;
+				opacity: 1;
+				
+			}
+			.box:hover p:last-of-type{
+				width: 1200px;
+				
+				transition-property:width ;
+				
+				transition-duration: 2s;
+				
+				transition-timing-function:ease ;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

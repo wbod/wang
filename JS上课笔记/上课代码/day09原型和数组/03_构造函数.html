@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script>
+        /*
+            构造函数（constructor）
+                - 构造函数是专门用来创建对象的函数
+                - 构造函数其实就是一个普通函数
+                - 构造函数和普通函数的主要区别在于它们的调用方式
+                    如果函数直接调用，那么它就是一个普通函数
+                    如果通过new关键字来调用，那么它就是一个构造函数
+                - 为了和普通函数区分构造函数通常会大写字母开头
+                - 构造函数的执行流程：
+                    1.调用构造函数，它会创建一个新的对象
+                    2.将新的对象设置为函数中的this
+                    3.执行函数中的代码
+                    4.将新的对象作为返回值返回
+         */
+        function Person(name, age, gender) {
+            //在构造函数中，this表示新创建的那个对象
+            // console.log(this);
+            // 在构造函数中，可以通过this来向新的对象中添加属性
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayHello = function () {
+                console.log('Hello 大家好，我是 '+this.name);
+            };
+        }
+        
+        function Dog(name) {
+            this.name = name;
+            this.sayHello = function () {
+                console.log('汪汪汪~~');
+            };
+        }
+
+        // 工厂方法所创建的对象，没有办法区分出类型，因为返回的都是Object
+        function createPerson(name, age, gender) {
+            //将新的对象作为返回值返回
+            return {
+                name,
+                age,
+                gender,
+                sayHello() {
+                    console.log('大家好，我是'+this.name);
+                }
+            };
+        }
+        
+        function createDog(name) {
+            return {
+                name,
+                sayHello(){
+                    console.log('汪汪汪~~~');
+                }
+            }
+
+        }
+
+        var p1 = new Person('孙悟空',18,'男');
+        var d1 = new Dog('旺财');
+        var p2 = new Person('猪八戒',28,'男');
+        // var p3 = Person('沙和尚', 38, '男'); 构造函数必须通过new关键字来调用
+        var p3 = createPerson('沙和尚', 38, '男');
+        var d3 = createDog('旺财');
+
+
+        // console.log(p1);
+        // console.log(p1);
+        // console.log(d1);
+        // console.log(p3, name, age, gender);
+
+         /*
+         一个构造函数也被称为一个类（class）,
+            通过一个类创建的对象，我们称为该对象为该类的实例（instance）
+            通过同一个类创建的对象我们称其为一类对象
+
+            instanceof 运算符，可以用来检查一个对象是否是一个类的实例
+          */
+
+        console.log(p1 instanceof Person);
+        // console.log(p2 instanceof Person);
+        // console.log(p3 instanceof Person);
+        // console.log(d1 instanceof Person);
+        // console.log(d1 instanceof Dog);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

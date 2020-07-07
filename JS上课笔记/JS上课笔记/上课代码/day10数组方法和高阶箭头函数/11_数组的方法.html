@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组方法</title>
+    <script>
+
+        /*
+            forEach() 也是用来遍历数组的一个方法（只适用于数组）
+                - 需要一个回到函数作为参数
+                - 回调函数会执行多次，数组里有几个元素就会执行几次
+                    每次调用时，都会将一个元素的信息已参数的形式传递进函数
+                    可以通过定义参数，来获取信息
+                    - 回调函数中，一共会接收到三个参数：
+                        第一个参数，当前元素的值
+                        第二个参数，当前元素的索引
+                        第三个参数，被遍历的数组
+         */
+        var arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+
+        // arr.forEach(function (value, index, arr) {
+        //     console.log(value, index, arr);
+        // });
+
+        arr.forEach(((value, index, array) => console.log(value)));
+    /*
+        作业：
+            1.数组去重练习
+            2.every() some() filter() map() reduce() reverse() sort()
+                自己预习整理
+            3.整理这两天的知识点
+     */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

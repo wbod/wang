@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>总结</title>
+    <script>
+
+        function fn() {
+            console.log('fn开始执行了~~~~');
+
+            for(var i=0; i<5; i++){
+
+                if(i === 2){
+                    // break;
+                    // continue;
+                    return;
+                }
+                console.log('\t循环执行--->',i);
+            }
+
+            console.log('fn执行结束了~~~~')
+        }
+
+        // fn();
+
+        // 连着写两个IIFE必须要以分号结尾
+        (function () {
+            console.log('函数1');
+        })();
+
+        (function () {
+            console.log('函数2');
+        })();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+    <script>
+        /*
+            endsWith()
+                - 检查字符串是否以指定内容结束
+            startsWith()
+                - 检查字符串是否以指定内容开始
+         */
+        var str = 'Hello How are you';
+
+        var r = str.endsWith('Ou');
+        r = str.startsWith('H');
+
+        // console.log(r);
+
+        /*
+            slice() 用来截取字符串
+                - 参数：
+                    1.截取的起始索引（包含该位置）
+                    2.截取的结束索引（不包含该位置）
+           substring() 用来截取字符串
+                - 参数：
+                    1.截取的使其位置
+                    2.截取的结束位置
+                    - 不能使用负索引，如果写了负索引，则会自动修正为0
+                        如果起始索引大于结束索引，会自动交换位置
+           substr()(可能要删)
+                - 参数：
+                    1.截取的起始位置
+                    2.截取的数量
+         */
+        str = 'Hello Atguigu';
+        r = str.slice(6,8);
+        r = str.slice(6,-1);
+
+        r = str.substring(6,0);
+
+        // console.log(r);
+
+        /*
+            split()
+                - 拆分字符串，可以将字符串拆分为一个数组
+            toLowerCase()
+                - 将字符串转换为小写
+            toUpperCase()
+                - 将字符串转换为大写
+            trim()
+                - 去除字符串两端的空格
+         */
+        str = '孙悟空@猪八戒@沙和尚@唐僧';
+        r = str.split('@');
+        r = str.split('八');
+        // console.log(r+'');
+
+        str = 'abcdefgABCDEFG';
+        r = str.toLowerCase();
+        r = str.toUpperCase();
+
+        str = 'hello';
+        var str2 = 'Hello';
+
+        // console.log(str.toLowerCase() === str2.toLowerCase());
+
+        str = "                    hello                          ";
+
+        r = str.trim();
+        r = str.trimEnd(); // 去除后边的空格 (对老版本的浏览器支持不好)
+        r = str.trimRight(); // 去除后边的空格 (对老版本的浏览器支持不好)
+
+        r = str.trimStart(); // 去除前边的空格 (对老版本的浏览器支持不好)
+        r = str.trimLeft(); // 去除前边的空格 (对老版本的浏览器支持不好)
+
+        // console.log(str);
+        // console.log(r);
+
+        // console.log(str.trimLeft === str.trimStart );
+
+        str = 'abc';
+        r = str.repeat(10);
+
+        str = 'abc';
+        r = str.split(',');
+        r = str.split(''); // 直接传递一个空串作为参数，可以将字符串拆分为一个一个字符组成的元素
+
+        console.log(r);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

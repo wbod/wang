@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>break和continue</title>
+    <script>
+
+        /*
+            break 用来立即结束循环或switch语句
+                break 默认只对离它最近的循环起作用
+         */
+
+        // for(var i=0; i<5; i++){
+        //     console.log('outer-->'+i);
+        //     for(var j=0; j<5; j++){
+        //         console.log('\tinner-->'+j);
+        //         if(j===2){
+        //             break;
+        //         }
+        //     }
+        //
+        // }
+
+    /*
+        continue
+            - 用来跳过当次循环
+            - 默认会影响到离它最近的循环
+    */
+
+        // for(var i=0; i<5; i++){
+        //     if(i === 2){
+        //         continue;
+        //     }
+        //     console.log('outer --> '+i);
+        // }
+
+        for(var i=0; i<5; i++){
+            console.log('outer --> '+i);
+            for(var j=0; j<5; j++){
+                if(j === 2){
+                    continue;
+                }
+                console.log('\tinner --> '+j);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

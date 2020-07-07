@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            margin-top: 50px;
+        }
+
+        .yellow{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            var box1 = document.querySelector('.box1');
+            btn.addEventListener('click',function(){
+                  if(!/\byellow\b/.test(box1.className)){
+                      box1.className += " "+"yellow"
+                  }
+                
+            },false)
+        
+        };
+
+            // 定义一个函数,用来为任意的元素添加class
+            // ele表示要添加样式的元素
+            // className 表示要添加的class
+            function addClass(ele,className){
+                if(!hasClass(ele,className)){
+                    // 将box1的class属性修改为yellow
+                    ele.className += ' ' +className;
+                }
+            }
+
+            // 定义一个函数用来检查类中是否含有某个class
+            function hasClass(ele,className){
+                var re = new RegExp("\\b"+className+"\\b")
+                return re.test(ele.className);
+            }
+    </script>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+
+
+    <div class="box1 yellowgreen"></div>
+
+</body>
+</html>

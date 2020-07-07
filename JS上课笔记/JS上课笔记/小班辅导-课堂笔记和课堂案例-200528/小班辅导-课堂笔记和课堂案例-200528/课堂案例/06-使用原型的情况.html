@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function User(name, age){
+        this.name = name;
+        this.age = age;
+        // this.say = function(){
+        //
+        // }
+    }
+    User.prototype.say = function(){
+        console.log(this.name, this.age);
+    };
+
+
+    var u1 = new User('校长', 19);
+    var u2 = new User('小王', 20);
+
+    console.log(u1, u2);
+    u1.say();
+    u2.say();
+</script>
+</body>
+</html>

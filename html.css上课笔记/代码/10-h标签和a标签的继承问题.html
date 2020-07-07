@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				h标签和a标签的继承问题: h标签默认对字号进行了设置,
+				所以会层叠掉从父辈元素继承得字号属性.
+				a标签默认对字体颜色进行了设置,所以会层叠掉从父元素继承的字体颜色
+			 */
+			.box{
+				font-size: 40px;
+				color:red;
+			}
+			.box h1{
+				font-size: 80px;
+			}
+			.box a{
+				color:red;
+			}
+			.box p{
+				color:yellow;
+			}
+			.box i{
+				color:green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h1>标题</h1>
+			<span>我是span</span>
+			<p>我是段落
+				<i>倾斜</i>
+			</p>
+			<a href="##">超链接</a>
+		</div>
+	</body>
+</html>

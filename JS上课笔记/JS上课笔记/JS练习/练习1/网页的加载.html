@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            alert('哈哈');
+        };
+    };
+        
+    </script> -->
+
+    <!-- 网页的加载是按照自上向下的顺序一行一行加载的
+        如果将script标签写在网页的上方，它会优先于body加载
+
+
+    编写DOM相关的代码时，有两个编写位置：
+        1.编写在body标签的最后
+        2.编写在window.onload = function(){}的响应函数中
+
+     希望这些代码，可以在网页加载完毕之后在执行
+     load事件表示资源加载，当资源加载完毕后事件会触发 -->
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            alert('你点我干嘛');
+        };
+    </script>
+</body>
+</html>

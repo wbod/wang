@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            编写一个用来检查一个字符串是否是正确的邮箱地址的正则表达式
+            101010101
+            jinlian.pan   @abc.com
+            abc
+
+            abc                       .xxx                          @     hello                .com .cn
+            任意的字母数字下划线一位以上   .任意字母数字下划线一位以上       @     任意字母数字-一位以上  .字母2到5位 .字母2到5位
+            \w+                        (\.\w+)*                     @     [a-z0-9-]+          (\.[a-z]{2,5}){1,2}
+         */
+
+        var emailReg = /^\w+(\.\w+)*@[a-z0-9-]+(\.[a-z]{2,5}){1,2}$/i;
+
+        console.log(emailReg.test('jinlian.pan@abc.com'));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

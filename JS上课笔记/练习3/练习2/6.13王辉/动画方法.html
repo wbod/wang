@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            position: absolute;
+            top:50px;
+            left:50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="test">今天天气真不错</div> -->
+    <div class="box"></div>
+     <button id="btn1">隐藏</button>
+     <button id="btn2">显示</button>
+     <button id="btn3">切换</button>
+     <script src="js/jquery-1.10.1.js"></script>
+     <script>
+         $(function(){
+            //  隐藏
+            $('#btn1').click(function(){
+                // 淡出
+                // $('.box').fadeOut(2000);
+
+                // 滑出
+                // $('.box').slideUp(1000);
+
+                // 隐藏
+                $('.box').hide(1500);
+            })
+            // 显示
+            $('#btn2').click(function(){
+                // 淡入
+                // $('.box').fadeIn(2000);
+
+                // 滑入
+                // $('.box').slideDown(1000);
+
+                // 显示
+                $('.box').show(1500);
+            })
+            // 切换
+            $('#btn3').click(function(){
+                // 淡出淡入切换
+                // $('.box').fadeToggle();
+
+                // 滑入滑出切换
+                // $('.box').slideToggle(1000);
+
+                // 显示隐藏切换
+                $('.box').toggle(1500);
+
+            })
+         });
+     </script>
+</body>
+</html>

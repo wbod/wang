@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        /*
+            通过键盘来控制div的移动
+         */
+        window.onload = function () {
+
+            // 获取box1
+            var box1 = document.getElementById('box1');
+            // 为document绑定一个keydown事件
+            document.addEventListener('keydown',function (ev) {
+                // 判断按键的方向
+                dir = ev.key;
+
+            });
+
+            document.addEventListener('keyup',function (ev) {
+                // 判断按下的键和松开的键是不是同一个
+                if(dir === ev.key){
+                    // 按键松开，重置dir
+                    dir = '';
+                }
+
+            });
+
+            // 创建一个变量，用来记录运动的方向
+            var dir = '';
+
+            // 创建一个定时器，来控制元素的移动
+            setInterval(function () {
+                switch (dir) {
+                    case 'ArrowUp':
+                    case 'Up':
+                        //向上移动
+                        box1.style.top = box1.offsetTop - 10 + 'px';
+                        break;
+                    case 'ArrowDown':
+                    case 'Down':
+                        // 向下移动
+                        box1.style.top = box1.offsetTop + 10 + 'px';
+                        break;
+                    case 'ArrowLeft':
+                    case 'Left':
+                        // 向左移动
+                        box1.style.left = box1.offsetLeft - 10 + 'px'
+                        break;
+                    case 'ArrowRight':
+                    case 'Right':
+                        // 向右移动
+                        box1.style.left = box1.offsetLeft + 10 + 'px'
+                        break;
+                }
+            },30)
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+
+<div id="box1"></div>
+
+</body>
+</html>

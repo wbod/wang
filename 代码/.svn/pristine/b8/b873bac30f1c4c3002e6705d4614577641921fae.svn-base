@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+  Object.keys()
+  Object.values()
+  Object.entries()
+-->
+<script type="text/javascript">
+  const person = {
+    name: 'jack',
+    age: 18
+  }
+  // 提取对象上所有属性名，成为一个数组
+  console.log(Object.keys(person));
+  // 提取对象上所有属性值，成为一个数组
+  console.log(Object.values(person));
+
+  // 对象遍历
+  const keys = Object.keys(person);
+  keys.forEach((key) => {
+    const value = person[key];
+  })
+
+  console.log(Object.entries(person));
+  
+  
+</script>
+</body>
+</html>

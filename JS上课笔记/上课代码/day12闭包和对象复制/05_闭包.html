@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script>
+        /*
+            创建闭包：
+                1.函数嵌套
+                2.内部函数引用外部函数的变量
+                3.将内部函数作为返回值返回
+
+            闭包就是可以访问外部函数（作用域）中变量的内部函数
+                闭包是什么时候产生的？
+                    - 当调用外部函数时，闭包就已经创建了
+                    - 外部函数每调用一次就会产生一个闭包，
+                        闭包和闭包之间是相互独立的
+                闭包是什么消失的？
+                    - 直到内部函数被GC（垃圾回收）后才消失
+
+         */
+        function outer() {
+            var n = 0;
+
+            function inner() {
+                n++;
+                console.log('inner ->',n);
+            }
+            
+            function inner2() {
+                n++;
+                console.log('inner2 ->',n)
+            }
+
+            // 将内部函数存储到一个对象中返回
+            return {inner:inner,inner2:inner2};
+        }
+
+        var obj = outer();
+        // var obj2 = outer();
+        // console.log(obj);
+        obj.inner();
+        obj.inner2();
+
+
+
+        // function outer(){
+        //     var n = 0;
+        //     function inner() {
+        //         n++;
+        //         console.log(n);
+        //     }
+        //     return inner;
+        // }
+
+        // var fn2 = outer();
+        // var fn3 = outer();
+
+
+
+
+
+
+        // var fn2 = (function () {
+        //     var n = 0;
+        //     return function () {
+        //         n++;
+        //         console.log(n);
+        //     };
+        // })();
+        //
+        // fn2();
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

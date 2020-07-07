@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise案例</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+    需求：setTimeout模拟发送请求
+      请求a数据，请求成功在请求b数据，请求成功在请求c数据
+   */
+
+      const promise = new Promise((resolve, reject) => {
+        // 执行异步代码，请求a数据
+        setTimeout(() => {
+          console.log("a数据ok");
+          resolve();
+        }, 1000);
+      });
+
+      promise
+        .then(() => {
+          // 请求b数据
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              console.log("b数据ok");
+              resolve();
+            }, 2000);
+          });
+        })
+        .then(() => {
+          // 请求c数据
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              console.log("c数据ok");
+              resolve();
+            }, 3000);
+          });
+        })
+        .then(() => {
+          console.log('所有数据都请求完毕了~');
+        })
+    
+    </script>
+  </body>
+</html>

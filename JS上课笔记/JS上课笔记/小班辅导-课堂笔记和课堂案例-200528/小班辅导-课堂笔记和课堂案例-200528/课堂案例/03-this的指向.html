@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this的指向</title>
+</head>
+<body>
+<script>
+    // 函数
+    function fn(){
+        console.log(this);
+    }
+
+    var obj = {
+        // 方法
+        name: 'obj',
+        say: function(){
+            console.log(this);
+        }
+    };
+    fn(); //window
+    window.fn();  //等同于 fn()
+    obj.say();
+
+    console.log('');
+
+    var obj1 = {name:'obj1', say: fn};
+    obj1.say();  // this 指向 obj 1
+
+
+    var f = obj.say;
+    f(); // this 指向 window
+
+
+    var obj2 = {
+        name:'obj2',
+        person: {
+            name: 'person',
+            say: obj1.say
+        }
+    };
+
+    obj2.person.say(); // this 指向 person 对象
+
+    var sf = obj2.person.say;
+    sf(); // this 指向 window
+    console.log('');
+
+
+
+
+    // this 在构造函数中使用
+    function User(){
+        this.name = '小张';
+        this.age = 18;
+        this.say = function(){
+            console.log('hi，say', this);
+        }
+    }
+
+    var u = new User();  //实例化构造函数  this指向被创建的对象
+    //var u = new User;  // 等同于加()
+    console.log(u.name);
+    console.log(u.age);
+
+    u.say();
+
+
+    //new User();  //实例化对象
+
+    console.log(new User() === u);
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

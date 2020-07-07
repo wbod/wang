@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_数值扩展</title>
+</head>
+<body>
+<!--
+1. 二进制与八进制数值表示法: 二进制用0b, 八进制用0o
+2. Number.isFinite(i) : 判断是否是有限大的数
+3. Number.isNaN(i) : 判断是否是NaN
+4. Number.isInteger(i) : 判断是否是整数
+5. Number.parseInt(str) : 将字符串转换为对应的数值
+6. Math.trunc(i) : 直接去除小数部分
+-->
+<script type="text/javascript">
+  console.log(0b1010);
+  console.log(0o111);
+  console.log(Infinity);
+  console.log(Number.isFinite(Infinity));
+  
+  console.log(Number.isNaN(NaN));
+  
+  function isNaN(num) {
+    return num !== num;
+  }
+
+  console.log(isNaN(123));
+  
+  console.log(Number.isInteger(123.1));
+  
+  console.log(Number.parseInt('a123.123'));
+  console.log(Number.parseFloat('123.123'));
+
+  console.log(Math.trunc(123.123));
+  
+</script>
+</body>
+</html>

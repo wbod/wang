@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提升</title>
+    <script>
+
+        // if(true){
+        //     var a = 10;
+        // }
+        // console.log(a);
+
+        /*
+            在JS中，所有的使用var关键字声明的变量，它的声明会在所有的代码执行前完成
+                这个特点我们称为变量的提升，注意只有声明会被提前，而赋值不会被提前。
+         */
+        // console.log(c); // undefined
+        // var a = 33; 使用var声明的变量会被提升（声明提前）
+        // b = 44; 没有使用var关键字声明，变量不会提升
+        // let c = 77; 使用let声明的变量无法在初始化前被访问
+
+
+        /*
+            函数的提升：
+                - 使用函数声明的形式（function xxx）创建函数，
+                    它会在所有的代码执行前被创建
+                    所以可以在函数声明前就对其进行调用
+
+                - 只有var和function开头的代码会被提升。
+         */
+        // fn();
+        //
+        function fn() {
+            console.log('我是fn函数~~~~');
+        }
+
+        fn2();
+
+        var fn2 = function () {
+            console.log('我是fn2~~~~');
+        };
+
+        // 立即执行函数并不会提升
+        (function () {
+            console.log(123);
+        })();
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

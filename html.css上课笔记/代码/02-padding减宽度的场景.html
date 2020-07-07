@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				padding减宽度的场景: 当块元素在不设置固定宽度时,给元素设置水平方向的内边距时,不会撑大
+				元素的尺寸,会自动和宽度进行计算
+				
+				盒子模型区域: content(设置宽高的区域)+padding区域+border区域+margin区域
+				
+				块元素在不设置宽度时,和父元素的content区域的宽度一样
+			 */
+			.one{
+				/* width: 300px; */
+				height: 300px;
+				background: yellow;
+				padding-left: 100px;
+				padding-right: 100px;
+			}
+			.two{
+				width: 500px;
+				height: 500px;
+				background: pink;
+			}
+			.three{
+				width: 500px;
+				height: 200px;
+				background: blue;
+				padding-left: 100px;
+			}
+			.four{
+				width: 1000px;
+				height: 500px;
+				background: yellow;
+				padding:0 100px;
+			}
+			.five{
+				height: 200px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型</div>
+		<div class="two">
+			<div class="three">333</div>
+		</div>
+		<div class="four">
+			<div class="five">555</div>
+		<!-- 	哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈 -->
+		</div>
+	</body>
+</html>

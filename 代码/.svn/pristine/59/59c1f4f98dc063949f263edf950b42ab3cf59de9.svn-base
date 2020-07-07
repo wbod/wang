@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>面向对象</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1. 面向对象：继承、封装、多态
+
+    */
+      // 组合继承
+      function Father(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      Father.prototype.setName = function (name) {
+        this.name = name;
+      };
+
+      function Son(name, age, sex) {
+        // 继承父构造函数属性
+        Father.call(this, name, age);
+        this.sex = sex;
+      }
+      // 继承父构造函数原型上的方法
+      // var f = new Father(); // { __proto__: Father.prototype }
+      // Son.prototype = f;
+      // Son.prototype.constructor = Son;
+      
+      /*
+        { 
+          name: undefined,
+          age: undefined,
+          __proto__: Father.prototype 
+        }
+      */
+      // Son.prototype.__proto__ = new Father().__proto__;
+      Son.prototype.__proto__ = Father.prototype;
+
+      var s = new Son("jack", 18, "男");
+
+      // console.log(s.__proto__ === f);
+      console.log(s);
+    </script>
+  </body>
+</html>

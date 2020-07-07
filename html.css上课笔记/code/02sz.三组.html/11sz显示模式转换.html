@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*
+            显示模式转换:
+            其他显示模式转换成行内块显示模式: display: inline-block;
+            其他显示模式转换成块级显示模式:
+         */
+        div{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            /* 转换成行内块 */
+            display: inline-block;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            /* 转换成行内块 */
+            display: inline-block;
+        }
+        img{
+            /* 转换成块级显示模式 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+        <div></div>
+		<div></div>
+		<span></span>
+		<img src="img/mm.jpg"  width="100">
+		<img src="img/mm.jpg"  width="100">
+    
+</body>
+</html>

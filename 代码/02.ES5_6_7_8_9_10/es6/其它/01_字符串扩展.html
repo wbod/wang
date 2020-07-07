@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>01_字符串扩展</title>
+  </head>
+  <body>
+    <!--
+    1. String.prototype.includes(str) : 判断是否包含指定的字符串
+    2. String.prototype.startsWith(str) : 判断是否以指定字符串开头
+    3. String.prototype.endsWith(str) : 判断是否以指定字符串结尾
+    4. String.prototype.repeat(count) : 重复指定次数
+    -->
+    <script type="text/javascript">
+      // const arr = [1, 2, 3, 4, 5];
+      // console.log(arr.indexOf(2)); // ES5
+      // console.log(arr.includes(6)); // ES7
+
+      const str = 'hello atguigu';
+      // console.log(str.indexOf('at'));
+      // console.log(str.includes('at')); // ES6
+
+      console.log(str.startsWith('hella'));
+      console.log(str.endsWith('agu'));
+      
+      console.log(str.repeat(3));
+    </script>
+  </body>
+</html>

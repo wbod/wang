@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+    <script>
+        /*
+            字符串（string）
+                - 在JS中使用字符串来表示语音、文字这些内容
+                - 字符串需要使用引号引起来
+                - 单引号双引号都可以，但是注意不要混合使用
+                - 同类型的引号是不能嵌套的
+                - 在JS中，使用 \ 作为转义字符
+                    例子：
+                        \" --> "
+                        \' --> '
+                        \\ --> \
+                        \t --> 制表符（缩进）
+                        \n --> 换行
+                 - 引号只在当前行起作用
+
+        */
+        var a = 'Hello';
+        a = "Hello";
+        // a = "hello'; //不要这么写
+        // a = 'Hello Hello "aaaa"';
+        a = "Hello H\nello \"aa\\\\aa\"";
+        // console.log(a);
+
+        a = "hello hello How are you";
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

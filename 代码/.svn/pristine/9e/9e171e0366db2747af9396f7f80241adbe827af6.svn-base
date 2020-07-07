@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_Array扩展</title>
+</head>
+<body>
+<!--
+1. Array.prototype.indexOf(value) : 得到值在数组中的第一个下标
+2. Array.prototype.lastIndexOf(value) : 得到值在数组中的最后一个下标
+3. Array.prototype.forEach(function(item, index){}) : 遍历数组
+4. Array.prototype.map(function(item, index){}) : 遍历数组返回一个新的数组，返回加工之后的值
+5. Array.prototype.filter(function(item, index){}) : 遍历过滤出一个新的子数组， 返回条件为true的值
+6. Array.prototype.reduce(function(previousValue, currentValue){}) : 遍历累加返回一个最终结果
+-->
+<script type="text/javascript">
+/*
+   需求:
+   1. 输出第一个6的下标
+   2. 输出最后一个6的下标
+   3. 输出所有元素的值和下标
+   4. 根据arr产生一个新数组,要求每个元素都比原来大10
+   5. 根据arr产生一个新数组, 返回的每个元素要大于4
+   6. 输出arr所有元素累加的结果
+*/
+
+var arr = [2, 6, 8, 1, 3, 5, 6, 7];
+// 1. 输出第一个6的下标
+// 判断某个值是否在数组中，如果在就返回相应的下标，如果不在返回-1
+console.log(arr.indexOf(6));
+// 2. 输出最后一个6的下标
+console.log(arr.lastIndexOf(6));
+// 3. 输出所有元素的值和下标
+arr.forEach(function (item, index, array) {
+  console.log(item, index, array);
+});
+// 4. 根据arr产生一个新数组,要求每个元素都比原来大10
+// 遍历原数组，返回新数组。新数组长度和原数组一样，但是新数组里面的值往往不一样
+// 长度一样，值不一样
+var newArr = arr.map(function (item) {
+  // 返回值做为新数组的每一项元素
+  return item + 10;
+});
+console.log(newArr);
+// 5. 根据arr产生一个新数组, 返回的每个元素要大于4
+// 遍历原数组，返回新数组。新数组长度往往会减少，但是新数组里面的值和原数组一样
+// 值一样，长度不一样
+var newArr = arr.filter(function (item) {
+  // 返回值如果是true，才会添加到新数组中
+  // 返回值如果是false，就会被过滤掉
+  return item > 4;
+});
+console.log(newArr);
+// 6. 输出arr所有元素累加的结果
+// 值不一样，长度不一样
+/*
+  arr.reduce(function fn(previousValue, currentValue, index, array) {
+    // previousValue 代表上一次调用fn当前函数的返回值, 初始化值为 initValue
+    // currentValue 就是当前遍历数组的值，就是item
+    // index 就是当前遍历数组的下标
+    // array 就是遍历的整个数组
+  }, initValue)
+*/
+var arr = [2, 6, 8, 1, 3, 5, 6, 7];
+var result = arr.reduce(function(previousValue, currentValue) {
+  // console.log(previousValue, currentValue);
+  return previousValue + currentValue;
+}, 0)
+console.log(result);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #game{
+            width: 344px;
+            background-color: #000;
+            padding: 20px 8px;
+            margin: 100px auto;
+        }
+
+        #score{
+            color: #B7D4A8;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #bg{
+            width: 304px;
+            height: 304px;
+            background-color: #B7D4A8;
+            padding: 20px;
+            border-radius: 5%;
+        }
+        
+        #main{
+            width: 300px;
+            height: 300px;
+        /*    设置边框*/
+            border: 2px solid black;
+            position: relative;
+        }
+        
+        #food, .part{
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border: 1px solid #B7D4A8;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #food{
+            top: 50px;
+            left: 100px;
+        }
+        
+    </style>
+    <script>
+
+        /*
+            1.页面的布局
+                - 注意事项：
+                    背景颜色 #B7D4A8
+                    窗口大小（10的倍数）
+                        蛇的大小 10px(可见框)
+                        食物的大小 10px（可见框）
+
+             2.随机设置食物的位置
+                修改食物的top和left值（范围0-290）
+                并且必须是10的倍数
+
+             3.设置蛇的移动
+                蛇的速度 10px
+                检查蛇是否吃到食物（蛇头的坐标和食物一致）
+                记分
+
+             4.吃到食物蛇的身体要增加
+                - 设置身体的位置？
+
+             5.设置游戏的结束机制
+                - 撞墙
+                - 撞自己
+         */
+
+        window.onload = function () {
+            //获取食物的对象
+            var food = document.getElementById('food')
+            //获取主窗口
+            var main = document.getElementById('main')
+            //获取蛇头
+            var head = document.getElementById('head')
+            //获取蛇
+            var snake = document.getElementById('snake')
+            //获取蛇的所有的部分
+            var parts = document.getElementsByClassName('part')
+
+            //创建一个变量，存储最大的left和top
+            var MAXLEFT = main.clientWidth - 10 // 290
+            var MAXTOP = main.clientHeight - 10 // 290
+
+            //创建一个变量，表示蛇头的运动方向
+            var dir = null
+            //创建一个变量，表示蛇的速度
+            var speed = 10
+            //创建一个变量，存储用户的分数
+            var score = 0
+            //获取分数的span
+            var scoreText = document.getElementById('score_text')
+
+
+            //创建一个定时器用来控制蛇的运动
+            var timer = setInterval(function () {
+                //获取蛇头当前的位置
+                var left = head.offsetLeft
+                var top = head.offsetTop
+
+
+                switch (dir) {
+                    case 'ArrowDown':
+                    case 'Down':
+                        //向下
+                        top += 10
+                        if(parts[1] && top === parts[1].offsetTop){
+                            top -= 20
+                        }
+                        break
+                    case 'ArrowUp':
+                    case 'Up':
+                        //向上
+                        top -= 10
+                        if(parts[1] && top === parts[1].offsetTop){
+                            top += 20
+                        }
+                        break
+                    case 'ArrowLeft':
+                    case 'Left':
+                        //向左
+                        left -= 10
+                        //如果蛇头的left值，和第二节身子的left一样了，则说明蛇掉头了
+                        if(parts[1] && left === parts[1].offsetLeft){
+                            left += 20
+                        }
+                        break
+                    case 'ArrowRight':
+                    case 'Right':
+                        //向右
+                        left += 10
+                        if(parts[1] && left === parts[1].offsetLeft){
+                            left -= 20
+                        }
+                        break
+                }
+
+                //检查蛇是否撞墙
+                if(left < 0 || left > MAXLEFT || top < 0 || top > MAXTOP){
+                    clearInterval(timer)
+                    alert('撞墙了，游戏结束！')
+                    return
+                }
+
+
+                //检查蛇是否吃到食物
+                if(left === food.offsetLeft && top === food.offsetTop){
+                    //进入判断，证明蛇吃到了食物（蛇头与食物重合）
+                    //加分
+                    score++
+                    // 000000001    00000000100
+                    scoreText.innerHTML = ('00000000' + score).slice(-8)
+
+
+                    //蛇变长..
+                    //创建一个表示蛇的div
+                    var body = document.createElement('div')
+
+                    //设置class，part
+                    body.className = 'part'
+
+                    //设置蛇身体的位置, 获取最后一个元素的位置
+                    //parts是一个数组，里边保存了蛇所有，包括蛇头和身体
+                    body.style.left = parts[parts.length - 1].offsetLeft + 'px'
+                    body.style.top = parts[parts.length - 1].offsetTop + 'px'
+
+
+                    //将身体添加到蛇里边
+                    snake.appendChild(body)
+
+                    //改变食物的位置
+                    changeFood(food)
+                }
+
+
+                //设置身体的位置，将当前身体设置为它前一个身体的位置
+                for(var i=parts.length-1 ; i>0 ; i--){
+
+                    var pLeft = parts[i-1].offsetLeft
+                    var pTop = parts[i-1].offsetTop
+
+                    //检查蛇头的坐标是否和身体重合
+                    if(left === pLeft && top === pTop){
+                        //撞到自己了
+                        clearInterval(timer)
+                        alert('撞自己了，游戏结束！')
+                        return
+
+                    }
+
+
+                    parts[i].style.left = pLeft + 'px'
+                    parts[i].style.top = pTop + 'px'
+                }
+
+
+                //修改蛇的位置
+                head.style.left = left + 'px'
+                head.style.top = top + 'px'
+
+
+            },200)
+
+            //创建一个数组，存储所有的方向键的值
+            var keys = ['ArrowDown','ArrowUp','ArrowLeft','ArrowRight','Right','Up','Left','Down']
+
+            //绑定一个键盘事件
+            document.onkeydown = function (event) {
+                //检查用户按的是否是方向键
+                if(keys.indexOf(event.key) !== -1){
+                    //修改dir的值
+                    dir = event.key
+                }
+
+            }
+
+
+            //定义一个函数，来随机生成food的位置
+            function changeFood(food) {
+                //随机生成left和top
+                // left 和 top 应该是10的倍数
+                var left = Math.round(Math.random() * (MAXLEFT/10)) * 10
+                var top = Math.round(Math.random() * (MAXTOP/10)) * 10
+
+                //修改food的位置
+                food.style.left = left+'px'
+                food.style.top = top + 'px'
+            }
+
+            // setInterval(function () {
+            //     changeFood(food)
+            // },500)
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="game">
+    <div id="score">
+        score:<span id="score_text">00000000</span>
+    </div>
+    <div id="bg">
+        <!--游戏的主窗口-->
+        <div id="main">
+<!--            创建表示蛇的元素-->
+            <div id="snake">
+                <div id="head" class="part"></div>
+            </div>
+
+<!--            定义食物-->
+            <div id="food"></div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

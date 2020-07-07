@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预解析</title>
+    <script>
+        /*
+            JS代码在执行前，需要经过一个预解析阶段
+            - 在预解析阶段，JS引擎主要做两件事找到以var和function开头的代码，
+                然后对var声明的变量进行声明，对function声明的函数进行创建
+         */
+        // var a = 10;
+        // var b = 20;
+        // a = 33;
+        // b = 44;
+        // function fn() {
+        //     console.log('fn执行了~~~');
+        // }
+        // fn();
+
+    /*
+        预解析：
+            var a;
+            var b;
+            function fn() {
+                console.log('fn执行了~~~');
+            }
+
+        逐行执行代码：
+            a = 10;
+            b = 20;
+            a = 33;
+            b = 44;
+            fn();
+    */
+
+
+    var a = function () {
+        console.log(2);
+    };
+
+    function a() {
+        console.log(1);
+    }
+
+    a();
+
+
+    /*
+        预解析：
+            var a;
+            function a() {
+                console.log(1);
+            }
+
+        逐行执行代码：
+            a = function () {
+                console.log(2);
+            };
+
+            a();
+
+
+     */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

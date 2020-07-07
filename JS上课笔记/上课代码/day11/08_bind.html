@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <script>
+
+        var obj = {name:'孙悟空'}
+
+        function fn(a, b) {
+            console.log('fn执行了，this是：',this);
+            console.log(a, b);
+        }
+
+        /*
+            bind()用于为一个函数绑定一个this
+                - 该方法需要通过函数对象调用
+                    调用后并不会立即调用函数，而是返回一个新的函数对象
+                    当我们通过新的函数对象来调用函数时，实际上就是在调用fn
+                    只是此时fn中的已经被写死。
+                - 参数：
+                    第一个参数，函数执行时的this
+                    第二个以后的参数，函数执行时的实参
+
+                - 通过bind()获取的函数，其this和实参已经提前绑定好，无法再传递新的参数
+         */
+        var newFn = fn.bind(obj, 123, 456);
+        newFn();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

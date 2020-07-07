@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关系运算符</title>
+    <script>
+        /*
+            关系运算符，用来比较两个值之间的关系是否成立，成立返回true，不成立返回false
+            > 用来比较左侧的值是否大于右侧的值
+            >= 用来比较左侧的值是否大于 或 等于右侧的值
+            <  用来比较左侧的值是否小于右侧的值
+            <= 用来标记左侧的值是否小于或等于右侧的值
+
+            如果对非数值进行关系运算，通常JS解析器会先将非数字的值转换为数值然后再比较
+
+            注意：
+                - 当比较两个字符串的的大小时，解析器不会将字符串转换为数值然后比较，
+                    比较字符串时，解析器会逐位的比较字符串的Unicode编码
+                - 通过这个特点可以比较两个字符串的大小，从而对它们按照字母顺序进行排序，
+                    但是对于中文来说，编码表应该是安装偏旁部首进行排序的，所以意义不大
+                - 如果比较的是两个字符串类型的数字时，依然会比较编码，可能会得到错误的结果
+         */
+
+        var result = 100 > 50; //true
+        result = 50 > 60; // false
+        result = 10 > 10; // false
+        result = 10 >= 10; // true
+
+        // 100 < 1
+        result = '100' < true; // false
+        // 1 > 0
+        result = 1 > null; // true
+        // 1 <= NaN 和NaN左比较时，怎么比都返回false
+        result = 1 <= 'hello'; // false
+
+        // 1      2
+        result = 'azzzz' > 'bcd'; // false
+
+        // 98  <  101
+        result = 'b' < 'e'; // true
+
+        result = 'abcde' < 'abcdf'; // true
+
+
+        result = '5' < '6'; // true
+
+        // result = '5' < '16'; // false
+
+        var a = '5';
+        var b = '16';
+
+        result = Number(a) < Number(b);
+        result = +a < +b;
+
+
+        console.log('result =', result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

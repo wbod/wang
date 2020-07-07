@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+    <script>
+
+        // console.log(typeof Math);
+        // 和其他的类的不同，Math并不是一个构造函数，也就是无法通过new来创建Math的实例
+        //  Math表示的数学，在Math对象中存储了一组数学运算相关的常量的和方法
+        //   这些常量和方法可以直接通过Math来访问
+        //   比如Math.PI用来表示圆周率
+        //  像Math这种对象，我们称其为工具类
+        // console.log(Math.PI);
+
+
+        /*
+            Math.PI 表示圆周率
+            Math.abs(x) 返回一个数的绝对值
+
+            Math.ceil(x) 向上取整（尽量往大了取）
+            Math.floor(x) 向下取整（尽量往小了取）
+            Math.round(x) 四舍五入取整
+         */
+        var a = -10;
+        var result = Math.abs(a);
+
+        result = Math.ceil(3.5); // 4
+        result = Math.ceil(3.1); // 4
+        result = Math.ceil(3.01); // 4
+
+        result = Math.floor(3.5); //3
+        result = Math.floor(3.99); //3
+
+        result = Math.ceil(-3.01); //-3
+        result = Math.floor(-3.99); //-4
+
+        result = Math.round(3.5);//4
+        result = Math.round(3.44444444);//3
+        // result = Math.round(-3.44444444);//-3
+        // result = Math.round(-3.5555);//-4
+
+        // console.log(result);
+
+        // parseInt()虽然也可以进行取整，但是不要用它取整，它的性能很差
+        // var num = 10.5;
+        // console.time('parseInt');
+        // for(var i=0; i<10000000; i++){
+        //     parseInt(num);
+        // }
+        // console.timeEnd('parseInt');
+        //
+        // console.time('ceil');
+        // for(var i=0; i<10000000; i++){
+        //     Math.ceil(num);
+        // }
+        // console.timeEnd('ceil');
+
+        /*
+            Math.max([x[, y[, …]]]) 获取多个值中最大值
+            Math.min([x[, y[, …]]]) 获取多个值中最小值
+            Math.pow(x, y) 求x的y次幂 相当于 x ** y，但是pow()兼容性更好
+            Math.sqrt(x) 求x的平方根 相当于 x ** 0.5
+
+         */
+
+        result = Math.max(11,22,3);
+        result = Math.min(11,22,3);
+
+        var arr = [3,2,1];
+        // result = Math.max(...arr);
+
+        result = Math.pow(4,3);
+        result = Math.sqrt(2);
+
+        // console.log(result);
+
+        /*
+            Math.random()
+                - 生成一个0-1之间的（伪）随机数
+                - 不包括0也不包括1
+            - 希望随机生成一个0-9之间的整数？
+         */
+        for(var i=0; i<100; i++){
+            result = Math.random();
+            console.log(result);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

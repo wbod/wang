@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			  需求:  
+			  a标签宽度是100,高度时30,背景色是黄色,字体是绿色,没有下划线,文本水平且垂直居中a标签
+			  鼠标移入a标签时,背景色变成黄绿,字体变成红色,加上下划线
+			  五个a标签整体水平居中
+			 */
+			.nav{
+				background: pink;
+				text-align: center;
+			}
+			.nav a{
+				width: 100px;
+				height: 30px;
+				background: yellow;
+				color:green;
+				/* 由于行内元素设置宽高不起作用,转成行内块 */
+				display: inline-block;
+				text-decoration: none;
+				/* 等于盒子的高度,让文本垂直居中 */
+				line-height: 30px;
+			}
+			.nav a:hover{
+				background: yellowgreen;
+				color:red;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<a href="##">导航</a>
+			<a href="##">导航</a>
+			<a href="##">导航</a>
+			<a href="##">导航</a>
+			<a href="##">导航</a>
+		</div>
+	</body>
+</html>

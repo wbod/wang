@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+    <script>
+        var fn = (a, b)=> a + b;
+        var fn2 = a => a + 10; // 如果函数只有一个参数，可以省略()
+        var fn3 = () => 30 + 10; // 如果函数没有参数，必须写()
+        var fn4 = () => {
+            var a = 10;
+            var b = 20;
+            return a + b;
+        };
+
+        var fn5 = () => ({a:10, b:33}); // 如果返回值是一个对象字面量，则必须在对象字面量外添加()
+
+        // console.log(fn5());
+
+        // 箭头函数的this，不由自己的调用方式决定，而是由外部作用域决定
+        // var fn6 = ()=>console.log(this);
+        // fn6();
+
+        var obj = {
+            // 为test属性赋值一个箭头函数
+            // test:()=>console.log(this)
+            t:function () {
+                var inner = ()=>console.log(this);
+                inner();
+            }
+        }
+
+        // obj.t();
+        // 将obj的t方法，赋值给一个变量tt
+        var tt = obj.t;
+        // tt();
+
+        var name = '哈哈' // 变量在作用域链上
+        var obj2 = {
+            name:'嘻嘻', // 属性在原型链上
+            fn:function () {
+                console.log(name);
+                // console.log(this.name);
+            }
+        }
+        obj2.fn();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

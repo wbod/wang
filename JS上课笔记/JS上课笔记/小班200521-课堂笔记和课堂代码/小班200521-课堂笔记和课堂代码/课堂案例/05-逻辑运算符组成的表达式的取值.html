@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+</head>
+<body>
+    <script>
+        console.log(true && true); // true
+        console.log(false && true); // false
+
+        console.log(100 && 20); // 20
+        console.log(false && 20); // false
+        console.log(null && 100); // null
+
+        if (100 && 20) {
+            console.log('成立')
+        } else {
+            console.log('不成立')
+        }
+
+        console.log('');
+
+        console.log(100 || 20);   // 100
+        console.log(0 || 'hello');  // hello
+        console.log(true || false);  // true
+        console.log(false || true);  // true
+        console.log(null || undefined);  //undefeined
+
+    </script>
+</body>
+</html>

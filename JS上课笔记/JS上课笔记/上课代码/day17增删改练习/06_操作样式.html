@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作样式</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            margin-top: 50px;
+
+            transition: all 1s;
+        }
+
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            //点击按钮后，改变box1的样式
+            // 为按钮绑定一个单击响应函数
+            var btn = document.getElementById('btn');
+            // 获取box1
+            var box1 = document.getElementById('box1');
+
+            var w = 100;
+
+            btn.onclick = function () {
+                w += 100;
+                // 修改box1的样式
+                // 可以直接通过box1.style属性来修改其样式
+                // 语法：元素.style.样式名 = 样式值
+                box1.style.width = w+'px';
+                box1.style.height = w+'px';
+
+                // 注意 类似于 xxx-yyy 这种属性，必须将其修改为驼峰命名法
+                // 将-号去掉，-后的字母改大写  xxxYyy borderLeftWidth
+                box1.style.backgroundColor = 'yellow';
+            };
+
+
+        };
+
+
+    </script>
+</head>
+<body>
+<button id="btn">点我一下</button>
+<div id="box1"></div>
+</body>
+</html>

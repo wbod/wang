@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if-else语句</title>
+    <script>
+
+        // 创建一个变量，来存储一个人的年龄
+        var age = prompt('请输入您的年龄：');
+
+        // 以下代码是否存在问题？怎么修改？
+        // if(age > 17 && age <= 30){
+        //     alert('你已经成年了~~');
+        // }else if(age > 30 && age <= 59){
+        //     alert('你已经中年了~~~');
+        // }else if(age > 59){
+        //     alert('你已经退休了~~~')
+        // }
+
+        if( age >= 60){
+            alert('你已经退休了！');
+        }else if(age >= 30){
+            alert('你已经中年了！');
+        }else if(age >= 18){
+            alert('你已经成年了');
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

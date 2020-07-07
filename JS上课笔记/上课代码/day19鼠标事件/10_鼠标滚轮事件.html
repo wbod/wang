@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            /*
+                box1可以根据鼠标滚轮滚动的方向变长或变短
+             */
+            // 获取box1
+            var box1 = document.getElementById('box1');
+            box1.addEventListener('wheel',function (ev) {
+                // alert(ev);
+                //wheel 事件会在鼠标滚轮滚动的时候触发
+                // deltaX 获取鼠标滚轮横向滚动方向
+                //          向左拨-3 向右拨3
+                //            左-100 右100（Chrome）
+                // deltaY 获取鼠标滚轮纵向滚动方向
+                //          上-3 下3
+                //          上-100 下100
+                // 如果滚轮向下滚，box1变长
+                if(ev.deltaY > 0){
+                    box1.style.height = box1.clientHeight + 10 + 'px';
+                }else{
+                    // 如果滚轮向上滚，box1变短
+                    box1.style.height = box1.clientHeight - 10 + 'px';
+                }
+            },false)
+        };
+    </script>
+</head>
+<body>
+
+<div id="box1"></div>
+
+</body>
+</html>

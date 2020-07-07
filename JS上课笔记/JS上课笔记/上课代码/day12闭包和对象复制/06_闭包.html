@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = 10;
+
+        var inner = fn();
+        inner();
+
+        function fn() {
+            var a = 20;
+            console.log('fn()中打印 a =',a);
+            function inner() {
+                console.log('inner()中打印 a =',a);
+            }
+            return inner;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

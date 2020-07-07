@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则语法</title>
+    <script>
+        // 创建一个正则表达式，来检查一个字符串是否是abc
+        var reg = /abc/;
+        var result = reg.test('abc');
+
+        // 创建一个正则，检查一个字符串是否是以a开头
+        /*
+            ^ 表示字符串的开始位置
+            $ 表示字符串的结束位置
+         */
+        reg = /^a/; // 匹配以a开头的字符串
+        reg = /c$/; // 匹配以c结尾的字符串
+        // result = reg.test('vabcv');
+
+        // 如果一个正则表达式以^ 开始，以$ 结束，则要求字符串要和正则表达式完全匹配
+        reg = /^a$/;// 匹配只有一个a的字符串
+        result = reg.test('aa');
+
+        // 创建一个正则表达式，来检查一个字符串是否是abc
+        reg = /^abc$/;
+        result = reg.test('abc'); //true
+        result = reg.test('bbabc'); //false
+        result = reg.test('abcee'); //false
+
+        // [] 表示的一个字符
+        reg = /^a[be]c$/; //abc  aec
+        result = reg.test('abc');//true
+        result = reg.test('aec');//true
+        result = reg.test('abec');//false
+        result = reg.test('ac');//false
+
+        reg = /^abc|aec$/; // 以abc开头或者以aec结尾
+        result = reg.test('abc');// true
+        result = reg.test('abcasdasdasdsd');// true
+        result = reg.test('asdasdasdaec');// true
+
+        reg = /^abc$|^aec$/;//字符串是abc或这是aec
+        result = reg.test('abcd');//false
+        result = reg.test('aec');//true
+        result = reg.test('baec');//false
+
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            // 获取box1
+            var box1 = document.getElementById('box1');
+            // 当鼠标移动时，改变div的偏移量
+            document.onmousemove = function (ev) {
+                //获取垂直滚动条滚动的距离
+                // console.log(document.documentElement.scrollTop);
+
+                // alert(ev);
+
+                // 获取鼠标指针的坐标
+                // clientX 和 clientY 获取的是鼠标指针相当于浏览器窗口的坐标
+                // pageX 和 pageY用来获取鼠标相当于相当于整个页面的坐标
+                var left = ev.clientX + document.documentElement.scrollLeft;
+                var top = ev.clientY + document.documentElement.scrollTop;
+
+                // 修改box1的水平和垂直的偏移量
+                // box1是一个绝对定位元素，默认是相对于初始包含块进行定位
+                box1.style.left = left + 'px';
+                box1.style.top = top + 'px';
+
+            };
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+<div id="box1"></div>
+
+</body>
+</html>

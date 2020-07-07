@@ -1,0 +1,24 @@
+// 引入外部less文件  就是正常写路径    只写less文件名  不用写后缀
+@import 'mixin';
+//@import 'reset';
+//@import 'header';
+*{
+  margin: 0;
+  padding: 0;
+}
+//div{
+//  border-radius: 50%;
+//}
+
+.wrap{
+  .allCenter(@w:500px,@h:500px,@bg:red);
+  .box1{
+    .allCenter(@w:400px,@h:400px,@bg:orange);
+  }
+  .box2{
+    .allCenter(@w:300px,@h:300px,@bg:skyblue);
+  }
+  .box3{
+    .allCenter();
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			 弹性布局:弹性盒子 flex布局 伸缩布局 伸缩盒子
+			 弹性布局是父元素和子元素之间的关系
+			 父元素:弹性空间或者弹性容器
+			 子元素: 弹性项或者弹性元素
+			 主轴:默认,主轴是水平方向,左边是开始,右边是结束
+			 交叉轴(侧轴或者垂轴,辅轴):默认,交叉轴是垂直方向,上面是开始,下面是结束
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/* 父元素 */
+			.box1{
+				width: 500px;
+				border:3px solid #000;
+				/* 开启弹性空间 */
+				display: flex;
+			
+				flex-direction: row;
+			  /* 弹性元素是否换行 */
+			  /* 
+				nowrap(默认值):不换行,当弹性元素超出父元素宽度时,弹性元素自动压缩宽度
+				wrap: 换行,当弹性元素超出父元素的宽度时,弹性元素换行
+				
+			   */
+			  flex-wrap: wrap-reverse;
+			
+				margin-bottom: 5px;
+			}
+			.box2{
+				width: 500px;
+				height: 1000px;
+				border:3px solid #000;
+				display: flex;
+				flex-direction: row;
+				
+				flex-wrap: wrap-reverse;
+				
+			}
+			.box1 div,.box2 div{
+				width:100px;
+				height: 100px;
+			}
+			.box1 div:nth-of-type(1),.box2 div:nth-of-type(1){
+				background: red;
+			}
+			.box1 div:nth-of-type(2),.box2 div:nth-of-type(2){
+				background: skyblue;
+			}
+			.box1 div:nth-of-type(3),.box2 div:nth-of-type(3){
+				background: yellow;
+			}
+			.box1 div:nth-of-type(4),.box2 div:nth-of-type(4){
+				background: darkred;
+			}
+			.box1 div:nth-of-type(5),.box2 div:nth-of-type(5){
+				background: yellowgreen;
+			}
+			.box1 div:nth-of-type(6),.box2 div:nth-of-type(6){
+				background: plum;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		<div class="box2">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+	</body>
+</html>

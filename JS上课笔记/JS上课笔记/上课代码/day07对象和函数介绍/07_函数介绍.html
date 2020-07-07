@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+        /*
+            对象的本质就是用来存储数据的（容器、塑料袋）
+            在JS中有很多很多很多种不同的对象，用来存放不同的数据
+
+            函数（function）也是一个对象！
+
+            和object不同，函数是专门用来存储代码的对象，
+                可以将一组代码存储到一个函数对象中，并且在需要时对函数进行调用
+                以使其存储的代码执行
+         */
+
+        //打印一个你好
+        // {
+        //     console.log('你好！');
+        //     console.log('Hello!');
+        //     console.log('扣你鸡娃！');
+        //     console.log('阿尼哈撒由！');
+        // }
+
+        //创建一个函数对象
+        /*
+            语法：
+                function 函数名字(){
+                    语句...
+                }
+        */
+
+        // 创建了一个fn函数
+        // 存储到函数中的代码，是不会自动执行的
+        function fn(){
+            console.log('你好！');
+            console.log('Hello!');
+            console.log('扣你鸡娃！');
+            console.log('阿尼哈撒由！');
+        }
+
+        //需要对函数进行调用，代码才会执行
+        //调用语法：函数对象()
+        fn();
+        // console.log(fn);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+    <script>
+        /*
+            逻辑运算符有三个：
+                ! 逻辑非（非运算）
+                    - 非运算可以用对一个布尔值进行取反操作，
+                        可以把一个布尔值true变false，false变true
+
+                    - 如果对一个非布尔值进行非运算，它会向将其转换为布尔值，
+                        然后再取反
+
+                    - 利用非运算，可以将一个任意类型的值转换为布尔值
+
+                && 逻辑与 （与运算）
+                    - 与运算可以对符号两侧值进行与运算
+                    - 如果与运算两侧的值都为true，则返回true，否则返回false
+                    - 与运算是找false的！
+
+                || 逻辑或 （或运算）
+                    - 如果或运算两侧的值都是false，则返回false，否则返回true
+                    - 或运算是找true的！
+         */
+
+        var a = false;
+        a = !a; //对a进行非运算，然后将结果再赋值给a
+
+        a = 'hello';
+        a = !a; // false
+
+        a = 'false';
+        a = !a;// false
+
+        a = null;
+        a = !a; // true
+
+        a = 100;
+        a = !!a;
+
+        // console.log(a);
+
+        // 与运算
+        var result = true && true; // true
+        result = true && false; // false
+        result = false && true; // false
+        result = false && false; // false
+
+        // 或运算
+        result = true || true; // true
+        result = true || false; // true
+        result = false || true; // true
+        result = false || false; // false
+
+
+        console.log('result =',result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

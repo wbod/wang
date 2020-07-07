@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算</title>
+    <script>
+
+        /*
+            对与非布尔值进行与或运算时，
+                它会先将其转换为布尔值，然后进行运算，最终返回原值
+                - 与运算的规则：
+                    - 如果第一个值是true，则返回第二个值。否则返回第一个
+
+                - 或运算的规则
+                    - 如果第一个值是true，则返回第一个值。否则返回第二个
+         */
+        // true && true
+        var result = 'hello' && 'abc'; // 'abc'
+        // true && false
+        result = 'hello' && 0; // 0
+        // false && true
+        result = 0 && 1; // 0
+        // false && false
+        result = 0 && null; // 0
+
+        // true || true
+        result = 'hello' || 'abc'; // 'hello'
+        // true || false
+        result = 'hello' || 0; // 'hello'
+        // false || true
+        result = 0 || 'hello'; // 'hello'
+        // false || false
+        result = 0 || null;  // null
+
+        // console.log('result =', result);
+
+
+    /*
+        在JS中，与（&&）和或（||）都是短路的与和短路的或
+            - 对于与运算来说，如果第一个值是false，则不会再去查看第二个值
+            - 对于或运算来说，如果第一个值是true，则不会再去查看第二个值
+    */
+        //false && alert('你猜我执行吗？');
+        //true && alert('你猜我执行吗？');
+
+        // true || alert('hello');
+        // false || alert('hello');
+
+        // console.log(0 || 1); //1
+        // console.log(0 || null); // null
+        // console.log(0 || 'hello'); // 'hello'
+
+        // console.log(NaN && 'abc'); // NaN
+        // console.log(NaN && 123123); // NaN
+        // console.log(NaN && null); // NaN
+        // console.log(null && NaN); // null
+
+        console.log(Infinity && 'hello'); // 'hello'
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

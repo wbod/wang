@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function test() {
+            console.log('hello');
+        }
+
+        // test();
+        // 通过定时器可以设置函数在一定时候才执行
+        // setTimeout() 用来设置函数在一定时间后执行
+        // 参数：
+        //   第一个 要执行的函数
+        //   第二个 间隔的时间（毫秒）
+        // setTimeout(test, 3000);
+
+        //clearTimeout() 用来关闭setTimeout()所设置的定时器
+
+
+        /*
+            setInterval()
+             - 可以用来设置让一个函数反复的执行
+             - 参数：
+                1.要执行的函数
+                2.每次执行的间隔时间
+             - setInterval() 调用时，它会返回一个唯一的id作为参数，
+                这个id是定时器的唯一标识，可以通过标识来关闭定时器
+         */
+        var timer = setInterval(test, 3000);
+
+        setTimeout(function () {
+            clearInterval(timer);
+        },10000)
+        // clearInterval() 用来关闭定时器
+        // clearInterval(timer);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

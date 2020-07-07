@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+                //    在实际开发中，如果你想修改一个变量的值，可以放心改，
+                //     因为它不会影响到别的变量，
+                //     如果你要改变的是一个对象的值，你要小心了，
+                //     因为它会影响到其他的指向该对象的变量
+
+
+
+        // var obj = new Object()
+        // obj. name = '孙悟空';
+        // obj. age = '18';
+        // obj. gender = '男';
+        // console.log(obj.name);
+
+         
+        // var a = 10;
+        // var b = a;
+        // a--;
+        // // 不会影响变量b
+        // console.log(a);
+        // console.log(b);
+        
+
+        // var e = {}
+        // var f = e;
+
+        // // 会影响变量e
+        // f.name ='猪八戒';
+
+        // // 不会影响变量e
+        // f = {}
+        // console.log(e);
+        // console.log(f);
+        
+
+            //    创建对象同时直接向对象中添加属性
+        
+            // 语法：{属性名:属性值,属性名:属性值,属性名:属性值}
+            // 对象字面量，外部是一个大括号，内部有一个一个的属性组成
+            //     属性名和属性值之间使用:连接，每一个属性以,结尾，最后一个属性不要写,
+        
+        var o = {
+            name:'孙悟空',
+            age:18,
+            gender:'男'
+        };
+        // console.log(o.name, o.age, o.gender);
+        console.log(o);
+        
+
+           
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

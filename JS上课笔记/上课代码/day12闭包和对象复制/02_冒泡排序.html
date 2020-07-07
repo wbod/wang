@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序</title>
+    <script>
+        /*
+            冒泡排序（bubble sort）
+            [3,4,1,2,6,7,9,0,5,8]
+            [3,1,2,4,6,7,0,5,8,9]
+
+
+            [3,2,1]
+            1. [2,1,3]
+            2. [1,2,3]
+
+            [4,3,2,1]
+            1. [3,2,1,4]
+            2. [2,1,3,4]
+            3. [1,2,3,4]
+
+         */
+        var arr = [3,4,1,2,6,7,9,0,5,8];
+        // arr = [9,8,7,6,5,4,3,2,1,0];
+
+        console.log('排序前:'+arr);
+        // 排列次数的最大应该为数组的长度-1
+        for(var j=0; j<arr.length-1; j++){
+            //获取到数组中的每一个元素
+            for(var i=0; i<arr.length-1; i++){
+                //比较当前元素和后一个元素的大小
+                //当前元素 arr[i]  后一个元素arr[i+1]
+                // console.log(arr[i], arr[i+1]);
+                if(arr[i] > arr[i+1]){
+                    // 前边的元素大于后边的元素，交换两个元素的位置
+                    var temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+            console.log('排序后:'+arr);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

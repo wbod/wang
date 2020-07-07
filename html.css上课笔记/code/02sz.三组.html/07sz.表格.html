@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+		  表单:是来获取用户信息. 包括表单标签,提示信息,表单域
+		  
+		  标签:
+		  label
+			属性:
+			  for: 和其他表单标签关联,实现单击label让其他表单标签变成选中状态
+		  input
+		    属性:
+			    type:
+					text 输入框
+					password 密码框
+					radio 单选按钮
+						name:表示组的概念, 当多个单选按钮组名一样时,形成单选切换效果
+					    checked:默认选中   三种方式: checked="checked"  checked=""  checked
+					checkbox 复选框
+					    checked:默认选中   三种方式: checked="checked"  checked=""  checked
+		  select 下拉框
+			 option 下拉项
+		  
+		  -->
+    <label for="txt1">姓名</label>
+    <input type="text" id="txt1">
+    <br><br>
+    <label for="txt2">密码</label>
+    <input type="password" id="txt2">
+    <br><br>
+    <label for="nan">性别</label>
+    <input type="radio" name="genfer" id="nan"><label for="nan">男</label>
+    <input type="radio" name="gender" checked="checked">女
+    <br><br>
+    你的国籍是：
+    <select>
+        <option>中国</option>
+        <option>中国</option>
+        <option>中国</option>
+        <option>中国</option>
+        <option>中国</option>
+        
+    </select>
+</body>
+</html>

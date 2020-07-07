@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+
+        //定义一个求任意两个数和的函数
+        // 在定义形参时，可以在参数后为其指定默认值
+        // function sum(a=10, b=3) {
+        //     console.log(a + b);
+        //     // console.log('a =',a)
+        //     // console.log('b =',b)
+        // }
+
+        // sum(7, 8);
+
+
+        function sum(a, b) {
+            // 目前来讲，a+b的结果在函数中直接被打印到了控制台里
+            // console.log(a + b);
+            // var result = a + b;
+
+            // 在函数中，可以通过return来设置函数的返回值
+            // return 值; return后的值就会成为函数的返回值
+            // return 后可以跟任意类型的值
+            // return 后也可以不跟任何值，这样相当于return undefined
+            // return 一旦执行，函数立即结束，换句话函数中return后的代码全都dead code
+           // return a + b;
+            return;
+            // 以下代码永远不会执行
+            console.log('hello');
+            console.log('你好');
+        }
+
+        var a = sum(33, 44);
+
+        console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

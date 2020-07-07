@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         /*
+            时间的记录
+                100000 59098ms
+                10000  849ms
+
+            第一次优化
+                100000 5352ms
+                10000  74ms
+
+            问题：
+                如果求1000000以内的质数会花费多长时间？
+                    如果时间太长可否再次对其进行优化？
+        */
+        // console.time() 用来开启一个计时器，它需要一个字符串作为参数，字符串表示计时器的名字
+        console.time('test');
+        for(var i=2; i<1000000; i++){
+            var flag = true;
+            for(var j=2; j<i; j++){
+                if(i % j === 0){
+                    flag = false;
+                    //进入判断，说明i一定不是质数，此时内层循环不需要再执行，可以直接退出
+                    break;
+                }
+            }
+            if(flag){
+                console.log(i);
+            }
+        }
+
+        //console.timeEnd()用来结束一个计时器
+        console.timeEnd('test');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

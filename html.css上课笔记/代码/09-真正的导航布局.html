@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+				从seo的角度,如果将多个a标签堆在一起,搜索引擎会认为是在作弊,叫做关键词堆砌
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.nav{
+				/* 块元素居中需要设置宽度 */
+				width: 550px;
+				background: yellowgreen;
+				margin: 0 auto;
+			}
+			.nav ul li{
+				float:left;
+				/* width: 100px;
+				height: 30px; */
+				background: greenyellow;
+				margin-left: 10px;
+			}
+			.nav ul li a{
+				display: block;
+				width: 100px;
+				height: 30px;
+				background: pink;
+				line-height: 30px;
+				color:red;
+				text-align: center;
+				text-decoration: none;
+			}
+			.nav ul li a:hover{
+				color:blue;
+				text-decoration: underline;
+			}
+			.clearFix::after{
+				content:"";
+				display: block;
+				clear:both;
+			}
+			.banner{
+				height: 300px;
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul class="clearFix">
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<div class="banner"></div>
+	</body>
+</html>

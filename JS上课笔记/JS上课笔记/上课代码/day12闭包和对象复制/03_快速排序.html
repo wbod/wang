@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速排序</title>
+    <script>
+        /*
+            快速排序（quick sort）
+                [3,4,1,2,6,7,9,0,5,8]
+                [3,4,1,2,0,5] 6 [7,9,8]
+             [1,2,0] 3 [4,5]    [7]8[9]
+         */
+        var arr = [3,4,1,2,6,7,9,0,5,8];
+
+        //创建一个快速排序的函数
+        // 对array进行排序，返回一个排好序的新数组
+        function quickSort(array) {
+            //设置基线条件
+            if(array.length <= 1){
+                return array;
+            }
+
+            // 获取一个基准值，获取数组的最后一个元素作为基准值
+            var base = array[array.length-1];
+
+            //创建两个数组
+            var left = []; //左数组，存储小于base的元素
+            var right = []; //右数组，存储大于base的元素
+
+            //比较每个元素和base的大小
+            for(var i=0; i<array.length - 1; i++){
+                // 比较当前值和基准值的大小
+                if(array[i] < base){
+                    //放入到左数组
+                    left.push(array[i]);
+                }else{
+                    //放入到右数组
+                    right.push(array[i]);
+                }
+            }
+
+            //left base right
+            // 将left base right 拼接为一个数组返回
+            return quickSort(left).concat(base, quickSort(right));
+        }
+
+        var result = quickSort(arr);
+
+        console.log(arr+'');
+        console.log(result+'');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

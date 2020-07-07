@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余的方法</title>
+    <script>
+        /*
+            every()
+                - 用来检查数组中的每个元素是否符合某个条件
+                     如果所有的元素都符合条件，它会返回true，否则返回false
+                - 它需要一个回调函数作为参数，回调函数需要返回一个布尔值
+                    如果返回true，则表示元素满足条件
+                    如果返回false，则表示元素不满足条件
+
+            some()
+                - 用来检查数组中是否有元素符合某个条件
+         */
+        var arr = [3,4,5,6,7,8];
+        var result = arr.every(function (ele) {
+            return ele > 6;
+        })
+
+        result = arr.every(ele => ele>6);
+        result = arr.some(ele => ele>6);
+
+        // console.log(result);
+
+        /*
+            filter()
+                - 用来获取数组中所有的符合条件的元素
+         */
+        result = arr.filter(a => a != null && a%2===0);
+
+        /*
+            map()
+                - 用来对数组中的每一个元素做一个操作，返回一个新数组
+         */
+        arr = [3,4,5,6,7,8];
+
+        var result = arr.map(function (a) {
+            if(a % 2===0){
+                return a ** 2;
+            }else{
+                return a;
+            }
+        });
+
+        /*
+            reduce()
+                - 将数组中的所有元素汇总为一个值
+                - 需要回调函数作为参数，参数有两个：
+                    第一个参数，表示累加器
+                    第二个参数，表示当前元素
+         */
+        arr = [3,4,5,6,7,8];
+        result = arr.reduce(function (a, b) {
+            return a + b;
+        });
+
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

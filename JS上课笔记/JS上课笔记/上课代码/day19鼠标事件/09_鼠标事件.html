@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            width: 200px;
+            position: absolute;
+            background-color: #bfa;
+            list-style: none;
+            display: none;
+        }
+
+        .menu li:hover{
+            background-color: #ff0;
+        }
+
+    </style>
+    <script>
+
+        //contextmenu 表示右键菜单的事件
+        document.addEventListener("contextmenu",function (ev) {
+            // 如果取消了contextmenu的默认行为，将会导致右键菜单不会出现
+            ev.preventDefault();
+            // 将菜单显示出来
+            var menu = document.querySelector('.menu');
+            menu.style.display = 'block';
+            menu.style.left = ev.clientX + 'px';
+            menu.style.top = ev.clientY + 'px';
+
+        },false);
+
+        document.addEventListener('click',function () {
+            var menu = document.querySelector('.menu');
+            menu.style.display = 'none';
+        },false)
+
+    </script>
+</head>
+<body>
+
+<ul class="menu">
+    <li>菜单一</li>
+    <li>菜单二</li>
+    <li>菜单三</li>
+    <li>菜单四</li>
+    <li>菜单五</li>
+    <li>菜单六</li>
+    <li>菜单七</li>
+</ul>
+
+</body>
+</html>

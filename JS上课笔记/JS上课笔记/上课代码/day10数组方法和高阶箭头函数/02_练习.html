@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <script>
+
+        // 定义一个类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 重写类的toString
+        Person.prototype.toString = function () {
+            return 'Person [name:'+this.name+', age:'+this.age+']';
+        };
+
+        //创建一个对象
+        var p1 = new Person('孙悟空', 18);
+        var p2 = new Person('猪八戒', 28);
+        var p3 = new Person('牛魔王', 68);
+        var p4 = new Person('红孩儿', 8);
+        var p5 = new Person('蜘蛛精', 16);
+        var p6 = new Person('玉兔精', 14);
+        var p7 = new Person('唐僧', 16);
+        var p8 = new Person('沙和尚', 38);
+
+        // 将对象放入到一个数组zh中
+        var personArr = [p1, p2, p3, p4, p5, p6, p7, p8];
+
+        // console.log(personArr + "");
+
+        //定义一个函数，它需要一个数组作为参数，在函数内部可以判断获取到所有的成年人，
+        // 并且将其存储到一个新的数组中返回
+        function getAdult(arr) {
+            //创建一个新的数组
+            var newArr = [];
+
+            //遍历arr，获取到它里边的所有的Person对象
+            for(var i=0; i<arr.length; i++){
+                //判断对象是否是成年人
+                if(arr[i].age >= 18){
+                    //如果大于等于18，则表示是成年人
+                    //是成年人，需要将其放入到新数组中
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+
+            //将新数组作为返回值返回
+            return newArr;
+        }
+
+        var result = getAdult(personArr);
+
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

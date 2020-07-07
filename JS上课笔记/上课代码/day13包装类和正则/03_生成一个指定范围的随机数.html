@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成一个指定范围的随机数</title>
+    <script>
+
+        for(var i=0; i<100; i++){
+            // 随机数的范围是 0-1
+            // 给整个结果 乘以 10 范围就是 0-10 之间
+            // 整数的0-10之间 Math.round(Math.random()*10)
+            // 整数的0-9之间 Math.floor(Math.random()*10)
+            // 整数的1-10之间 Math.ceil(Math.random()*10)
+
+
+            /*
+                生成一个0-x间的整数
+                    Math.round(Math.random()*x)
+
+                生成一个x-y间的整数
+                    Math.round(Math.random()*(y-x)) + x
+             */
+
+            // 生成 1-6 之间的整数
+            // var result = Math.round(Math.random()*5) + 1;
+
+            // 生成一个33-40之间的整数
+            var result = Math.round(Math.random()*7) + 33;
+
+            // console.log(result);
+        }
+
+        //有一个数组
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        //把数组的顺序打乱
+        arr.sort(function(a, b) {
+            return Math.random() - Math.random();
+        });
+
+        console.log(arr + '');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

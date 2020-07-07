@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            // 获取btn01
+            var btn01 = document.getElementById('btn01');
+            var box1 = document.getElementById('box1');
+            btn01.onclick = function () {
+                // 在元素当中，有一个dataset属性，在该属性中存储所有的data-xxx的属性值
+                alert(box1.dataset.yyy);
+            };
+        };
+    </script>
+</head>
+<body>
+<button id="btn01">按钮</button>
+
+<!--
+    在元素中可以自主添加形如 data-xxx="" 的属性
+-->
+<div id="box1" data-haha="123" data-xxx="456" data-yyy="你好" data-aaa-bbb="xixi"></div>
+</body>
+</html>

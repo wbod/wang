@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串转数字</title>
+    <script>
+
+        /*
+            JS专门为我们提供了两个函数，用来将字符串转换为数字
+                parseInt()
+                    - 将一个字符串转换为一个整数
+                paresFloat()
+                    - 将一个字符串转换为一个浮点数
+
+               - 原理：
+                - 使用parseXxx()转换一个字符串时，
+                    它们会自左向右依次读取字符串中的内容，
+                    会把字符串中的合法数字提取出来，然后将其转换为数值
+                    parseInt() 只获取合法的整数位
+                    parseFloat() 获取合法的小数位
+         */
+        var a = '10px';
+        a = '100px12312423445';
+        a = '123.456.678';
+        console.log(a, typeof a);
+
+        // a = parseInt(a);
+        a = parseFloat(a);
+        console.log(a, typeof a);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

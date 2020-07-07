@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作样式</title>
+    <style>
+        #box1{
+            height: 100px;
+            background-color: orange;
+            margin-top: 50px;
+            transition: all 1s;
+        }
+
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            //点击按钮后，改变box1的样式
+            // 为按钮绑定一个单击响应函数
+            var btn = document.getElementById('btn');
+            // 获取box1
+            var box1 = document.getElementById('box1');
+
+            var w = 100;
+
+            btn.onclick = function () {
+                // 通过style属性所设置的样式都是内联样式，所以一般设置完成后会立即生效
+               // 读取元素的样式 通过style属性所读取的样式，也是内联样式
+                // 读取语法：对象.style.样式名 (一般不会使用这种方式来读取属性)
+                // alert(box1.style.width);
+
+                /*
+                    getComputedStyle() 用来读取元素当前的样式
+                        需要两个参数：
+                            第一个，要获取样式的元素
+                            第二个，要获取的伪元素，如果不需要获取伪元素的可以省略或传null
+                        返回值：
+                            返回一个对象作为返回值，
+                                对象中存储了当前元素所有的生效的样式
+                                这个对象也是一个实时更新对象
+                        通过getComputedStyle()读取的样式都是只读的，无法修改
+
+                        该函数支持IE9及以上浏览器
+                 */
+
+
+               var cs = getComputedStyle(box1);
+
+               // alert(cs.width);
+               // alert(cs.backgroundColor);
+               //  cs.width = '300px'; 不能修改的
+                alert(cs.width);
+
+                // box1.style.width = parseInt(cs.width) * 2 + 'px';
+            };
+
+
+        };
+
+
+    </script>
+</head>
+<body>
+<button id="btn">点我一下</button>
+<div id="box1"></div>
+</body>
+</html>

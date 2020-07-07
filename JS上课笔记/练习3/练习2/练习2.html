@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮四</button>
+    <button id="btn3">按钮三</button>
+
+    
+        
+    <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+    <script type="text/javascript">
+
+    
+    //    所有通过jquery获取的元素对应的变量     需要以$开头    用以标记是jquery对象,和dom对象区分
+      var $btns = $('button');
+        //需求1：统计一共多少个按钮
+    //    console.log($btns.length);
+    //    console.log($btns.size());
+        //需求2：取出第二个button的文本
+    //    jQuery对象和dom对象的互转
+    //    jQuery => dom      下标取值或者遍历
+    //    dom => jQuery      $(this)
+    //    console.log($btns[1].innerHTML);
+        //需求3：输出所有button的文本
+    //    $.each();    通用遍历方法 用来遍历数组或者对象的
+    //    $btns.each()    是专门用来遍历jQuery对象的
+        $btns.each(function () {
+    //      this  指向每一次拿出来的dom元素
+            console.log(this.innerHTML);
+        })
+    //需求4：输出第三个按钮是所有按钮当中的第几个
+    //index()  是用来获取当前元素在兄弟元素当中的索引
+        console.log($('#btn3').index());
+    </script>
+</body>
+</html>

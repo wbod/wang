@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            网页的加载是按照自上向下的顺序一行一行加载的
+                如果将script标签写在网页的上方，它会优先于body加载
+
+
+            编写DOM相关的代码时，有两个编写位置：
+                1.编写在body标签的最后
+                2.编写在window.onload = function(){}的响应函数中
+
+         */
+
+        // 希望还是将代码写在网页上边
+
+        // 希望这些代码，可以在网页加载完毕之后在执行
+        // load事件表示资源加载，当资源加载完毕后事件会触发
+        window.onload = function () {
+            // window的load事件，会在网页加载完毕后触发
+            // 可以将希望在网页加载完才执行的代码，统一设置在load事件的响应函数中
+            // 这样即可确保代码在网页加载完成后才执行
+
+            //获取id为btn的元素
+            var btn = document.getElementById('btn');
+
+            //为btn绑定单击响应函数
+            btn.onclick = function () {
+                alert('哈哈哈哈');
+            };
+
+        };
+
+
+
+    </script>
+
+</head>
+<body>
+    <button id="btn">点我一下</button>
+
+<!--    可以将JS代码编写到body标签最后，这样可以确保在JS执行时
+        网页已经加载完毕，确保可以正常的获取到DOM对象
+    -->
+
+</body>
+</html>

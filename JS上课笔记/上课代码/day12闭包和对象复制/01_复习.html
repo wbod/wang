@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习</title>
+    <script>
+
+        function fn() {
+            // arguments 是用来存储实参的类数组对象
+            // 它里边包含了一个属性callee，callee就表示当前正在调用的函数
+            // console.log(arguments.callee === fn);
+
+            // arguments.callee();
+        }
+
+        // fn();
+
+        // console.log(this);
+
+        // var [c,d,...e] = [1,2,3,4,5,6];
+        // console.log(e);
+
+        var a = 10;
+        var b = 20;
+
+        // 交换a和b的值
+        // var temp = a;
+        // a = b;
+        // b = temp;
+
+        // [a,b] = [b,a];
+
+        var arr = [1,2];
+        [arr[0], arr[1]] = [arr[1], arr[0]];
+
+        // console.log(arr+'');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

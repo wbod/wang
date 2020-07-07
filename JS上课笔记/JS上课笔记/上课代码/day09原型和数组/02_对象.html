@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script>
+
+        /*
+            创建一个表示人的对象（name age gender）
+         */
+        // var p1 = {
+        //     name:'孙悟空',
+        //     age:18,
+        //     gender:'男',
+        //     sayHello() {
+        //         console.log('大家好，我是'+this.name);
+        //     }
+        // };
+        //
+        // var p2 = {
+        //     name:'猪八戒',
+        //     age:28,
+        //     gender:'男',
+        //     sayHello() {
+        //         console.log('大家好，我是'+this.name);
+        //     }
+        // }
+        //
+        // var p3 = {
+        //     name:'沙和尚',
+        //     age:38,
+        //     gender:'男',
+        //     sayHello() {
+        //         console.log('大家好，我是'+this.name);
+        //     }
+        // }
+        //
+        // p1.sayHello();
+        // p2.sayHello();
+        // p3.sayHello();
+
+
+        /*
+            使用上述方式创建对象，会造成大量的重复性代码，不好！
+            创建一个函数来解决重复代码的问题
+
+            这种创建对象函数，被称为工厂方法
+         */
+        // function createPerson(name, age, gender) {
+        //     //创建一个对象
+        //     var o = {};
+        //
+        //     //向对象中添加属性
+        //     o.name = name;
+        //     o.age = age;
+        //     o.gender = gender;
+        //     o.sayHello = function () {
+        //         console.log('大家好，我是'+this.name);
+        //     };
+        //
+        //     //将新的对象作为返回值返回
+        //     return o;
+        // }
+
+        // function createPerson(name, age, gender) {
+        //     //将新的对象作为返回值返回
+        //     return {
+        //         name:name,
+        //         age:age,
+        //         gender:gender,
+        //         sayHello() {
+        //             console.log('大家好，我是'+this.name);
+        //         }
+        //     };
+        // }
+
+        function createPerson(name, age, gender) {
+            //将新的对象作为返回值返回
+            return {
+                name,
+                age,
+                gender,
+                sayHello() {
+                    console.log('大家好，我是'+this.name);
+                }
+            };
+        }
+
+        var p1 = createPerson('孙悟空',  18, '男');
+        var p2 = createPerson('猪八戒',  28, '男');
+        var p3 = createPerson('沙和尚',  38, '男');
+
+        // console.log(p1);
+        // console.log(p2);
+        // console.log(p3);
+
+        p1.sayHello();
+        p2.sayHello();
+        p3.sayHello();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

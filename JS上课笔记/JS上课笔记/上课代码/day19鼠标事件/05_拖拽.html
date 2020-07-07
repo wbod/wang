@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            /*
+                拖拽的功能：
+                    1.当在被拖拽的元素上按下鼠标，功能开始
+                    2.当鼠标移动时，被拖拽的元素跟随鼠标一起移动
+                    3.当鼠标松开时，元素固定在当前位置不动
+
+                需要的事件：
+                    鼠标按下 mousedown
+                    鼠标移动 mousemove
+                    鼠标松开 mouseup
+
+                问题：
+                    如何确保鼠标指针和元素的相对位置保持不变？
+             */
+
+            //为被拖拽的元素绑定一个鼠标按下的事件
+            var box1 = document.getElementById('box1');
+            box1.onmousedown = function () {
+                // 当鼠标按下时，功能开始，需要元素跟随鼠标移动
+                document.onmousemove = function (ev) {
+                    box1.style.left = ev.clientX + 'px';
+                    box1.style.top = ev.clientY + 'px';
+                };
+
+                // 当鼠标松开时，结束onmousemove事件
+                document.onmouseup = function () {
+                    // 去除onmouseup事件
+                    document.onmouseup = null;
+                    // 去除onmousemove事件
+                    document.onmousemove = null;
+                };
+
+            };
+
+        };
+
+    </script>
+</head>
+<body>
+
+<div id="box1"></div>
+
+<div style="width: 100px;height: 100px;background-color: #ff0; position:absolute; top: 200px;left: 300px;"></div>
+
+</body>
+</html>

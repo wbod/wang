@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡</title>
+    <style>
+
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        #s1{
+            background-color: #ff0;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 300px;
+            top:300px;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            /*
+                事件的冒泡（bubble）
+                    - 冒泡指的是事件的向上传导
+                    - 当一个后代元素上的事件被触发时，同时会导致其祖先元素上的相同事件一起触发
+                    - 冒泡只和网页的结构有关和表现无关
+                    - 冒泡的存在实际上简化了开发，所以大部分情况下冒泡都是有利的
+                    - 但有一些情况，我们不希望冒泡存在，可以通过事件对象来取消冒泡
+             */
+
+            // 为s1绑定单击响应函数
+            document.getElementById('s1').onclick = function (ev) {
+                alert('我是s1上的单击响应函数');
+
+                // 将事件对象的cancelBubble设置为true，即可取消事件的冒泡
+                // ev.cancelBubble = true;
+                ev.stopPropagation();
+            };
+
+            // 为box1绑定单击响应函数
+            document.getElementById('box1').onclick = function (ev) {
+                alert('我是box1上的单击响应函数');
+                ev.stopPropagation();
+            };
+
+            // 为body绑定单击响应函数
+            document.body.onclick = function () {
+                alert('我是body上的单击响应函数')
+            };
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+
+<div id="box1">
+    我是div
+    <span id="s1">
+        我是span
+    </span>
+</div>
+
+
+</body>
+</html>

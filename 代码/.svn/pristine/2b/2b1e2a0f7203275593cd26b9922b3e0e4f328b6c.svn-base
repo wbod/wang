@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const promise = new Promise((resolve, reject) => {
+        // resolve(111);
+        // reject(222);
+      });
+      // promise变成成功/失败都触发，pending不触发
+      promise.finally(() => {
+        console.log("finally()");
+      });
+    </script>
+  </body>
+</html>

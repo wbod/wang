@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组方法</title>
+    <script>
+        var arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+
+        // console.log(arr[arr.length - 1]);
+
+        // Array.isArray() 用来检查一个对象是否是一个数组
+        // console.log(Array.isArray(arr));
+        // console.log(Array.isArray(1));
+
+        /*
+            pop()
+                删除并返回数组的最后一个元素。
+            push()
+                在数组的末尾增加一个或多个元素，并返回数组的新长度。
+                arr[arr.length] = xxx;
+            shift()
+                删除并返回数组的第一个元素。
+            unshift()
+                在数组的开头增加一个或多个元素，并返回数组的新长度。
+         */
+        arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+        var result = arr.pop();//删除数组中的最后一个元素
+        result = arr.push('白骨精','玉兔精');
+
+        result = arr.shift();
+        result = arr.shift();
+
+        result = arr.unshift('铁扇公主','女儿国王');
+        // result = arr.unshift('女儿国王');
+
+        console.log('result =', result);
+        console.log(arr+'');
+    </script>
+</head>
+<body>
+</body>
+</html>

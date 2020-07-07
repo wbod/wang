@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法</title>
+    <script>
+
+        /*
+            方法(method)
+        */
+
+        //一个对象的属性值可以使任意类型
+        var obj = {};
+        obj.a = 'hello'; // 属性值是字符串
+        obj.b = true; // 属性值是布尔值
+        obj.c = 123; // 属性值是数值
+        obj.d = null; // 属性值是空值
+        obj.e = undefined; // 属性值是未定义
+        obj.f = {}; //属性值是对象
+        // obj.f.a = '你好';
+
+        // 如果一个对象的属性是函数
+        // 则我们称该函数是这个对象的一个方法（method）
+        obj.g = function(){
+            console.log('我是一个函数');
+        }; // 对象的属性也可以是一个函数
+
+        // console.log(obj);
+        // 调用函数，就称为调用方法
+        // 在js中，函数和方法主要就是称呼的不同，其本质是一样的
+        // obj.g();
+        // alert('hello'); 函数
+        // console.log('hello'); 方法
+
+        // console.log(typeof console);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

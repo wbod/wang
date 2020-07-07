@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象和函数</title>
+</head>
+<body>
+    <script>
+        //创建一个对象
+        var o1 = {name:'JIM', age:19};
+
+        var o2 = new Object();   //
+
+
+        var n1 = new Number(300);
+        var n2 = 300;
+
+        console.log(n1);
+        console.log(n2);
+
+        console.log(n1+n2);
+
+        // 自定义构造函数
+        function User(){}
+
+        var u = new User(); // 得到对象
+
+
+        console.log('');
+
+
+
+        //定义函数
+        function person(){
+
+        }
+
+        person();  //调用函数， 普通函数
+        new person();   // 构造函数
+
+
+        // 定义一个构造函数
+        function Man(){
+
+        }
+        var m = new Man();  //通过构造函数可以得到一个对象
+        var m1 = new Man();   //一个构造函数能够得到很多对象
+
+    </script>
+
+</body>
+</html>

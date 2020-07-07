@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的返回值</title>
+</head>
+<body>
+<script>
+    //声明一个函数
+    function fn(a,b){
+        console.log('hello, 我是fn');
+        var sum = a + b;
+        return sum;
+    }
+
+
+
+    var f1 = fn;  // fn 把自己赋值给了 f1
+    console.log(f1, typeof f1);
+
+    var f2 = fn(10,20);  //调用了函数，函数调用了里面的代码就会被输出
+
+    console.log(f2);   //
+
+    console.log('');
+
+
+    function demo(){
+        console.log(100);
+        return 2000;
+        console.log(50);
+    }
+
+
+    var d = demo(); // 调用函数，函数内的代码就执行了，输出1000
+
+    console.log(d);  //  输出了函数的返回值 2000
+</script>
+
+</body>
+</html>

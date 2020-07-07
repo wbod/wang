@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算术运算符</title>
+    <script>
+
+        /*
+            在JS中，可以对数字以外的类型的值进行算术运算
+                - 在对非数字的值进行算术运算时，JS引擎会先将其转换为数值，
+                    然后再运算
+                - 任何值和NaN，运算结果都是NaN
+                - 特殊情况：
+                    - 任意值和字符串做加法时，会先将其转换为字符串，
+                        然后对字符串进行拼串的操作
+         */
+        var a = true + false; //1 + 0
+        a = '100' - 3; //100 - 3
+        a = 33 * null; //33 * 0
+        a = 33 + undefined;// 33 + NaN
+
+        a = '123' + '456';// '123456'
+        a = 123 + 'hello'; // '123hello'
+        a = NaN + '123';// 'NaN123'
+
+        a = '1' + 2 + 3; // '123'
+        a = '1' + (2 + 3); // '15'
+
+        console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

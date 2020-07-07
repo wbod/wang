@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  width: 500px;
+  height: 500px;
+  background: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.wrap .box1 {
+  width: 400px;
+  height: 400px;
+  background: orange;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.wrap .box2 {
+  width: 300px;
+  height: 300px;
+  background: skyblue;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.wrap .box3 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

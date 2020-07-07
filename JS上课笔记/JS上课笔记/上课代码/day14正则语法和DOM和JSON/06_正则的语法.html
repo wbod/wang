@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>语法</title>
+    <script>
+
+        //创建一个正则表达式，可以检查一个字符串中是否含有.
+        // . 可以用来匹配除了换行(\n)以外的任意字符
+        var reg = /./;
+        var result = reg.test('a');
+
+        // 可以在正则表达式中使用 \ 作为转义字符
+        reg = /\./;
+        result = reg.test('.');
+
+        /*
+            \w
+                - 任意的单词字符，等价于 [A-Za-z0-9_]
+            \W
+                - 除了单词字符，等价于 [^A-Za-z0-9_]
+            \d
+                - 任意数字 [0-9]
+            \D
+                - 除了数字 [^0-9]
+            \s
+                - 空格
+            \S
+                - 除了空格
+            \b
+                - 单词边界
+            \B
+                - 除了单词边界
+         */
+        reg = /\w/;
+        reg = /\W/;
+        reg = /\d/;
+        reg = /\D/;
+        reg = /\s/;
+        reg = /\S/;
+        result = reg.test('b');
+
+
+        //创建一个正则表达式，检查一个字符串中是否含有child这个单词
+        reg = /\bchild\b/;
+        result = reg.test('abcchildren'); // false
+        result = reg.test('child'); // true
+        result = reg.test('hello child'); // true
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

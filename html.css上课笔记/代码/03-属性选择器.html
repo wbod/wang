@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+/* 			.list li{
+				color:red;
+			}
+ */		
+			/* 属性选择器:
+				[class] 必须包含class属性名的
+			 */
+/* 			.list li[class]{
+				color:red;
+			}
+ */			/* .list li[title]{
+				color:blue;
+			} */
+			
+			/* [class="box"] class属性值等于box的 */
+			/* .list li[class="box"]{
+				color:red;
+			} */
+			
+			/* [class ^="box"] class属性值是以box开头的 */
+			/* .list li[class ^="box"]{
+				color:red;
+			} */
+			
+			/* [class $="box"] class属性值是以box开头的 */
+			.list li[class $="box"]{
+				color:red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li class="box">炒肝</li>
+			<li class="boxzzz">卤煮</li>
+			<li class="xbox">面茶</li>
+			<li class="aaaboxbbb">豆汁儿</li>
+			<li class="box one">爆肚</li>
+			<li title="西餐">咖啡</li>
+		</ul>
+	</body>
+</html>

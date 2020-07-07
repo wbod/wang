@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var numbers = [1,7,2,3,4,5,4,5,6,2,7,4,5,6];
+        // 创建一的新数组
+        var num = [];
+        // 遍历老数组
+        for(var i = 0; i < numbers.length; i++){
+          //判断新数组中是否存在该元素
+            if(num.indexOf(numbers[i]) === -1){
+                // 如果新数组中没有该值，则将其添加到新数组中
+                num.push(numbers[i]);
+            }
+        }
+         console.log(num+'');
+         
+    </script>
+</head>
+<body>
+
+</body>
+</html>

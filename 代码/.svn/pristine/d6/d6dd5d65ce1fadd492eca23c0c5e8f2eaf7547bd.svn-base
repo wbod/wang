@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型</title>
+</head>
+<body>
+  <script>
+    /*
+      1. 什么是原型？
+        原型指的是两个原型属性：prototype 和 __proto__
+        为了更好描述：
+          prototype 显示原型属性 
+          __proto__ 隐式原型属性
+
+      2. 所有函数都有显示原型属性，它的值是一个对象，这个对象叫做原型对象
+        constructor 构造方法: 值就是函数本身
+        __proto__：值就是Object.prototype
+          为什么？原型对象不是你new的，所以构造函数默认是Object
+    
+      3. 所有对象（包括Function、Array）都有隐式原型属性，它的值是其构造函数的原型对象（其构造函数的显示原型的值）
+        
+        怎么找构造函数？
+          所有数组都是new Array产生的实例对象，数组的构造函数就是Array
+          所有函数（Object、Array..）都是new Function产生的实例对象，函数的构造函数就是Function
+            Function也可以看做new Function产生的
+          普通对象如果是你new产生的，构造函数就是你new的那个函数
+          普通对象如果不是你new产生的，构造函数默认Object
+    */
+  </script>
+</body>
+</html>

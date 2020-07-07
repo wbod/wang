@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+    <script>
+        
+        function fn(a, b, c) {
+            console.log('a =',a);
+            console.log('b =',b);
+            console.log('c =',c);
+        }
+
+        var arr = [10, 20, 30];
+
+        // 传递实参时，如果希望分别将数组中的元素作为实参传递，可以直接在数组前使用...
+        // 这样数组的第一个元素会成为第一个参数，第二个元素会成为第二个参数，以此类推
+        // fn(...arr);
+        // fn(arr[0], arr[1], arr[2]);
+
+        // 要将数组中的值赋值给指定的变量
+        // var a = arr[0];
+        // var b = arr[1];
+        // var c = arr[2];
+
+        arr = [10, 20, 30, 40, 50, 60, 70];
+        // var [a,b,c] = arr;
+        var a,b,c;
+
+        [a,b,...c] = arr;
+
+        // console.log(a, b, c);
+
+        // 解构对象
+        var obj = {name:'孙悟空', age:'18', gender:'男'};
+
+        // var {name, age, gender} = obj;
+
+        // var name, age, gender;
+
+        // 解构对象时，如果不是以var开头，必须使用()把表达式括起来
+        // ({name, age, gender} = obj);
+
+        var {name, ...rest} = obj;
+
+
+        // console.log(name, age, gender);
+
+        console.log(name, rest);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

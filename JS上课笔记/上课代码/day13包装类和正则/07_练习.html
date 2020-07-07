@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <script>
+        /*
+            练习1：
+                获取用户输入的任意字符串，然后对其进行反转操作
+                    abc  --> cba
+                    hello --> olleh
+
+            练习2：
+                创建一个函数，这个函数可以用来检查一个字符串是否是一个回文
+                    如果是返回true，否则返回false
+                回文：
+                    一个字符串从前往后读，和从后往前读一样就是一个回文字符串
+                    abcba
+         */
+
+        /*
+            练习1：
+                获取用户输入的任意字符串，然后对其进行反转操作
+                    abc  --> cba
+                    hello --> olleh
+         */
+
+        // 获取用户输入的字符串
+        // var str = prompt('请输入一个内容：');
+
+        // 需要对str进行反转
+        // 将字符串转换为一个数组
+        // var arr = str.split('');
+        // 对数组进行反转
+        // arr.reverse();
+        // 将数组转换为字符串
+        // var result = arr.join('');
+        // alert(result);
+
+
+        // var str = prompt();
+        //
+        // //创建一个变量来存储结果
+        // var result = '';
+        //
+        // // 对字符串进行遍历
+        // for(var i=str.length-1; i>=0; i--){
+        //     // alert(str[i]);
+        //     result += str[i];
+        // }
+        //
+        // alert(result);
+
+        /*
+            练习2：
+                创建一个函数，这个函数可以用来检查一个字符串是否是一个回文
+                    如果是返回true，否则返回false
+                回文：
+                    一个字符串从前往后读，和从后往前读一样就是一个回文字符串
+                    abcba
+
+                检查一个字符串是否是回文
+                    abcdefgfedcba
+                    bcdefgfedcb
+                    cdefgfedc
+                    defgfed
+         */
+
+        var str = prompt('情书一个字符串：');
+
+        // 检查一个字符串是否是回文
+        function huiWen(str) {
+            // 设置基线条件
+            // 如果字符串长度小于或等于1，字符串一定是回文
+            if(str.length <= 1){
+                return true;
+            }
+            // 如果字符串的第一个字符串和最后一个字符不一样，字符串一定不是回文
+            if(str[0] !== str[str.length-1]){
+                return false;
+            }
+            //当代码执行到该位置，说明首尾字符相同
+            return huiWen(str.slice(1,-1));
+        }
+
+        alert(huiWen(str));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

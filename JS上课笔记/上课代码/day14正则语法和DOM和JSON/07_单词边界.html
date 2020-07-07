@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'hello hello how are you!';
+        var reg = /\bhow\b/;
+        reg = /\byou\b/;
+
+        // console.log(reg.test(str));
+
+        // 获取用户输入的一个用户名
+        var username = prompt('请输入一个用户名：');
+        console.log('--'+username+'--');
+        //通过正则表达式去除username的前后空格
+        //将username中的空格替换为空串
+        // username = username.replace(/\s/g,'');
+        username = username.replace(/^\s+|\s+$/g,'');
+
+        console.log('--'+username+'--');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

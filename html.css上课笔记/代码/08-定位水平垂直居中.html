@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			    定位的元素可以使用margin属性进行位移,margin起始位置是在偏移量的基础之上
+				定位水平居中:将left设置50%,再设置margin-left等于负的自身宽度的一半
+				定位垂直居中:将top设置50%,再设置margin-top等于负的自身高度的一半
+			 */
+			.box{
+				width: 800px;
+				height: 500px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				position: relative;
+			}
+			.s1{
+				width: 100px;
+				height: 50px;
+				background: blue;
+				position: absolute;
+				left:50%;
+				margin-left: -50px;
+				top:50%;
+				margin-top:-25px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="s1">1</span>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例子</title>
+    <script>
+
+        /*
+            时间的记录
+                100000 59098ms
+                10000  849ms
+
+            第一次优化
+                100000 5352ms
+                10000  74ms
+
+            第二次优化
+                1000000 800ms
+                100000 34ms
+                10000  9ms
+
+            问题：
+                如果求1000000以内的质数会花费多长时间？
+                    如果时间太长可否再次对其进行优化？
+        */
+        // console.time() 用来开启一个计时器，它需要一个字符串作为参数，字符串表示计时器的名字
+        console.time('test');
+        for(var i=2; i<1000000; i++){
+            var flag = true;
+
+            /*
+                36
+                    1  36
+                    2  18
+                    3  12
+                    4  9
+                    6  6
+
+             */
+
+            for(var j=2; j<=i**0.5; j++){
+                if(i % j === 0){
+                    flag = false;
+                    //进入判断，说明i一定不是质数，此时内层循环不需要再执行，可以直接退出
+                    break;
+                }
+            }
+            // if(flag){
+            //     console.log(i);
+            // }
+        }
+
+        //console.timeEnd()用来结束一个计时器
+        console.timeEnd('test');
+
+    //    作业：
+    //     - 把这两天的练习自己重新敲敲
+    //     - 把git的分支的创建、合并、解决冲突、删除操作操作
+    //     - 对象和函数
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

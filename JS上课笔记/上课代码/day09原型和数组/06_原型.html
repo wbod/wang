@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+    <script>
+
+        /*
+            原型（prototype）
+                - 每一个函数中都会有一个属性prototype，它指向的是一个对象
+                    这个对象我们称为“原型对象”
+                - 如果函数是作为普通函数调用的，则prototype没有任何作用
+                - 如果函数作为构造函数调用，那么通过该构造函数所创建的实例中，
+                    都会有一个隐藏属性指向该原型对象，可以通过对象.__proto__来访问该属性
+                - 原型对象就相当于一个公共的区域，可以被所有的实例访问到，
+                    当我们访问对象中的属性时，会先在对象本身中寻找
+                        如果找到了则直接使用，如果没有找到则去原型对象中寻找
+                        如果找到了则使用，如果原型对象中依然没有
+                        则去原型对象的原型对象中寻找，以此类推..
+                        直到找到Object的原型，Object的原型是所有对象原型
+                        如果依然没有找到，则返回undefined
+
+                        这就形成了一条原型链，搜索对象的属性时是沿着原型链向上寻找
+                        和作用域链不同，在作用域中找一个变量时，如果没有会报错
+                        而在原型链中找一个属性时，如果没有会返回undefined
+
+
+                 - 我们可以将对象中共有的属性，统一存储到原型对象中，
+                    这样我们只需创建一个属性，即可被该类的所有实例共享
+         */
+        function MyClass() {
+        }
+
+        MyClass.prototype.name = '刘德华';
+
+        var mc = new MyClass();
+        mc.name = '孙悟空';
+
+        var mc2 = new MyClass();
+
+        // var mc3 = new MyClass();
+
+        // console.log(mc2.name);
+
+
+        // console.log(MyClass.prototype === mc2.__proto__);
+        // console.log(mc.__proto__);
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        // 将sayHello设置到Person的prototype中
+        Person.prototype.sayHello = function () {
+            console.log('Hello，大家好，我是 '+this.name);
+        };
+
+        var p1 = new Person('孙悟空');
+        var p2 = new Person('渣渣辉');
+
+        // 可以通过实例去修改原型，但是千万不要这么做
+        p1.__proto__.hello = 'abc';
+
+        p1.sayHello();
+        p2.sayHello();
+
+        // console.log(p1.sayHello === p2.sayHello);
+        console.log(p1.hello);
+        console.log(p2.hello);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

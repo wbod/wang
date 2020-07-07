@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符优先级</title>
+</head>
+<body>
+<script>
+    console.log(100 + 20 * 4);
+
+    var a  = 10;
+
+    // a ++ 整体取值 10 ，副作用 a变为11
+    // ++ a, 整体取值12， 副作用 a 变为12
+    // 10 + 100 && 12
+    // 110 && 12
+    console.log(a ++ + 100 && ++ a);  // 12
+
+
+</script>
+</body>
+</html>

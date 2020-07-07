@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script>
+        /*
+            基本数据类型（原始值）
+                - 基本数据类型是构成语言的根基
+                - 目前为止我们一共学习了五种基本数据类型（不可变类型）：
+                    数值（Number）
+                    字符串（String）
+                    布尔值（Boolean）
+                    空值（Null）
+                    未定义（Undefined）
+
+             所有的基本数据类型的值都是相互独立的，当我们去表示一个复杂的数据时，
+                无法体现出，多个数据描述的是一个整体
+
+             对象（object），变量之间是相互独立的，对象就像是一个容器一样，
+                在对象的内部可以存储多个类型不同的变量
+                当我们需要表示一些复杂数据，只需要将相关的值
+                统一存储到一个对象，即可完成
+         */
+
+        //在js中来表示一个人的信息（姓名，性别，年龄）
+        // var name = '孙悟空';
+        // var age = 18;
+        // var gender = '男';
+
+        //创建一个对象
+        //使用new调用的函数，被称为构造函数，构造函数是专门用来创建对象的函数
+        var obj = new Object();
+
+        //对象中存储的变量被称为属性
+        //向对象中添加属性
+        //语法：对象.属性名 = 属性值
+        obj.name = '孙悟空';
+        obj.age = 18;
+        obj.gender = '男';
+
+        //读取对象中的属性
+        // 语法：对象.属性
+
+        // console.log(obj.name);
+        console.log(obj.address); // 如果读取对象中没有的属性，会返回undefined
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

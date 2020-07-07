@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+				list-style: none;
+			}
+			img{
+				display: block;
+			}
+			.box{
+				width: 238px;
+				height: 212px;
+				border:1px solid #d9e0ee;
+				border-top:3px solid #ff8500;
+				margin: 100px auto 0;
+			}
+			.box h2{
+				height: 35px;
+				line-height: 35px;
+				border-bottom: 1px solid #d9e0ee;
+				padding-left:12px ;
+				font-size: 16px;
+			}
+			.box h2 a{
+				color:#000;
+				text-decoration: none;
+				font-weight: 400;
+				/* display:  block; */
+				/* 之前由于没有设置h2的字号,此时h2是一个1.5em的字号,给a标签设置16px字号,比h2
+				   中的字号要小,同在一行,字体都是沿着基线对齐,此时行高35,h2文本是垂直居中
+				   的状态,此时a标签的字号偏小,所以看上去就偏下了
+				 */
+				/* font-size: 16px; */
+			}
+			.box .banner{
+				width: 180px;
+				height: 108px;
+				background: pink;
+				margin: 7px auto 0;
+			}
+			.box .banner a{
+				display: block;
+				height: 108px;
+				background: yellow;
+				text-decoration: none;
+			}
+			.box .banner a span{
+				display: block;
+				height: 21px;
+				background: #000;
+				color:#fff;
+				font-size: 12px;
+				text-align: center;
+				line-height: 21px;
+			}
+			/* 表示鼠标移入a时,后代的span的实现 */
+			.box .banner a:hover span{
+				color:#ff8400;
+			}
+			
+/* 			.box .banner a:hover .s1{
+				color:#ff8400;
+			}
+			.box .banner a:hover .s2{
+				color:yellowgreen;
+			}
+ */		
+			.list{
+				margin-top: 10px;
+			}
+			.list li{
+				/* border: 1px solid red; */
+				font:12px "宋体";
+				line-height: 24px;
+				background: url(images/dian.png) no-repeat 9px center;
+				padding-left: 19px;
+			}
+			.list li a{
+				color:#666;
+				text-decoration: none;
+				/* background: pink; */
+			}
+			.list li a:hover{
+				text-decoration: underline;
+				color:#ff8400;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>
+				<a href="##">图片博客</a>
+			</h2>
+			<div class="banner">
+				<a href="##">
+					<img src="hua.jpg">
+					<span class="s1">最不欧洲的西班牙</span>
+					<!-- <span class="s2">最不欧洲的德国</span> -->
+				</a>
+			</div>
+			<ul class="list">
+				<li>
+					<a href="##">高考15分爸爸教四岁女儿学数学</a>
+				</li>
+				<li>
+					<a href="##">高考15分爸爸教四岁女儿学数学</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

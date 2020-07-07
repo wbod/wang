@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* body{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        } */
+        .box1{
+            width: 150px;
+            height: 150px;
+            background: pink;
+            float: left;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            float: right;
+            position: absolute;
+            left: 1200px;
+            top: 100px;
+        }
+       
+        /*.box3{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+        }
+        .box5{
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+        } */
+            
+        
+    </style>
+</head>
+<body>
+    <button id="btn1">显示</button>
+    <button id="btn2">隐藏</button>
+    <button class="btn3">切换</button>
+    <div class="box1"></div>
+    <!-- <div class="box2"></div> -->
+    <!-- <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>  -->
+    <script src="js/jquery-1.10.1.js"></script>
+    <script>
+        // 淡出淡入效果
+        // $(function(){
+        //      $('#btn1').click(function(){
+        //          $('.box1').fadeOut(1000);
+        //      })
+        //      $('#btn2').click(function(){
+        //          $('.box1').fadeIn(1000);
+        //      })
+        //      $('.btn3').click(function(){
+        //          $('.box1').fadeToggle();
+        //      })
+        // })
+
+        // 滑出滑入
+        // $(function(){
+        //     $('#btn1').click(function(){
+        //         $('.box1').slideDown(1000);
+        //     })
+        //     $('#btn2').click(function(){
+        //         $('.box1').slideUp(1000);
+        //     })
+        //     $('.btn3').click(function(){
+        //         $('.box1').slideToggle();
+        //     })
+        // })
+
+        $(function(){
+            $('#btn1').click(function(){
+                $('.box1').show(1000);
+            })
+            $('#btn2').click(function(){
+                $('.box1').hide(1000)
+            })
+            $('.btn3').click(function(){
+                $('.box1').toggle(1000)
+            })
+        })
+    </script>
+</body>
+</html>

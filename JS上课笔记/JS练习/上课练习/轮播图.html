@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer{
+            width: 520px;
+            height: 382px;
+            background: pink;
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+        
+
+        }
+        img{
+            display: inline-block;
+            margin: -18px;
+        }
+        
+        .one{
+           width: 25px;
+           height: 56px;
+           position: absolute;
+           left: 0;
+           top: 165px;
+           background: pink;
+           border: none;
+           
+       }
+       .two{
+           width: 25px;
+           height: 56px;
+           position: absolute;
+           left: 495px;
+           top: 165px; 
+           background: pink;
+           border: none;
+           
+        } 
+        
+    </style>
+    <script>
+            window.onload = function () {
+    
+    /*
+        点击按钮切换图片，点击上一张切换到上一张，点击下一张切换到下一张
+
+     */
+      
+    // 获取图片标签
+    var img = document.getElementsByTagName('img')[0];
+
+    // 切换图片实际上就是修改img的src属性
+    // img.src = "img/3.jpg";
+
+    // 创建一个数组，用来存储图片的路径
+    var imgPath = ["./images/1_02.png","./images/2_03.png","./images/3_03.png","./images/4_03.png","./images/5_03.png"]
+     
+      //创建一个变量用来存储当前显示的图片的索引
+     var index = 0;
+
+     // 设置图片的信息
+     var info = document.getElementById('info');
+
+    //为两个按钮绑定单击响应函数
+    var btn = document.getElementById('btn');
+    var btn2 = document.getElementById('btn2');
+
+    // 如何做到在五张图片之间切换？
+    btn.onclick = function () {
+        // 向左翻
+        // 索引自减
+        index--;
+
+        // 判断index是否小于0
+        if(index < 0){
+            index = imgPath.length-1;
+        }
+         // 修改img的src来切换图片
+    img.src = imgPath[index];
+    // 图片切换完毕，修改信息
+    info.innerHTML = '一共 '+imgPath.length+' 张图片，当前第 '+(index+1)+' 张';
+    };
+
+    btn2.onclick = function () {
+        // 向右翻
+        // 索引自增
+        index++;
+        // 判断index是否大于4
+        if(index > 4){
+            index = 0;
+        }
+        img.src = imgPath[index];
+    info.innerHTML = '一共 '+imgPath.length+' 张图片，当前第 '+(index+1)+' 张';
+    };
+
+
+
+};
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p id="info" style=" font-size: 30px; font-weight: 700px;">一共5张图片,当前第1张</p>
+        <img src="./images/1_02.png" alt="小黄人">
+        <button class="one" id="btn">左翻翻</button>
+        <button class="two" id="btn2">右翻翻</button>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   var arr = [1,2,3,6,3,8,1];
+    //   var newArr = [];
+    //   for(var i = 0; i < arr.length; i++){
+    //       if(newArr.indexOf(arr[i])===-1){
+    //           newArr.push(arr[i]);
+    //       }
+    //   }
+    //   console.log(newArr);
+
+      var arr = [1,[[[2], 3],[6,[3],8],1]];
+      arr.toString().split(',').map(function (item, index, array) {
+
+           return +item ;  
+        })
+    
+     console.log(arr);
+     
+      
+    </script>
+</body>
+</html>

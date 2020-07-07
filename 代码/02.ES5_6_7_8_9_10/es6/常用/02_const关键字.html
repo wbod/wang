@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>02_const关键字</title>
+  </head>
+  <body>
+    <!--
+1. 作用:
+  * 定义一个常量
+2. 特点:
+  * 不能修改
+  * 其它特点同let
+3. 应用:
+  * 保存不用改变的数据
+-->
+    <script type="text/javascript">
+      /*
+    1. 不存在变量提升
+    2. 不能重复声明
+    3. 产生块级作用域 {}
+    4. 不能重新赋值
+  */
+      let a = 123;
+      a = 456;
+      console.log(a);
+
+      // const b = 123;
+      // b = 456;
+      // console.log(b);
+
+      const obj = { name: "jack" };
+      obj.name = "bob";
+      obj.age = 18;
+      console.log(obj);
+
+      /*
+      let 定义变量
+      const 定义常量
+        1. 将来所有量都默认使用let定义，只有确定固定不变常量的用const，
+          90%以上变量就是let定义，剩下是const
+        2. 将来所有量都默认使用const定义，只有确定发生变化的量的用let，
+          90%以上变量就是const定义，剩下是let （实际使用第二种）
+
+          开发中的量是变量居多还是常量。 
+
+        所以：默认使用const定义，只有这个量的值将来发生变化，才改成let
+      */
+    </script>
+  </body>
+</html>

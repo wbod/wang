@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归</title>
+    <script>
+        /*
+            递归
+                - 简单理解就是在函数自己调用自己
+         */
+        // function fn() {
+        //     console.log('fn函数执行了~~~');
+        //     fn();
+        // }
+        // fn();
+
+        /*
+            创建一个函数，用来求任意数的阶乘
+                4! 4的阶乘：1x2x3x4
+                10! 10的阶乘：10x9x8x7x6x5x4x3x2x1
+         */
+
+        // jieCheng() 用来求n的阶乘
+        function jieCheng(n) {
+            //创建一个变量来存储结果
+            var result = 1;
+            //创建一个for循环来获取1-n之间的数字
+            for(var i=2; i<=n; i++){
+                result *= i;
+            }
+            return result;
+        }
+        // console.log(jieCheng(10));
+
+        /*
+            通过递归来计算任意数的阶乘
+                递归的核心思想就是“化整为零”，将一个大问题拆分为一个小问题
+                例子：想求6的阶乘，如何计算？
+                  720  6! = 6 * 5!
+                  120  5! = 5 * 4!
+                  24   4! = 4 * 3!
+                  6    3! = 3 * 2!
+                       2! = 2 * 1
+
+           其实递归的功能和循环类似，都是可以用来反复去执行某段代码的，
+            但是相比于循环来说，递归的执行性能要低的多，
+                并且大部分解析器都会限制递归执行的次数
+            相比于循环，递归的逻辑（代码）更容易理解
+
+            一般情况下，开发中递归不是我们的首选，甚至我们应该尽量避免使用递归
+         */
+
+        // 递归版本的阶乘计算
+        function jieCheng2(n) {
+            //判断n是否等于1
+            // 基线条件，设置递归的终止条件
+            if(n === 1){
+                return 1;
+            }
+            //如果n大于1，例如n=6
+            //6! = 6 * 5!  n! = n * (n-1)!
+            //递归条件，规定了如何对问题进行拆分
+            return n * jieCheng2(n-1);
+        }
+
+       // console.log(jieCheng2(10))
+       // 创建一个函数，用来求一个数幂运算（使用递归）
+       // 6^6 = 6 * 6^5
+       // 6^5 = 6 * 6^4
+       function pow(num, times) {
+            //设置基线条件（递归的停止）
+           if(times === 1){
+               // 要计算num的1次幂，直接返回num
+               return num;
+           }else if(times === 0){
+               return 1;
+           }
+
+           //设置递归条件（拆分问题）
+           return num * pow(num, times-1);
+       }
+
+        console.log(pow(2, 10));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

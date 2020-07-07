@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的使用</title>
+    <script>
+        //创建对象
+        //var obj = new Object();
+        //var obj = Object();
+        var obj = {};// 使用对象字面量来创建对象
+
+        // 使用typeof检查一个对象时，会返回 "object"
+        // console.log(typeof obj);
+
+        //添加属性
+        /*
+            对象的属性名没有强制的命名规范，
+                但是我们开发中的最佳实践，属性名也要遵循标识符的规范
+
+            如果你起的名字太奇怪了，需要使用另外一种添加的属性的方式
+                语法：对象['属性名'] = 属性值;
+         */
+        obj.name = '孙悟空';
+        obj.age = 18;
+        obj.gender = '男';
+        // obj.if = '哈哈';
+        // obj.var = '嘻嘻';
+        // obj['123123123hjhjjhjhjhjhj13212'] = '呵呵';
+
+        // 修改属性
+        obj.age = 19;
+        // 删除属性
+        // delete用来删除一个对象中的属性
+        delete obj.age;
+
+        // console.log(obj.name);
+
+        var a = 'gender';
+        // console.log(obj[a]);
+
+        /*
+            对象的属性值可以使任意的数据类型
+         */
+        obj.test = true; // test属性值是布尔值
+        obj.test = null; // test属性值是空值
+        obj.test = undefined; // test属性值是undefined
+
+        // 对象中也可以存储对象
+        obj.test = {}; // test属性值是对象
+
+        obj.test.name = 'tom';
+
+        console.log(obj.test.name);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

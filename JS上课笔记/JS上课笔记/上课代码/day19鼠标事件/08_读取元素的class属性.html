@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+
+        .hello{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var box1 = document.querySelector('.box1');
+
+            // 使用className获取的元素的class值，就是原本的class值
+            // 例如：box1.className 是这样的 box1 box2 box3 box4
+            // classList 是一个类数组对象，在它里边将元素的每一个class属性都设置为了数组中的一个元素
+
+            /*
+                作业：
+                    自己实现一组类相关的方法，要求兼容IE8以上的浏览器
+                classList只支持IE10以上的浏览器
+                    contains() 用来检查classList是否含有某个类，如果有返回true，没有返回false
+                    add() 用来向元素中添加一个或多个class
+                    remove() 移除元素中的一个或多个class
+                    replace() 使用一个新的class替换元素中的class
+                    toggle() 切换元素中的指定class，如果有则删除，如果没有则添加
+             */
+            var btn01 = document.getElementById('btn01');
+            btn01.addEventListener('click',function () {
+                // alert(box1.classList.contains('hello'));
+                // box1.classList.add('hello');
+                // box1.classList.remove('box1');
+                // box1.classList.replace('box1', 'hello');
+                box1.classList.toggle('hello');
+            },false)
+
+        };
+
+    </script>
+</head>
+<body>
+<button id="btn01">点我一下</button>
+<div class="box1 box2 box3 box4"></div>
+
+</body>
+</html>

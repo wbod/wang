@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        .container{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+        }
+        .list{
+            width: 4200px;
+            height: 400px;
+            position: absolute;
+            top:0;
+            left:-600px;
+        }
+        .list img{
+            float: left;
+            /* display: block; */
+        }
+        .pointsDiv{
+            position: absolute;
+            bottom: 10px;
+            left:50%;
+            transform: translateX(-50%);
+            /*width: 100px;*/
+            height: 20px;
+        }
+        .pointsDiv span{
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border:2px solid #fff;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        .pointsDiv span.active{
+            background: pink;
+        }
+        .arrow{
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            top:50%;
+            margin-top: -20px;
+            /*transform: translateY(-50%);*/
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+            line-height: 34px;
+            display: none;
+        }
+        .arrow:hover{
+            background: rgba(0,0,0,0.6);
+        }
+        .container:hover .arrow{
+            display: block;
+        }
+        #prev{
+            left:20px;
+        }
+        #next{
+            right:20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="list">
+       <img src="./img/5.jpg" alt="">
+       <img src="./img/1.jpg" alt="">
+       <img src="./img/2.jpg" alt="">
+       <img src="./img/3.jpg" alt="">
+       <img src="./img/4.jpg" alt="">
+       <img src="./img/5.jpg" alt="">
+       <img src="./img/1.jpg" alt="">
+    </div>
+    <div class="pointsDiv">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    /*
+           击左右按钮，切换图片
+                  2.无限循环（首尾相接）
+                  3.每个3s自动翻页
+                  4.鼠标移入停止自动翻页，移出开启
+                  5.切换图片小圆点同步更新
+                  6.点击小圆点切换对应页面
+
+    */
+    $(function(){
+        // 获取前后按钮
+        var $prev = $('#prve');
+        var $next = $('#next');
+
+        // 获取图片容器
+        var $list = $('.list');
+
+        // 获取小圆点
+        var $points = $('.pointsDiv > span');
+
+        // 获取显示区域容器   用来实现移入移出自动开启轮播
+        var $container = $('container');
+
+        // 动画总是长
+        var time = 3000;
+        // 动画帧时长
+        var itemTime = 30;
+        // 定义图片宽度
+        var pageWidth = 600;
+        // 显示图片张数
+        var showImg = $points.length;
+
+        // 定义标识变量 用来记录当前图片是否正在执行动画
+        var isMoving = false;
+
+        // 保存当前索引
+        var index = 0;
+
+        // 绑定上一页按钮单击事件
+        $prev.click(function(){
+             nexPage(false);
+             upDate(false);
+        });
+
+        // 绑定下一页按钮单击事件
+        $next.click(function(){
+             nexPage(true);
+             upDate(true);
+        });
+        
+        // 单击小圆点切换对应图片
+        $points.click(function(){
+         // 当前点击小圆点的索引
+             var targetIndex = $(this).index();
+             nexPage(targetIndex);
+        })
+
+        function nexPage(next){
+            if(isMoving){
+                return;
+            }
+            isMoving = true;
+
+        // next这个形参用来区分  图片移动的方向 、
+        // 如果是false则在当前的left值基础之上+600   如果是true则在当前的left值基础上-600
+        //        参数类型判断
+             if(typeof next === 'boolean'){
+                 var offset = next ? -pageWidth : pageWidth;
+             }else{
+                 var offset = -(next -  index) * pageWidth;
+             }
+
+        //  单次偏移量 = 总偏移量/(动画总时长/动画帧时长)
+            var itemOffset = offset/ (time/itemTime);
+
+        //  获取当前list的left值
+            var left = $list.position().left;
+
+        // 计算目的地left值 = 当前位置 + 总偏移量
+            var targetLeft = left + offset;
+
+        // 启动定时器 开始动画
+            var timer = setInterval(function(){
+        //  轮播图的逻辑 需要在当前位置的基础之上增加单次偏移
+        //   所以 用当前位置+ 单次偏移
+                 left += itemOffset;
+        //  如果当前位置和目的地left相等 说明一张图片切换完成
+        //   需要清除定时器
+                 if(left === targetLeft){
+                     clearInterval(timer);
+                // 当前图片翻页完成时 再来判断是否到达边界
+                   if(left === 0){  //说明
+
+                   }
+                 }
+            })
+        }   
+    })
+</script>
+</body>
+</html>

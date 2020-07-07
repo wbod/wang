@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制类型转换</title>
+</head>
+<body>
+    <script>
+        // Number
+        console.log(Number("109"));
+        console.log(Number(" 109     "));
+        console.log(Number("10 9"));
+        console.log(Number("     "));
+        console.log('');
+
+        console.log(parseInt(true));
+        console.log(parseInt('123abc'), Number('123abc'));
+        console.log(parseInt('ab123'), Number('ab123'));
+        console.log(parseInt(''), Number(''));
+        console.log(parseInt('   '), Number('   '));
+        console.log(parseInt(' 123 '), Number(' 123 '));
+        console.log(parseInt("123"), parseFloat("123"))
+        console.log(parseInt("123.123"), parseFloat("123.123"));
+        console.log('');
+
+
+        console.log(String(100));
+        console.log(String(true));
+        console.log(String(undefined));
+        var data = true;
+        console.log(data.toString());
+
+    </script>
+</body>
+</html>

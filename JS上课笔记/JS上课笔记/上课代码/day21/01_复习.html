@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // window.addEventListener('keydown',function () {
+        //     alert(123);
+        // });
+
+        window.onload = function () {
+            var head = document.getElementById('head');
+
+            var num = 0;
+
+            // 创建一个定时器，来定时修改h1中的文字
+            setTimeout(function fn() {
+                num++;
+                head.innerHTML = num;
+                setTimeout(fn, 10*num);
+            },10);
+
+        };
+
+    </script>
+</head>
+<body>
+<h1 id="head">0</h1>
+</body>
+</html>

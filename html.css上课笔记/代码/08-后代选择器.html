@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			  之前讲的标签选择器,类选择器,id选择器属于基本选择器
+			  复合选择器
+			  后代选择器: 祖先空格后代{}  将基础选择器结合使用
+			  
+			  权重:
+			  标签选择器 < 类选择器 < id选择器 < 行内样式 < !important 
+			      1         10        100       1000        无穷大
+			 */
+			/* h1{
+				color:red;
+			} */
+			.web .teacher {
+				color: red;
+			}
+
+			.web h3 {
+				color: yellowgreen;
+			}
+
+			.java .teacher {
+				color: yellow;
+			}
+
+			.java h3 {
+				color: deeppink;
+			}
+
+			/* =================================== */
+			h2 {
+				color: blue;
+			}
+
+			.ban {
+				color: green;
+			}
+
+			/* #yellow{
+				color:yellow
+			} */
+			.web h2 {
+				color: pink;
+			}
+
+			.web .ban {
+				color: red;
+			}
+
+			i {
+				color: pink
+			}
+
+			.girl {
+				color: green;
+			}
+
+			.web i {
+				color: red;
+			}
+
+			.web .ban i {
+				color: blue;
+			}
+
+			.web .girl {
+				color: gray;
+			}
+
+			.web .ban .girl {
+				color: saddlebrown;
+			}
+
+			#gf {
+				color: #000;
+			}
+
+			#webxy i {
+				color: yellow;
+			}
+			
+			.data h3{
+				color:blue;
+			}
+			.data .bz{
+				color:yellow;
+			}
+			.data .bz i{
+				color:pink;
+			}
+			.data .bz .xr{
+				color:gold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="web" id="webxy">
+			<h1 class="teacher">老刘</h1>
+			<h2 class="ban" id="yellow">前端班长
+				<i class="girl" id="gf">女朋友</i>
+			</h2>
+			<h3>0422学员</h3>
+			<h3>0422学员</h3>
+			<h3>0422学员</h3>
+		</div>
+		<div class="java">
+			<h1 class="teacher">java老师</h1>
+			<h2>java班长</h2>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+		</div>
+		<div class="data">
+			<h1 class="teacher">java老师</h1>
+			<h3 class="bz">java班长
+				<i>前任</i>
+				<i class="xr">现任</i>
+			</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //创建一个正则来检查一个字符串是否是bbb
+        var reg = /^bbb$/;
+        var result = reg.test('bbb'); //true
+        result = reg.test('b'); //false
+        result = reg.test('bb'); //false
+        result = reg.test('bbbb'); //false
+
+        /*
+            量词
+                - 量词用来指定字符出现的次数
+                {n} 字符正好出现n次
+                {n,} 表示n次以上（大于等于n）
+                {n,m} 表示n-m次
+
+                + 表示1次以上，相当于{1,}
+                * 表示0次或多次
+                ? 表示0次或1次
+
+                量词只对它的前一位字符起作用
+         */
+        reg = /^b{2}$/;
+        result = reg.test('bb'); // true
+
+        reg = /^b{2,}$/;
+        result = reg.test('bbb'); // true
+
+        reg = /^b{2,4}$/;
+        result = reg.test('bb');// true
+        result = reg.test('bbb');// true
+        result = reg.test('bbbb');// true
+        result = reg.test('bbbbb');// false
+
+        reg = /^ab+$/
+        result = reg.test('abbb'); // true
+
+        reg = /^ab*$/
+        result = reg.test('a'); //true
+
+        reg = /^ab?$/
+        result = reg.test('a');// true
+        result = reg.test('ab');// true
+        result = reg.test('abb');// false
+
+
+
+        reg = /^a[bcdefg]+$/;
+        result = reg.test('abcdefg'); //true
+        result = reg.test('ab'); //true
+        result = reg.test('ac'); //true
+        result = reg.test('afg'); //true
+
+        // 检查一个字符串是否出现了1次以上的ab
+        // 正则表达式中，可以使用()来为字符分组
+        reg = /^(ab)+$/;
+        result = reg.test('ababab'); //true
+        result = reg.test('abb'); //false
+
+        reg = /^a(b|e)c$/; // 等价于 /^a[be]c$/
+        result = reg.test('abc');//true
+        result = reg.test('aec');//true
+        result = reg.test('xxxaec');//false
+        result = reg.test('abec');//false
+
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

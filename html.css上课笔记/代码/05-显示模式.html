@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			显示模式:
+			块级显示模式: 独占一行,设置宽高起作用,当不设置宽度时,宽度和父元素的宽度一样
+			块元素: div h1-h6 p ul ol li dl dt dd hr form
+			行内(内联)显示模式: 设置宽高不起作用,一行可以有多个共存,在没有内容是,宽高是0,当标签有一个空格以上时,
+			显示效果会有一个间距
+			行内元素: span a b strong i em u ins s del 
+			行内块显示模式: 设置宽高起作用,一行可以有多个共存
+			行内块元素: img 表单元素
+			
+			 */
+			div{
+				/* width: 100px; */
+				height: 100px;
+				background: yellowgreen;
+			}
+			b{
+				width: 1000px;
+				height: 1000px;
+				background: yellow;
+				font-size:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<b>加粗1</b>
+		<b>加粗2</b>
+		<a href="##">超链接</a>
+		<i>倾斜</i>
+		<span>小盒子</span>
+		<img src="dapanji.jpeg" width="50">
+		<img src="dapanji.jpeg" width="50">
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*================================  第一种类型:  会受其他标签的影响 ===========*/
+			/* 
+			  站在父元素的角度选中第1个子元素,且该子元素刚是父元素下的第1个元素
+			 */
+			
+			/* .list li:first-child{
+				color:red;
+			} */
+			
+			/*
+			  站在父元素的角度选中最后一个子元素,且该子元素刚是父元素下的最后的元素
+			 */
+			/* .list li:last-child{
+				color:red;
+			} */
+			
+			/*
+				站在父元素的角度上选中符合相应编号条件的子元素,且该子元素刚好是父元素下的第 编号 个元素
+				(odd 表示基数编号   even 表示偶数编号   n 表达式,字母必须是n,n从0开始)
+			 */
+			/* .list li:nth-child(1){
+				background: red;
+			}
+			.list li:nth-child(odd){
+				background: red;
+			}
+			.list li:nth-child(even){
+				background: blue;
+			} */
+/* 			.list li:nth-child(2n+1){
+				background: red;
+			}
+			.list li:nth-child(2n){
+				background: red;
+			}
+ */			
+			/* .list li:nth-child(2n+3){
+				background: red;
+			} */
+			/* 所有规则与上面相同,只是从后往前数 */
+			/* .list li:nth-last-child(1){
+				background: red;
+			} */
+			
+			/*  选中当前子元素,且该子元素是父元素下的唯一一个子元素 */
+			/* .box span:only-child{
+				color:red;
+			} */
+			
+			/* ==========================第二种类型:  不会受其他标签的影响============================================== */
+			
+			/* 和第一种的区别在于需要限制元素类型, 第一个子元素 */
+			/* .list li:first-of-type{
+				background: red;
+			} */
+			/* 和第一种的区别在于需要限制元素类型, 最后一个子元素 */
+			/* .list li:last-of-type{
+				background: red;
+			} */
+			
+			/*  和第一种的区别在于需要限制元素类型 (数字编号   odd 表示基数编号   even 表示偶数编号   n 表达式,字母必须是n,n从0开始)*/
+			/* .list li:nth-of-type(odd){
+				background: red;
+			} */
+			/* 限制元素类型,倒数 */
+			/* .list li:nth-last-of-type(5){
+				background: red;
+			} */
+			
+			
+			/*  选中当前子元素,且该子元素是父元素下的唯一类型的唯一子元素 */
+			
+			.box span:only-of-type{
+				color:red;
+			}
+			/*=============================== 否定伪类 =================================================*/
+			/*
+				当前元素离没用任何的内容(文本,空格,标签)
+			 */
+			.box:empty{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<span>哈哈</span>
+			<span>哈哈</span>
+			<span>哈哈</span>
+			<span>哈哈</span>
+			<span>哈哈</span>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<p>duanlo</p>
+		</ul>
+		<div class="box">
+			<span>span</span>
+			<span>span</span>
+			<p>段落</p>
+		</div>
+	</body>
+</html>

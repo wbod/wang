@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数作用域</title>
+    <script>
+        /*
+            函数作用域（局部作用域，只有使用let和const声明的变量才有块作用域）
+                - 函数作用域在函数调用时产生，函数调用结束时销毁
+                - 每调用一次函数就会产生一个新的函数作用域
+                - 在函数内部声明的变量都位于函数作用域中
+                - 在函数作用域中定义的变量是 局部变量，只能在函数内部访问
+                    在函数外部无法访问（全局作用域无法访问局部变量）
+                - 在函数中定义的函数是 局部函数， 只能在函数内部调用
+                - 在函数内部不使用var关键字声明变量，会自动成为全局变量
+                - 变量和函数的提升同样适用于函数作用域,
+                    使用var声明的变量和function开头的函数，会在函数内部所有代码执行前声明和创建
+                - 一个作用域对于它外部的作用域是完全封闭的。
+         */
+
+        function fn() {
+            var a = 10;
+            // console.log('函数内部：',a);
+
+            //定义一个内部函数
+            function inner() {
+                console.log('这是内部函数inner', a);
+            }
+
+            inner(); // 可以在函数内部之间访问内部函数
+        }
+
+        // fn();
+
+        // console.log('全局作用域：',a);
+        // inner();
+
+        function fn2() {
+            //window.b = 'xxx';
+            b = 'fn2的内部变量！'; // 在函数内部不使用var关键字声明变量，会自动成为全局变量
+        }
+
+        fn2();
+
+        // 在全局作用域中访问变量b
+        // console.log(b);
+
+
+        function fn3() {
+            console.log(a);
+            inner();
+            var a = 10;
+            
+            function inner() {
+                console.log('内部函数');
+            }
+        }
+
+        fn3();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

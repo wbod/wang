@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			body{
+				overflow: hidden;
+			}
+			
+			#carImg{
+				width: 100%;
+				/*cursor: grab;
+				cursor: -webkit-grab;*/
+			}
+			
+
+		</style>
+		
+	</head>
+	<body>
+
+<!--
+	浏览器在加载资源时，加载模式属于 懒加载，
+		一个外部资源会直到它被使用时才会加载
+		所以除了0.jpg其他资源都是随着切换随着加载，这样就会导致查看图片过程中会感到不是那么流畅
+
+		为了解决该问题，我们对图片进行预加载
+-->
+		<img id="carImg" src="../day19/img/0.jpg" >
+		
+		<script>
+
+			//创建一个数组用来缓存图片
+			var arr = [];
+			for(var i=0; i<60; i++){
+				// 创建一个图片标签，然后设置路径，图片就会预先被加载
+				var img = document.createElement('img');
+				img.src = "../day19/img/"+i+".jpg";
+				arr.push(img);
+			}
+
+
+
+
+			/*
+				逻辑：
+					1.当鼠标按下是功能开始
+					2.根据鼠标滑动方向来切换图片
+					3.当鼠标松开时功能结束
+			 */
+
+			// 获取图片元素
+			var carImg = document.getElementById('carImg');
+			// 创建一个变量记录功能是否开始
+			var isStart = false; //默认值是false，没有开始
+			// 创建一个变量记录当前图片的索引
+			var currentIndex = 0;
+			// 创建一个变量表示图片的最大数量
+			var totalImg = 60;
+			// 定义一个变量记录鼠标按下的位置
+			var mouseBegin, distance;
+
+			// 为document绑定鼠标按下的事件
+			document.addEventListener('mousedown',function (ev) {
+				// 取消默认行为
+				ev.preventDefault();
+				// 鼠标按下功能开始，将isStart设置为true
+				isStart = true;
+				// 修改mouseBegin的值
+				mouseBegin = ev.clientX;
+
+			}, false);
+
+			// 绑定鼠标移动的事件
+			document.addEventListener('mousemove',function (ev) {
+
+				// 判断拖拽是否开始
+				/*
+					问题：
+						1.图片的切换是没有方向
+						2.鼠标移动的快图片切换的慢，鼠标移动的慢图片切换的快
+						3.为什么每次都是从车头开始转
+
+				 */
+				if(isStart){
+					// currentIndex++;
+					// currentIndex %= totalImg;
+					// // 切换图片
+					// carImg.src = "../day19/img/"+currentIndex+".jpg";
+
+					//获取当前位置
+					// 创建一个变量，记录鼠标移动的距离
+					distance = currentIndex + Math.floor((mouseBegin - ev.clientX)/20);
+
+					distance %= totalImg;
+
+					// 判断distance是否是负值
+					if(distance < 0){
+						distance += totalImg;
+					}
+
+					carImg.src = "../day19/img/"+distance+".jpg";
+				}
+
+			}, false);
+
+			// 鼠标松开事件
+			document.addEventListener('mouseup',function (ev) {
+				// 鼠标松开功能结束，将isStart设置为false
+				isStart = false;
+				// 更新currentIndex
+				currentIndex = distance;
+			}, false);
+
+		</script>
+	</body>
+</html>

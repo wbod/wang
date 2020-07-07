@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参数</title>
+    <script>
+
+        var a = 10;
+        /*
+          参数就相当于函数内部的局部变量，定义形参就相当于在函数内部定义局部变量
+         */
+        function fn(a) {
+            console.log(a);
+            //在函数作用域中，访问全局变量a 可以通过全局对象window来完成访问
+            console.log(window.a);
+        }
+
+        // fn();
+
+
+        function fn2(b) {
+            b++;
+            console.log(b);
+        }
+
+        var b = 3;
+
+        // 传递参数时，是直接将变量所对应的值作为参数传递
+        // fn2(b);
+
+        //全局作用域中打印的b的值依然是3
+        // console.log(b);
+
+        function fn3(obj) {
+            obj.name = '孙悟空';
+            console.log(obj.name);
+        }
+
+        var c = {name:'猪八戒'};
+
+        fn3(c);
+
+        console.log(c.name);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

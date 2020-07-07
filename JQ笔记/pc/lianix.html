@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function Foo() {};
+const foo = new Foo();
+  //请写出以下输出结果：
+console.log(foo.__proto__ === Foo.prototype)
+console.log(foo.__proto__.__proto__ === Object.prototype)
+console.log(foo.__proto__.constructor === Foo)
+console.log(foo.__proto__.__proto__.constructor === Object)
+console.log(Foo.__proto__ === Function.prototype)
+
+    </script>
+</body>
+</html>

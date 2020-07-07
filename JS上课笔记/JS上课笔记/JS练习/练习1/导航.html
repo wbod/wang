@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav{
+            width: 200px;
+            height: 388px;
+            /* background: pink; */
+            /* margin: 0 auto; */
+        }
+        .nav ul{
+            border: 1px solid red;
+        }
+        .nav ul li {
+            /* text-align: center; */
+            height: 35px;
+            line-height: 35px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: relative;
+            
+            
+        }
+        .nav ul li:hover{
+            background: pink;
+            color: #ff5000;
+            
+        }
+        .nav ul li a{
+            display: inline-block;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+        .nav ul li a:hover{
+            text-decoration:underline ;
+            color: #ff5000;
+            
+        }
+        .list{
+            width: 300px;
+            height: 388px;
+            /* border: 1px solid red; */
+            display: none;
+            position: absolute;
+            left: 199px;
+            top: 0;
+
+        }
+     
+        .nav ul .navOne:hover .list{
+            display: block;
+        }
+        .navTwo{
+            position: relative;
+        }
+        .list02{
+               width: 500px;
+               height: 388px;
+               /* border: 1px solid red; */
+               opacity: 0;
+               position: absolute;
+               left: 199px;
+               top: -36px;
+            }
+        .navTwo:hover .list02{
+            opacity: 1;
+        }
+        .navTwo .list02 ul .navThree:hover{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li class="navOne">
+               <a href="##">衣服</a>
+               /
+               <a href="##">裤子</a>
+               /
+               <a href="##">鞋子</a>
+               <div class="list">
+                   <ul>
+                       <li>
+                           <a href="##">女装</a>
+                           <a href="##">男装</a>
+                           <a href="##">内衣</a>
+                       </li>
+                       <li>
+                        <a href="##">鞋靴</a>
+                        <a href="##">箱包</a>
+                        <a href="##">配件</a>
+                    </li>
+                    <li>
+                        <a href="##">童装玩具</a>
+                        <a href="##">孕产</a>
+                        <a href="##">用品</a>
+                    </li>
+                    <li>
+                        <a href="##">家电</a>
+                        <a href="##">数码</a>
+                        <a href="##">手机</a>
+                    </li>
+                    <li>
+                        <a href="##">美妆</a>
+                        <a href="##">洗护</a>
+                        <a href="##">保健品</a>
+                    </li>
+                    <li>
+                        <a href="##">珠宝</a>
+                        <a href="##">眼镜</a>
+                        <a href="##">手表</a>
+                    </li>
+                    <li>
+                        <a href="##">运动</a>
+                        <a href="##">户外</a>
+                        <a href="##">乐器</a>
+                    </li>
+                    <li>
+                        <a href="##">游戏</a>
+                        <a href="##">动漫</a>
+                        <a href="##">影视</a>
+                    </li>
+
+                    <li>
+                        <a href="##">美食</a>
+                        <a href="##">生鲜</a>
+                        <a href="##">零食</a>
+                    </li>
+                    <li>
+                        <a href="##">鲜花</a>
+                        <a href="##">宠物</a>
+                        <a href="##">农资</a>
+                    </li>
+                    <li>
+                        <a href="##">家具</a>
+                        <a href="##">嘉实</a>
+                        <a href="##">家纺</a>
+                    </li>
+                   </ul>
+               </div>
+            </li>
+
+            <li class="navTwo">
+                <a href="##">零食</a>
+                /
+                <a href="##">海鲜</a>
+                /
+                <a href="##">水果</a>
+                <div class="list02">
+                    <ul>
+                        <li class="navThree">
+                            <a href="##">
+                                <h3>水果</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="##">荔枝</a>
+                            <a href="##">百香果</a>
+                            <a href="##">芒果</a>
+                            <a href="##">樱桃</a>
+                        </li>
+                        <li>
+                            <a href="##">榴莲</a>
+                            <a href="##">杨梅</a>
+                            <a href="##">柠檬</a>
+                            <a href="##">水蜜桃</a>
+                        </li>
+                        <li>
+                            <a href="##">李子</a>
+                            <a href="##">桃子</a>
+                            <a href="##">苹果</a>
+                            <a href="##">黄桃</a>
+                        </li>
+                        <li>
+                            <a href="##">火龙果</a>
+                            <a href="##">波罗蜜</a>
+                            <a href="##">蓝莓</a>
+                            <a href="##">猕猴桃</a>
+                        </li>
+                        <li>
+                           <a href="##">
+                               <h3>零食</h3>
+                           </a>
+                        </li>
+                        <li>
+                            <a href="##">牛肉干</a>
+                            <a href="##">面包</a>
+                            <a href="##">辣条</a>
+                            <a href="##">饼干</a>
+                        </li>
+                        <li>
+                            <a href="##">巧克力</a>
+                            <a href="##">葡萄干</a>
+                            <a href="##">芒果干</a>
+                            <a href="##">绿豆糕</a>
+                        </li>
+                        <li>
+                            <a href="##">薯片</a>
+                            <a href="##">锅巴</a>
+                            <a href="##">海苔</a>
+                            <a href="##">蛋黄酥</a>
+                        </li>
+                        <li>
+                            <a href="##">猪肉脯</a>
+                            <a href="##">棒棒糖</a>
+                            <a href="##">瓜子</a>
+                            <a href="##">豆干</a>
+                        </li>
+                        <li>
+                            <a href="##">腰果</a>
+                            <a href="##">开心果</a>
+                            <a href="##">山楂</a>
+                            <a href="##">红枣</a>
+                        </li>
+
+                    </ul>
+                </div>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+               
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+             <li>
+                <a href="##">衣服</a>
+                /
+                <a href="##">裤子</a>
+                /
+                <a href="##">鞋子</a>
+             </li>
+        </ul>
+    </div>
+
+</body>
+</html>

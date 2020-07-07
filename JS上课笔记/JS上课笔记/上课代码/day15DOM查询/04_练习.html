@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <style>
+        #outer{
+            width: 520px;
+            background-color: #bfa;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        img{
+            vertical-align: bottom;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            /*
+                点击按钮切换图片，点击上一张切换到上一张，点击下一张切换到下一张
+
+             */
+
+            // 获取图片标签
+            var img = document.getElementsByTagName('img')[0];
+
+            // 切换图片实际上就是修改img的src属性
+            // img.src = "img/3.jpg";
+
+            // 创建一个数组，用来存储图片的路径
+            var imgPath = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+
+            //创建一个变量用来存储当前显示的图片的索引
+            var current = 0;
+
+            // 设置图片的信息
+            var info = document.getElementById('info');
+            info.innerHTML = '一共 '+imgPath.length+' 张图片，当前第 '+(current+1)+' 张';
+
+
+            //为两个按钮绑定单击响应函数
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            // 如何做到在五张图片之间切换？
+            prev.onclick = function () {
+                // 上一张
+                // 索引自减
+                current--;
+
+                //判断current是否小于0
+                if(current < 0){
+                    current = imgPath.length - 1;
+                }
+
+                // 修改img的src来切换图片
+                img.src = imgPath[current];
+                // 图片切换完毕，修改信息
+                info.innerHTML = '一共 '+imgPath.length+' 张图片，当前第 '+(current+1)+' 张';
+            };
+
+            next.onclick = function () {
+                // 下一张
+                // 索引自增
+                current++;
+
+                //判断current是否大于4
+                if(current > imgPath.length - 1){
+                    current = 0;
+                }
+
+                img.src = imgPath[current];
+                info.innerHTML = '一共 '+imgPath.length+' 张图片，当前第 '+(current+1)+' 张';
+            };
+
+        };
+
+    </script>
+</head>
+<body>
+
+<div id="outer">
+    <p id="info">一共 5 张图片，当前第 1 张</p>
+    <img src="img/1.jpg" alt="冰棍">
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+</div>
+
+</body>
+</html>

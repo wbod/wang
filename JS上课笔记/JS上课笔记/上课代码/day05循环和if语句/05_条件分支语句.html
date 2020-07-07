@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件分支语句</title>
+    <script>
+        //根据不同的数字显示不同的中文
+        //1 --> 壹   2 --> 贰
+
+        //创建一个变量来表示数字
+        var num = 3;
+
+        // if(num == 1){
+        //     console.log('壹');
+        // }else if(num == 2){
+        //     console.log('贰');
+        // }else if(num == 3){
+        //     console.log('叁');
+        // }else if(num == 4){
+        //     console.log('肆');
+        // }
+
+    /*
+        条件分支语句（switch-case）
+            switch(表达式){
+                case 表达式:
+                    语句....
+                    break;
+                case 表达式:
+                    语句...
+                    break;
+                case 表达式:
+                    语句...
+                    break;
+                default:
+                    语句....
+                    break;
+            }
+
+         执行的流程：
+            switch-case语句在执行时，
+                会自上向下将case后的表达式和switch后()中的表达式进行全等比较
+                如果比较结果为true，则自当前case处开始执行代码
+                如果比较结果为false，则继续向下比较，直到找到true为止。
+                如果所有的比较结果都false，则自default处开始执行代码
+
+            注意，当case后的表达式和switch后的表达式全等比较结果为true时，
+                会从当前case处开始向下执行代码，此时它下边的所有代码都会执行，
+                哪怕是其他case后的代码，如果不希望执行其他case后的代码，
+                可以在语句的最后使用break关键字。
+
+            switch-case被称为条件分支语句，它的作用和if-else基本上是一样的，
+                换句话说，可以通过if-else来实现switch-case的功能
+                同样也可以通过switch-case来实现if-else的功能
+                在开发中还是会以if-else为主
+
+                当你判断的条件都是这种 xxx === yyy，比较适合使用switch-case
+
+
+             练习：
+                根据用户输入的数字，打印星期几。
+
+
+    */
+        // num = +prompt("请输入一个数字:");
+        num = prompt("请输入一个数字:");
+        switch (num) {
+            case '1':
+                alert('壹');
+                break;
+            case '2':
+                alert('贰');
+                break;
+            case '3':
+                alert('叁');
+                break;
+            default:
+                alert('你输错了！');
+                break;
+
+
+            // case 'a':
+            // case 'b':
+            // case 'c':
+            // case 'd':
+            //     alert('你输错了~');
+            //     break;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

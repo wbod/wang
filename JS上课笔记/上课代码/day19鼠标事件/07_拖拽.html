@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #box4{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+        .drag{
+            position: absolute;
+        }
+
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            //获取box1对象
+            var box1 = document.getElementById('box1');
+
+            // 创建一个变量，记录拖拽的状态
+            //var isDrag = false; // 默认拖拽没有开始
+            var left, top;
+            // 创建一个变量，记录被拖拽的对象
+            var dragEle = null;
+
+            //为box1绑定鼠标按下的事件
+            document.addEventListener('mousedown',function (ev) {
+
+                // alert(ev.button);
+                // button用来表示鼠标的按钮 0表示左键 1表示滚轮按下 2表示右键
+                // 判断元素是否是拖拽元素
+                if(ev.target.classList.contains('drag') && ev.button === 0){
+                    // 开始拖拽 将isDrag设置为true
+                    // isDrag = true;
+                    // 将ev.target 赋值给dragEle
+                    dragEle = ev.target;
+                    // 取消默认行为
+                    ev.preventDefault();
+                    // 获取鼠标和元素的距离
+                    left = ev.offsetX;
+                    top = ev.offsetY;
+                }
+            }, false);
+
+            // 开始拖拽 , 为document绑定一个鼠标移动的事件
+            document.addEventListener('mousemove',function (ev) {
+                if(dragEle){
+                    dragEle.style.left = ev.clientX - left  +'px';
+                    dragEle.style.top = ev.clientY - top + 'px';
+                }
+            }, false);
+
+            //设置onmouseup来停止拖拽
+            document.addEventListener('mouseup', function (ev) {
+                // 将 isDrag 设置为false，停止拖拽
+                // isDrag = false;
+                dragEle = null;
+            });
+
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="box1" class=""></div>
+<div id="box2" class="drag active hello"></div>
+<div id="box3" class="drag"></div>
+<div id="box4" class="drag"></div>
+<img src="an.jpg" class="drag">
+</body>
+</html>

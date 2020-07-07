@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象字面量</title>
+    <script>
+
+        // var o = {}; //创建一个空对象
+        // o.name = 'xxx';
+        // o.age = 0;
+
+        // 创建对象同时直接向对象中添加属性
+        /*
+            语法：{属性名:属性值,属性名:属性值,属性名:属性值}
+            对象字面量，外部是一个大括号，内部有一个一个的属性组成
+                属性名和属性值之间使用:连接，每一个属性以,结尾，最后一个属性不要写,
+         */
+        var o = {
+            name:'孙悟空',
+            age:18,
+            gender:'男',
+           "123asdsd":'aaa'
+        };
+
+        // console.log(o.name,o.age,o.gender);
+        console.log(o['123asdsd']);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

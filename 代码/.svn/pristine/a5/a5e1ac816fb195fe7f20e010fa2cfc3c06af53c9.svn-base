@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03_Object扩展</title>
+  </head>
+  <body>
+    <!--
+ES5给Object扩展了一些静态方法, 常用的2个:
+1. Object.create(prototype, [descriptors])
+  * 作用: 以指定对象为原型创建新的对象
+  * 为新的对象指定新的属性, 并对属性进行描述
+    - value : 指定值
+    - writable : 标识当前属性值是否是可修改的, 默认为false
+    - configurable: 标识当前属性是否可以被删除 默认为false
+    - enumerable： 标识当前属性是否能用for in 枚举 默认为false
+2. Object.defineProperties(object, descriptors)
+  * 作用: 为指定对象定义扩展多个属性
+    * get ：用来获取当前属性值得回调函数
+    * set ：修改当前属性值得触发的回调函数，并且实参即为修改后的值
+   * 存取器属性：setter,getter一个用来存值，一个用来取值
+-->
+    <script type="text/javascript">
+      var person = { name: "jack", age: 18, setName: function () {} };
+      // 创建新对象，将新对象.__proto__ = person, 并返回新对象
+      // 对象和对象的继承~
+      var son = Object.create(person, {
+        // 添加属性/方法
+        sex: {
+          value: "男",
+          // 描述属性的属性（属性描述符/元属性）
+          writable: true, // 可写：决定属性是否可以修改
+          enumerable: false, // 枚举/遍历：决定属性是否可以被遍历出来
+          configurable: true, // 配置：决定属性是否可以重新配置（1. 是否可以删除 2. 是否可以修改元属性）
+        },
+        setAge: {
+          value: function () {},
+          enumerable: true,
+        },
+      });
+      console.log(son);
+      son.sex = "女";
+      // 关键字 delete 删除对象上的属性
+      delete son.sex;
+      console.log(son);
+
+      /*
+        普通for循环  一般用来遍历数组
+        for in循环   一般用来遍历对象
+          即可以遍历自身上属性，也可以遍历原型上的属性
+          需求：一般不需要原型上的属性
+
+        forEach      一般用来遍历数组
+      */
+
+      for (var key in son) {
+        // hasOwnProperty判断属性是否是对象上自身上的属性，是返回值true
+        if (son.hasOwnProperty(key)) {
+          console.log(key);
+        }
+      }
+
+      // console.log(son.name);
+      // console.log(son.setName());
+
+      var person = { name: "jack", age: 18, setName: function () {} };
+
+      Object.defineProperty(person, "name", {
+        value: "rose",
+        writable: false, // 可写：决定属性是否可以修改
+        enumerable: false, // 枚举/遍历：决定属性是否可以被遍历出来
+        configurable: true, // 配置：决定属性是否可以重新配置（1. 是否可以删除 2. 是否可以修改元属性）
+      });
+      console.log(person);
+      person.name = 123;
+      console.log(person);
+
+      Object.defineProperties(person, {
+        name: {
+          value: "rose",
+          writable: false, // 可写：决定属性是否可以修改
+          enumerable: false, // 枚举/遍历：决定属性是否可以被遍历出来
+          configurable: true, // 配置：决定属性是否可以重新配置（1. 是否可以删除 2. 是否可以修改元属性）
+        },
+        age: {
+          value: 20
+        }
+      });
+    </script>
+  </body>
+</html>

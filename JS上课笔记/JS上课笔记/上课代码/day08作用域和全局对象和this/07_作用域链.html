@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域链</title>
+    <script>
+
+        /*
+            当我们去访问一个变量时，
+                会优先在当前作用域中寻找是否含有该变量
+                    如果有则直接使用，如果没有则去上一层作用域中寻找
+                    如果找到了则使用，如果依然没有找到则继续向上一级寻找，
+                    以此类推，直到找到为止，如果一直到全局作用域（window对象）
+                    依然没有找到，则报错：Uncaught ReferenceError: xxx is not defined
+                这样就组成了一条作用域链，
+                    也就是查找变量时，是沿着作用域链向上寻找
+         */
+
+        // var a = 30;
+
+        function fn() {
+            // var a = 20;
+            // console.log(a);
+
+            function inner() {
+                //var a = 10;
+                console.log(a);
+            }
+
+            inner();
+        }
+
+        // fn();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

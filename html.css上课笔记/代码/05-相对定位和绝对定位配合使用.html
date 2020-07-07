@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 
+				绝对定位: 当元素设置绝对定位后,不在具备之前的显示模式,设置宽高起作用
+				相对定位配合绝对定位使用:绝对定位的参考点,会参照当前的设置相对定位的
+				父元素(离自己最近的),如果父元素没有设置相对定位,会以初始包含块为参考点
+				
+				子绝父相:父子指的标签是嵌套关系,绝指的是子标签是绝对定位,父指的是父标签是相对定位
+			 */
+			*{
+				margin: 0 ;
+				padding: 0;
+			}
+			.header{
+				width: 1000px;
+				height: 300px;
+				border: 1px solid #333;
+				margin: 200px auto 0;
+				/* 相对定位 */
+				position: relative;
+			}
+			span{
+				width: 100px;
+				height: 30px;
+				background: blue;
+				/* 绝对定位 */
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			.one{
+				/* 相对定位 */
+				position: relative;
+				width: 500px;
+				height:200px ;
+				border: 1px solid red;
+				margin: 50px auto 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+			<div class="one">
+				<span></span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+    <style>
+        span{
+            /*将span转换为行内块元素*/
+            display: inline-block;
+            /* 设置span的宽度    */
+            width: 120px;
+        }
+
+    </style>
+    <script>
+
+        /*
+            练习1：打印99乘法表
+                    1x1=1
+                    1x2=2 2x2=4
+                    1x3=3 2x3=6 3x3=9
+                    1x4=4 2x4=8 3x4=12 4x4=16
+                    。。。
+                                                9x9=81
+
+
+              *
+              **
+              ***
+              ****
+         */
+
+        //创建一个外部循环，用来表示图形的高度
+        for(var i=1; i<=9; i++){
+            // 创建一个内部循环，用来表示图形的宽度
+            for(var j=1; j<=i; j++){
+                //打印公式
+                document.write('<span>'+j+' x '+i+' = '+(i*j)+'</span>');
+
+            }
+            document.write("<br>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

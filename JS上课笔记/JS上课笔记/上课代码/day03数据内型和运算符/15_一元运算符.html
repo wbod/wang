@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一元运算符</title>
+    <script>
+        /*
+            一元运算符
+                - 只有一个操作数的运算符
+                - +（一元+），正号
+                    - 正号不会对数字产生任何的影响
+                - -（一元-），负号
+                    - 符号会对数字进行符号位取反
+
+                - 对于非数字来说，一元的+和-，它会先将其转换为数字然后在运算
+        */
+
+        var a = 10;
+        a = -a;
+
+        var b = true;
+        b = -b;
+
+        // 可以利用一元的+，来将将任意值转换为数值，原理同Number，但是更加便捷
+        // var c = '123';
+        // console.log(c, typeof c);
+        // c = +c;
+        // console.log(c, typeof c);
+
+        var d = 1 + +'2' + 3;
+        console.log('d =',d);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐式类型转换</title>
+    <script>
+        var a = true;
+        // console.log(a, typeof a);
+
+        // 可以通过为任意值+空串的形式来将其转换为一个字符串
+        // 它的原理和String()函数是一样的，但是操作起来更加的简单
+        a = a + ''; // 'true' + ''
+        // console.log(a, typeof a);
+
+
+        var b = '123';
+        console.log(b, typeof b);
+
+        //将b转换为数值
+        // 可以通过为任意值-0 *1 /1这些方式来将一个任意值转换为数字（了解）
+        // 它的原理和Number()函数一样，但是操作起来更加的简便
+        b = b - 0;
+        console.log(b, typeof b);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

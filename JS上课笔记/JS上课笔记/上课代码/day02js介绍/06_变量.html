@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+    <script>
+
+        //声明变量
+        // var a;
+        // var b, c, d;
+        //为变量赋值
+        // a = 100;
+        // b = 200;
+        // c = 'hello';
+        // d = true;
+
+        // 声明和赋值同时进行
+        // 在JS中，JS的变量是没有类型的概念的，变量中可以存储任意类型的值
+        // 动态类型
+        var a = 'hello';
+        a = 123;
+
+        // 打印变量a的值
+        // console.log(a);
+
+        /*
+            标识符
+                - 在JS中，所有的可以自己命名的内容，被称为标识符
+                    比如：变量名、函数名、类名
+                - 标识符的规范：
+                    1.标识符中可以含有字母、数字、下划线_、$
+                        但是不能以数字开头
+                    2.标识符不能是JS中的关键字和保留字，
+                        同时也不建议使用JS中已经使用的函数名作为变量
+                    3.JS标识符采用驼峰命名法
+                        小驼峰
+                            - 首字母小写，每一个单词的开头字母大写
+                            - maxlength --> maxLength
+                            - 基本结构：xxxYyyZzz
+                            - 通常都会使用小驼峰
+                        大驼峰
+                            - 首字母大写，每一个单词的开头字母大写
+                            - maxLength --> MaxLength
+                            - 基本结构：XxxYyyZzz
+                            - 大驼峰用于类名的设置
+
+                        了解（帕斯卡命名法）
+                            - 所有的字母都小写，单词之间使用_隔开
+                            - maxlength --> max_length
+                            - 基本结构：xxx_yyy_zzz
+                            - 在JS中使用的并不常见
+
+                        命名时，尽量使用英语，如果不会写英语，可以使用拼音，
+                            但是不要英语拼音混着用
+         */
+        var a123_$ = 345;
+        var ab = 33;
+        // console.log(a123_$);
+        // var alert = 123; //不要这么用
+        // console.log(alert);
+        // alert('hahah');
+        // var mAxLeNgTh = 100; //也不要这么用
+
+        // var zuiDaChangDu = 123123;  // 实在没辙了可以用拼音（不建议）
+
+        // var zuiDaLength = 123123; // 也不要这么用
+
+        // var 锄禾日当午 = 123; // 这么容易被打死
+        // console.log(锄禾日当午);
+
+        var age = 10;
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

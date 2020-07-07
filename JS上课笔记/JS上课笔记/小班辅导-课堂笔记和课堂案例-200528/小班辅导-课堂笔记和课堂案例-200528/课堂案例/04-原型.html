@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+    // 同构 __proto__ 获取对象的原型
+    var obj = {name:'校长', age:10};
+    console.log('对象：', obj);
+    console.log('对象的原型', obj.__proto__); //对象的原型 原型链的顶部, 没有原形了
+    console.log('对象的原型的原型', obj.__proto__.__proto__);  // null
+    console.log('');
+
+
+    var n = new Number(10);
+    console.log('对象：', n);
+    console.log('对象的原型：', n.__proto__);
+    console.log('对象的原型的原型：', n.__proto__.__proto__);  //原型链的顶部了
+    //console.log(n.__proto__.__proto__.__proto__)
+
+
+
+</script>
+
+</body>
+</html>

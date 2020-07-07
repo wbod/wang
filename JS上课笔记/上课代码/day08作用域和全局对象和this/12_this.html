@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script>
+
+        /*
+            函数的this只受函数调用方式的影响
+         */
+        var name = 'hello';
+
+        var obj = {
+            name:'孙悟空',
+            sayName:function () {
+                console.log(this.name);
+            }
+        };
+
+        // obj.sayName();
+        var fn = obj.sayName;
+        // fn();
+
+        var obj2 = {
+            name:'猪八戒',
+            sayName:function () {
+
+                console.log(this.name);
+                //调用全局函数fn
+                // fn();
+                // 定义一个内部函数
+                // this是谁和函数的定义方式无关，只和调用方式有关
+                function t() {
+                    console.log(this);
+                }
+
+                t();
+            }
+        }
+
+        obj2.sayName();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

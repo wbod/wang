@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+
+            function fn() {
+                alert('hello');
+            }
+            btn.addEventListener('click', fn, false)
+
+            btn.removeEventListener('click' ,fn , false)
+        };
+
+    </script>
+</head>
+<body>
+<button id="btn">点我一下</button>
+</body>
+</html>

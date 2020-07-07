@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转换为布尔值</title>
+    <script>
+
+        /*
+            将其他的数据类型转换为布尔值
+                方式一：
+                    - 使用Boolean()函数
+
+                转换的情况：
+                    - 数值：
+                        除了0和NaN，其他值都会转换为true
+
+                    - 字符串：
+                        除了空串，其他值都会转换为true
+
+                    - null和undefined都会转换为false
+
+                    - 大部分对象都会转换为true
+
+
+         */
+        var a = 100; // true
+        a = -100; // true
+        a = Infinity; // true
+        a = NaN; // false
+        a = 0; // false
+
+        a = 'hello'; // true
+        a = 'false'; // true
+        a = ''; // false
+        a = '  '; // true
+        a = null; // false
+        a = undefined; // false
+
+        console.log(a, typeof a);
+
+        a = Boolean(a);
+        console.log(a, typeof a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

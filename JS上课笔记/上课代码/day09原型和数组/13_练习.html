@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 创建一个Person类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.toString = function () {
+            // Person [name: 孙悟空, age: 18]
+            return 'Person [name: '+this.name+', age: '+this.age+']';
+        };
+
+        //创建一个数组，向数组中添加几个Person对象
+        var p1 = new Person('孙悟空', 18);
+        var p2 = new Person('沙和尚', 38);
+        var p3 = new Person('红孩儿', 8);
+
+        var perArr = [p1, p2, p3];
+
+        // 要求创建一个函数，可以获取到数组中所有的成年人，并将其保存到一个新的数组中返回
+        function getAdult(arr) {
+            var newArr = [];
+            // 将arr中的所有成年人，添加到新数组中
+
+            return newArr;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

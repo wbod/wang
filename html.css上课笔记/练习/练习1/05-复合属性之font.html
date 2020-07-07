@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+				单属性: 之前我们学习的所有都是单属性,单属性是一个属性名对应一个属性值
+				复合属性: 复合属性是一个属性名对应多个属性值
+				
+				font属性: 文本属性
+				
+				注意: 当和复合属性值相同操作的单属性同时存在时,要先写复合属性,再写单属性,
+				反之单属性会被复合属性中的单个值层叠掉
+			 */
+			.one{
+				height: 300px;
+				background: pink;
+				color:yellowgreen;
+				/* font-size: 40px;
+				font-weight: 700;
+				font-style: italic;
+				font-family: "黑体";
+				line-height: 300px; */
+				/*     是否倾斜 是否加粗  字号/行高   字体 */
+				/* font:italic 700 40px/300px "黑体"; */
+				/* 字号和字体是必写项 */
+				/* font: 40px "微软雅黑"; */
+				font-size: 40px;
+				font: 40px "宋体";
+				font-weight: 700;
+				font-style: italic;
+				line-height: 300px;
+				line-height: 500px;;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">复合属性之font</div>
+	</body>
+</html>

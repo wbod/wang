@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包装类</title>
+    <script>
+
+        var a = 10; // 基本数据类型的值
+        var b = {}; // 是一个对象
+
+        // b.name = '孙悟空';
+        // b.sayHello = function () {
+        //     console.log('哈哈哈哈~~');
+        // };
+
+        // var result = a.toString();
+        // console.log(result);
+
+        a.name = 'haha';
+        a.age = 18;
+        console.log(a.name, a.age);
+
+        /*
+            在JS中，给我们提供了三个包装类：
+                Number()
+                String()
+                Boolean()
+                - 这三个包装类可以用于创建出一个基本数据类型的对象
+                - 可以通过 new Number()、 new String()、 new Boolean()
+                    来创建一个基本数据的对象，但是千万不要这么用
+
+                - 当我们去调用一个基本数据类型的属性或方法时，由于值中并不具备属性和方法，
+                    所有JS的引擎会临时通过包装类来将其转换为对象，然后通过该对象调用属性或方法。
+
+                - 这样就意味着，可以直接通过值来调用其包装类的方法
+
+         */
+        var c = 10; //基本数据类型的10（原始值）
+
+        // 对象类型的数字具有原始值数字的所有功能，并且它可以直接存储属性和方法
+        // 但是在开发中，我们绝对绝对不要这么使用
+        var d = new Number(10); // 对象类型的10
+
+        // console.log(d+''); //10
+        // d.name = '哈哈';
+        // d.age = 18;
+        // console.log(d.name, d.age);
+        // console.log(d + 33);
+
+        var f = new Number(33);
+        var g = new Number(33);
+
+        // 比较对象形式基本类型数据时，比较的是对象的内存地址
+        // console.log(f == g);
+        // console.log(typeof f);
+
+
+        var str = 'hello';
+
+        var reuslt = str.endsWith('o');
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

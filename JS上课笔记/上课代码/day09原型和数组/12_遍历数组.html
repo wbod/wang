@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧', '白骨精'];
+
+    //    for-in来遍历数组
+    //     for(var i in arr){
+    //         // for-in语句会执行多次，数组中有几个元素就会执行几次
+    //         // 每次执行都会将当前的索引赋值给i
+    //         console.log(arr[i]);
+    //     }
+
+        // for-of语句和for-in类似，不同点在于它会直接返回元素而不是索引
+        // 但是这两种玩意对于老版本的浏览器支持度不高
+        for(var v of arr){
+            console.log(v);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

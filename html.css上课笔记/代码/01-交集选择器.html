@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				交集选择器: 同时具备多个选择器,选择器之间没有空格,表示交集状态,多个条件
+			 */
+			/* .one{
+				color:red;
+			} */
+			/* span.one{
+				color:red;
+			} */
+			/* .one.two{
+				color:red;
+			} */
+			span.one.two{
+				color:red;
+			}
+			.list li{
+				list-style: none;
+				color:red;
+			}
+			.list li.current{
+				color:blue;
+			}
+			.list .current{
+				color:blue;
+			}
+			.list div.current{
+				color:green;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="one two">我是span</span>
+			<span class="one">我是span2</span>
+			<p class="one two">我是段落</p>
+			<h1 class="one">标题</h1>
+		</div>
+		
+		<ol class="list">
+			<li>1</li>
+			<li class="current">2</li>
+			<li>3</li>
+			<li>4</li>
+			<div class="current">哈哈</div>
+		</ol>
+	</body>
+</html>

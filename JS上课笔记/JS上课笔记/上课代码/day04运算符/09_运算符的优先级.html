@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符的优先级</title>
+    <script>
+
+        /*
+            在JS中，运算符也是有计算的优先级的，
+                比如：先乘除 后加减
+                有一个传说中的运算符优先级的表格，
+                    在表格中越靠前，优先级越高，优先级越高越优先计算
+                    优先级一样，自左向右计算，如果遇到优先级不清楚的，可以通过该表格查询
+                    https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+                    优先级的表格，不需要记忆，如果遇到优先级不清楚的，可以通过()来改变运算的优先级
+        */
+        var a = 1 + 2 * 3;
+
+        // 假设或的优先级高，或优先级一样  结果应该是 3
+        // 如果与的优先级的高，结果应该是   1
+        a = (1 || 2) && 3;
+
+        // console.log(a);
+
+        // console.log(10 > 5 > 4);
+        // 判断 5是否小于10 同时 5大于4
+        console.log(5 < 10 && 5 > 4);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

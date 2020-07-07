@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <script>
+        //有一个数组
+        var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+
+        var result = filter(arr, fn3);
+
+        console.log(result+'');
+
+
+        //创建一个函数，可以同时满足三个功能
+        function filter(arr, fn) {
+            var newArr = [];
+            for(var i=0; i<arr.length; i++){
+                if(fn(arr[i])){
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+            return newArr;
+        }
+
+        //定义一个函数
+        function fn(n) {
+            //用来判断一个数是否是奇数，奇数返回true，否则返回false
+            return n % 2 !== 0
+        }
+
+        //创建一个判断偶数的函数
+        function fn2(n) {
+            return n % 2 === 0;
+        }
+
+        function fn3(n) {
+            return n % 3 === 0;
+        }
+
+        // var result = getOdd(arr);
+        // result = getEven(arr);
+        // result = getThree(arr);
+        //
+        // console.log(result+"");
+
+        //定义一个函数，将arr中的所有奇数存储到一个新的数组中返回
+        // function getOdd(arr) {
+        //     //创建一个新数组
+        //     var newArr = [];
+        //     //遍历arr
+        //     for(var i=0; i<arr.length; i++){
+        //         // 检查元素是否是奇数
+        //         if(arr[i] % 2 !==0 ){
+        //             //将它放入到新的数组中
+        //             newArr[newArr.length] = arr[i];
+        //         }
+        //     }
+        //     //将新的数组返回
+        //     return newArr;
+        // }
+
+        // 定义一个函数，将arr中的所有的偶数存储到一个新的数组中返回
+        // function getEven(arr) {
+        //     var newArr = [];
+        //     for(var i=0; i<arr.length; i++){
+        //         if(arr[i] % 2 === 0){
+        //             newArr[newArr.length] = arr[i];
+        //         }
+        //     }
+        //     return newArr;
+        // }
+
+        // 定义一个函数，将arr中的所有的三的倍数存储到一个新的数组中返回
+        // function getThree(arr) {
+        //     var newArr = [];
+        //     for(var i=0; i<arr.length; i++){
+        //         if(arr[i] % 3 === 0){
+        //             newArr[newArr.length] = arr[i];
+        //         }
+        //     }
+        //     return newArr;
+        // }
+
+
+
+ </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建一个正则表达式
+        // 正则表达式贪婪模式，通过量词去匹配内容，它会尽可能多的去匹配
+        // 可以通过在量词后边写?，来关闭贪婪模式
+        var reg = /ab+?/;
+        reg = /ab*?/;
+        reg = /ab??/;
+
+
+        // console.log(reg.test('abb'));
+
+        var str = 'abbbcc';
+
+        var result = str.match(reg);
+
+        // console.log(result[0]);
+
+        str = 'dasda13715433267fsgfdgafs13867545679dfasfsdfasf';
+        var phoneReg = /1[3-9][0-9]{9}/g;
+        // result = str.match(phoneReg);
+
+        /*
+            exec() 是正则表达式的方法，用来从字符串中匹配内容
+                作用和match类似，不同点在于它是正则的方法，match是字符串的方法
+                同时exec() 一次只会匹配一个结果，即使你设置全局匹配
+         */
+        // phoneReg = /1[3-9]([0-9]{5})([0-9]{4})/g;
+        // result = phoneReg.exec(str);
+        // console.log(result[1]);
+
+
+        str = `<div>
+<h2>HTML DOM 树</h2>
+<img src="/i/ct_htmltree.gif" alt="HTML DOM Node Tree" />
+</div>`;
+
+        // 编写正则表达式，提取出字符串中图片的路径
+        reg = /src="(.+?)"/;
+        result = reg.exec(str);
+
+        console.log(result[1]);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

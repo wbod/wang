@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+    // 同构 __proto__ 获取对象的原型
+    var obj = {name:'校长', age:10};
+    // 获取obj的原型
+    console.log(obj.__proto__);  //隐式获取
+    console.log(Object.prototype); //显示获取原型
+    console.log(obj.__proto__ === Object.prototype);
+    console.log('');
+
+    // 创建个数组
+    var arr = [10,20,30];
+    console.log(arr.__proto__);  //隐式获取
+    console.log(Array.prototype); //显示获取
+    console.log(arr.__proto__ === Array.prototype)
+
+    
+    console.dir(arr);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        #box3{
+            width: 300px;
+            height: 300px;
+            background-color: #ff0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box3">
+    <div id="box2">
+        <div id="box1"></div>
+    </div>
+</div>
+
+<a href="https://www.baidu.com">去Baidu</a>
+
+
+<input id="inp" type="text">
+<script>
+
+    document.querySelector('a').onclick = function(ev){
+        ev.preventDefault();
+        alert(123);
+      // return false;
+    };
+
+    //
+
+    box3.onclick = function (event) {
+        alert(event.currentTarget.id);
+    };
+
+    // box2.onclick = function (event) {
+    //     alert('box2');
+    // };
+
+    // inp.onkeydown = function (event) {
+    //     alert(event)
+    // };
+
+</script>
+</body>
+</html>

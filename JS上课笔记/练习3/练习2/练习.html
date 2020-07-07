@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="box">class为box的div1</div>
+<div id="div2" class="box">class为box的div2</div>
+<div id="div3">div3</div>
+<span class="box">class为box的span</span>
+<br/>
+<ul>
+  <li>AAAAA</li>
+  <li title="hello">BBBBB</li>
+  <li class="box">CCCCC</li>
+  <li title="hello">DDDDDD</li>
+  <li title="two">BBBBB</li>
+  <li style="display:none">我本来是隐藏的</li>
+</ul>
+
+
+<script src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+  //  选择第一个div    :first
+//  $('div:first').css('background','pink');
+
+//  选择最后一个div
+//  $('div:last').css('background','pink')
+
+//  选择所有class属性不为box的div  :not()
+//  $('div:not(.box)').css('background','pink');
+
+//  选择第二个和第三个li元素
+//  $('li:eq(1)').css('background','pink');
+//  $('li:eq(2)').css('background','pink');
+//  $('li:eq(1),li:eq(2)').css('background','pink');
+
+//   大于0  小于3  之间就剩下索引1和索引2对应的元素了
+//  :gt和:lt  都是不包含给定索引的
+//  jQuery的选择器是从左向右依次执行    用上一次的执行结果来执行下一个选择器
+//  $('li:gt(0):lt(2)').css('background','pink');
+//  $('li:lt(3):gt(0)').css('background','pink');
+
+//  选择内容为BBBBB的li
+//  $('li:contains(BBBBB)').css('background','pink');
+
+//  选择隐藏的li
+//  $('li:hidden').show(1000);
+
+//  选择有title属性的li元素
+//  $('li[title]').css('background','pink');
+
+//   选择title属性为hellow的li元素
+    //  $('li[title=hello]').css('background','pink');
+
+//  选择所有有title属性且title属性不为hello的li元素
+   $('li[title]:not([title = hello])').css('background','pink');
+</script>
+</body>
+</html>

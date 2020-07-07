@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //    练习3： 我家的狗5岁了，5岁的狗相当于多大年龄的人呢？
+    //     其实非常简单，狗的前两年每一年相当于人类的10.5岁，然后每增加一年就增加四岁。
+    //     那么5岁的狗相等于人类的年龄就应该是10.5+10.5+4+4+4 = 33岁
+
+        // 编写一个程序，获取用户输入的狗的年龄，然后通过程序显示其相当于人类的年龄。 ​
+        // 如果用户输入负数，请显示一个提示信息
+     
+        //先获取用户输入的够的年龄
+        var dogAge = prompt('你家狗多大了：');
+
+        //检查用户的输入是否合法
+        // 如果isNaN()返回true，证明用户输入的是一个非法的数字
+        if(isNaN(dogAge) || dogAge < 0){
+            //如果进入判断，证明用户输入的是一个非法数字，显示错误信息
+            alert('你输入的信息有误！');
+        }else{
+            //在外部声明一个变量，用来存储狗相当于人的年龄
+            var likePersonAge;
+            //判断狗的年龄是否超过两岁
+            if(dogAge <= 2){
+                likePersonAge = dogAge * 10.5;
+            }else{
+                // 进入else，表示狗的年龄超过了2岁
+                likePersonAge = 2 * 10.5 + (dogAge - 2) * 4;
+            }
+
+            alert(dogAge+'岁的狗相当于'+likePersonAge+'岁的人!');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

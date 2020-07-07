@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function Person(name) {
+            this.name = name;
+            this.sayHello = fn;
+        }
+
+        // 将函数设置为全局函数
+        // 将函数定义在全局作用域确实可以解决问题，
+        //  但与此同时全局函数也污染到了全局的命名空间（namespace）
+        function fn() {
+            console.log('Hello，大家好，我是 '+this.name);
+        }
+
+        var p1 = new Person('孙悟空');
+        var p2 = new Person('渣渣辉');
+
+        console.log(p1.sayHello === p2.sayHello);
+
+        p1.sayHello();
+        p2.sayHello();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

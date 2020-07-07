@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         /*
+            数组（Array）
+                - 数组也是一个对象
+                - 数组也是用来存储数据的
+                - 和object不同，数组中可以存储一组有序的数据，
+                - 数组中存储的数据我们称其为元素（element）
+                - 数组中的每一个元素都有一个唯一的一个索引，通过索引可以对其进行各种操作
+                - 索引（index），从0开始的整数
+                - array和object没有太本质的区别，不同点主要在于对象中使用使用属性名操作数据
+                    数组中通过索引来操作数据
+                - 对于存储大量数据来讲，数组的存储性能要高于对象
+         */
+
+
+        //    创建一个数组对象
+        var arr = new Array();
+        arr[0] = 1;
+        arr[1] = 12;
+        arr[2] = 22;
+        arr[3] = 32;
+        arr[4] = 42;
+        // arr.length = 4;
+        arr[arr.length] = 123;
+        arr[arr.length] = 234;
+        console.log(arr);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

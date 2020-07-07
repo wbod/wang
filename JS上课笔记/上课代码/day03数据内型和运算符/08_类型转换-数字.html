@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+    <script>
+
+        /*
+            其他的数据类型，转换为数值（Number）
+                - 方式一：
+                    - 使用Number()函数来将其他类型转换为数字
+                    - 转换的情况：
+                        string -> number
+                            - 如果字符串是一个合法的数字，则直接转换为对应的数字
+                                '123' --> 123
+                                '123.45' --> 123.45
+                            - 如果字符串是一个非法的数字，则会转换为NaN
+                                'abc' --> NaN
+                                '123.45.46' --> NaN
+                                '100px' --> NaN
+                             - 空串和纯空格组成的字符串，会转换为0
+                                '' --> 0
+                                '   ' --> 0
+
+                        boolean -> number
+                            true --> 1
+                            false --> 0
+                            在JS底层，true就是用1来表示的，false就是用0来表示的
+
+                       null -> number
+                            null --> 0
+
+                       undefined -> number
+                           undefined --> NaN
+         */
+        var a = '123'; //123
+        a = 'abc';
+        a = '123.45';
+        a = '123.45.46';
+        a = '100px';
+        a = ''; // 空串
+        a = '           ';
+        a = 'Infinity'; // Infinity
+
+        a = true; //1
+        a = false; //0
+
+        a = null; // 0
+        a = undefined; // NaN
+
+        console.log(a, typeof a);
+
+        a = Number(a);
+        console.log(a, typeof a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
